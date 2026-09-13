@@ -141,3 +141,30 @@
   });
   update();
 })();
+
+/* ---------- Hero app window: tilts toward the cursor (fine pointers only) ---------- */
+(function () {
+  const stage = document.querySelector('.hero__visual');
+  if (!stage) return;
+  const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!canTilt) return;
+  let raf = 0;
+  stage.addEventListener('pointermove', (e) => {
+    if (raf) return;
+    raf = requestAnimationFrame(() => {
+      raf = 0;
+      const r = stage.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width;   // 0 (left) .. 1 (right)
+      const py = (e.clientY - r.top) / r.height;   // 0 (top)  .. 1 (bottom)
+      stage.style.setProperty('--ry', `${(-6 + (0.5 - px) * 10).toFixed(2)}deg`);
+      stage.style.setProperty('--rx', `${(2 + (0.5 - py) * 8).toFixed(2)}deg`);
+      stage.classList.add('is-tracking');
+    });
+  });
+  stage.addEventListener('pointerleave', () => {
+    stage.classList.remove('is-tracking');
+    stage.style.removeProperty('--ry');
+    stage.style.removeProperty('--rx');
+  });
+})();
