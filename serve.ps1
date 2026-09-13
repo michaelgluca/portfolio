@@ -1,4 +1,4 @@
-# Tiny static file server for local preview with live reload — no installs needed.
+# Tiny static file server for local preview with live reload, no installs needed.
 # Run:  powershell -ExecutionPolicy Bypass -File serve.ps1
 # Then open http://localhost:8080 in your browser. Ctrl+C to stop.
 # Saving a CSS file swaps the stylesheet in place; saving anything else reloads the page.
@@ -25,7 +25,7 @@ $mime = @{
 }
 
 # Served from the same origin so the site's CSP (script-src 'self') allows it. The HTML
-# rewrite below widens connect-src to 'self' for the polling fetch — dev only, never shipped.
+# rewrite below widens connect-src to 'self' for the polling fetch (dev only, never shipped).
 $reloadScript = @'
 (function () {
   var last = null;

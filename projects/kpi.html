@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b0d12" />
-  <title>KPI &amp; Performance Management App — Michael G. Luca</title>
+  <title>KPI &amp; Performance Management App | Michael G. Luca</title>
   <meta name="description" content="Case study: a governed, automated KPI and performance-management platform on Power Apps, Dataverse, Power Automate and Power BI, replacing spreadsheet-based reporting across a UK public-sector organisation." />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="canonical" href="https://michaelluca.co.uk/projects/kpi.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://michaelluca.co.uk/projects/kpi.html" />
-  <meta property="og:title" content="KPI &amp; Performance Management App — case study" />
+  <meta property="og:title" content="KPI &amp; Performance Management App | Case study" />
   <meta property="og:description" content="A governed, automated performance-management platform on Power Apps, Dataverse, Power Automate and Power BI." />
   <meta property="og:image" content="https://michaelluca.co.uk/assets/photo.jpg" />
   <meta name="twitter:card" content="summary" />
@@ -67,7 +67,7 @@
           disconnected monthly spreadsheets with a single governed system. Built on Power Apps and Dataverse
           with automated data collection through Power Automate and Teams adaptive cards, approval workflows
           to protect data quality, and Power BI dashboards with row-level security. Consolidates a
-          37-indicator corporate framework and scales toward 450–500 indicators organisation-wide — while
+          37-indicator corporate framework and scales toward 450–500 indicators organisation-wide, while
           keeping licensing costs low for ~100 occasional contributors.
         </p>
 
@@ -101,51 +101,51 @@
             results by hand. Several parallel frameworks each had their own format and cadence:
           </p>
           <ul>
-            <li><strong>Corporate Performance Framework</strong> — 37 indicators reported monthly to senior leadership assurance.</li>
-            <li><strong>Departmental frameworks</strong> — different indicators and formats, reported monthly or quarterly.</li>
-            <li><strong>Strategy-based reporting</strong> — outcomes tracked against strategies (e.g. climate, housing).</li>
-            <li><strong>Corporate Plan</strong> — indicators mapped to plan outcomes, reported annually.</li>
+            <li><strong>Corporate Performance Framework</strong>: 37 indicators reported monthly to senior leadership assurance.</li>
+            <li><strong>Departmental frameworks</strong>: different indicators and formats, reported monthly or quarterly.</li>
+            <li><strong>Strategy-based reporting</strong>: outcomes tracked against strategies (e.g. climate, housing).</li>
+            <li><strong>Corporate Plan</strong>: indicators mapped to plan outcomes, reported annually.</li>
           </ul>
           <p>
             This created duplicated effort, inconsistent standards, and no single source of truth. Whenever a
             team wanted a new performance framework (for example, for a climate-change strategy), the BI team
-            had to build something bespoke — which didn’t scale.
+            had to build something bespoke, which didn’t scale.
           </p>
 
           <h2 id="solution">The solution</h2>
           <p>
             A single Power App that lets staff create and manage KPIs, assemble them into reusable
-            frameworks, and then automates the monthly collection of figures and commentary — with
+            frameworks, and then automates the monthly collection of figures and commentary, with
             governance built in so the data stays trustworthy. Analysis and trends live in Power BI
             dashboards rather than the app, keeping the app focused on capture and automation.
           </p>
 
           <h2 id="built">What was built</h2>
           <ul>
-            <li><strong>KPI / indicator authoring</strong> — a guided form capturing rich metadata: definition, category, reporting frequency, targets and target rationale, benchmarking availability, data-due dates, and named data/commentary leads (with delegates).</li>
-            <li><strong>Approval workflows</strong> — new KPIs and new frameworks are signed off by the BI management team to prevent duplication and enforce quality before they go live.</li>
-            <li><strong>Reusable indicator bank + framework builder</strong> — users assemble frameworks (corporate, departmental, policy, strategy) by selecting from existing indicators, so KPIs are defined once and reused across many frameworks. Frameworks act as filters and row-level-security boundaries in reporting.</li>
-            <li><strong>Automated data collection</strong> — scheduled Power Automate flows detect which indicators are due and request figures from data leads, with email reminders when submissions are late (e.g. chasing after 5 days).</li>
-            <li><strong>Automated commentary capture</strong> — for red/amber (RAG) indicators, the system requests commentary and supports a threaded, dialogue-style Q&amp;A on each indicator, notifying leads when questions are posted.</li>
-            <li><strong>Target-change approvals</strong> — targets can only be changed through an approval process, protecting the integrity of reporting baselines.</li>
-            <li><strong>Performance Improvement Plans (PIPs)</strong> — for underperforming indicators, standardised improvement plans capture the issue, contributing factors, and SMART actions (owner, deadline, status, updates) tracked through to sign-off.</li>
-            <li><strong>Benchmarking fields</strong> — optional London/England ranks, quartiles and averages surfaced where benchmarking data exists.</li>
-            <li><strong>Power BI reporting layer</strong> — dashboards with RAG status (configurable ~5% tolerance), trend graphs, framework filtering, row-level security, and export to PowerPoint for board packs.</li>
+            <li><strong>KPI / indicator authoring</strong>: a guided form capturing rich metadata: definition, category, reporting frequency, targets and target rationale, benchmarking availability, data-due dates, and named data/commentary leads (with delegates).</li>
+            <li><strong>Approval workflows</strong>: new KPIs and new frameworks are signed off by the BI management team to prevent duplication and enforce quality before they go live.</li>
+            <li><strong>Reusable indicator bank + framework builder</strong>: users assemble frameworks (corporate, departmental, policy, strategy) by selecting from existing indicators, so KPIs are defined once and reused across many frameworks. Frameworks act as filters and row-level-security boundaries in reporting.</li>
+            <li><strong>Automated data collection</strong>: scheduled Power Automate flows detect which indicators are due and request figures from data leads, with email reminders when submissions are late (e.g. chasing after 5 days).</li>
+            <li><strong>Automated commentary capture</strong>: for red/amber (RAG) indicators, the system requests commentary and supports a threaded, dialogue-style Q&amp;A on each indicator, notifying leads when questions are posted.</li>
+            <li><strong>Target-change approvals</strong>: targets can only be changed through an approval process, protecting the integrity of reporting baselines.</li>
+            <li><strong>Performance Improvement Plans (PIPs)</strong>: for underperforming indicators, standardised improvement plans capture the issue, contributing factors, and SMART actions (owner, deadline, status, updates) tracked through to sign-off.</li>
+            <li><strong>Benchmarking fields</strong>: optional London/England ranks, quartiles and averages surfaced where benchmarking data exists.</li>
+            <li><strong>Power BI reporting layer</strong>: dashboards with RAG status (configurable ~5% tolerance), trend graphs, framework filtering, row-level security, and export to PowerPoint for board packs.</li>
           </ul>
 
           <h2 id="decisions">Key technical decisions</h2>
           <div class="decision">
             <h3>Dataverse vs SharePoint (data architecture)</h3>
             <p>Led the analysis of whether the app needed Microsoft Dataverse or could run on SharePoint lists. Framed the decision around concrete engineering criteria rather than defaults: the requirement for row-level security (departments seeing only their own data), calculated/formula columns, integrity of lookup relationships, and delegation limits on large volumes of submission records that grow every reporting period.</p>
-            <p>Weighed these against licensing and Dataverse capacity costs, and drove the recommendation to Dataverse once row-level security was confirmed as a hard requirement — while keeping the door open to SharePoint for lower-security scenarios.</p>
+            <p>Weighed these against licensing and Dataverse capacity costs, and drove the recommendation to Dataverse once row-level security was confirmed as a hard requirement, while keeping the door open to SharePoint for lower-security scenarios.</p>
           </div>
           <div class="decision">
             <h3>Cost-efficient data submission via Teams Adaptive Cards</h3>
-            <p>Rather than requiring ~100 occasional contributors to each hold premium licences, designed the data-entry path around Teams adaptive cards driven by service-account flows. Contributors submit their monthly figures directly in Teams — cards can be stacked so one person with many indicators gets a single message, not one per indicator — with the flow writing back to Dataverse. This kept the solution affordable at scale while still centralising data in a secure store.</p>
+            <p>Rather than requiring ~100 occasional contributors to each hold premium licences, designed the data-entry path around Teams adaptive cards driven by service-account flows. Contributors submit their monthly figures directly in Teams (cards can be stacked so one person with many indicators gets a single message, not one per indicator) with the flow writing back to Dataverse. This kept the solution affordable at scale while still centralising data in a secure store.</p>
           </div>
           <div class="decision">
             <h3>Governance-driven delivery</h3>
-            <p>Ran the project through the organisation’s formal Power Platform governance process — long-list → as-is scoping → to-be &amp; technical scoping → initial development → continuous development with stakeholders → live — producing the To-Be and Technical Scoping documents and requesting the Dataverse environments early, since provisioning has long lead times.</p>
+            <p>Ran the project through the organisation’s formal Power Platform governance process (long-list → as-is scoping → to-be &amp; technical scoping → initial development → continuous development with stakeholders → live), producing the To-Be and Technical Scoping documents and requesting the Dataverse environments early, since provisioning has long lead times.</p>
           </div>
           <div class="decision">
             <h3>Requirements elicitation</h3>
@@ -168,7 +168,7 @@
           <h2 id="impact">Impact</h2>
           <ul>
             <li>Replaces manual spreadsheet collection with an automated, auditable workflow.</li>
-            <li>Removes the need to build bespoke apps for each new strategy or framework — teams self-serve by assembling frameworks from a shared indicator bank.</li>
+            <li>Removes the need to build bespoke apps for each new strategy or framework: teams self-serve by assembling frameworks from a shared indicator bank.</li>
             <li>Establishes a single source of truth with enforced standards, approvals, and consistent RAG/benchmarking treatment.</li>
             <li>Keeps licensing costs low by routing occasional contributors through Teams rather than the app.</li>
           </ul>

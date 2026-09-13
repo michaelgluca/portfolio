@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b0d12" />
-  <title>Capital Programme Management App — Michael G. Luca</title>
+  <title>Capital Programme Management App | Michael G. Luca</title>
   <meta name="description" content="Case study: a Dataverse-backed Power Platform application giving a UK public-sector organisation a single source of truth for its £24.5m schools capital programme." />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="canonical" href="https://michaelluca.co.uk/projects/capital.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://michaelluca.co.uk/projects/capital.html" />
-  <meta property="og:title" content="Capital Programme Management App — case study" />
+  <meta property="og:title" content="Capital Programme Management App | Case study" />
   <meta property="og:description" content="A Dataverse-backed single source of truth for a ~£24.5m schools capital programme." />
   <meta property="og:image" content="https://michaelluca.co.uk/assets/photo.jpg" />
   <meta name="twitter:card" content="summary" />
@@ -61,17 +61,17 @@
           </ul>
         </div>
         <h1>Capital Programme Management App</h1>
-        <p class="case-hero__sub">Microsoft Power Platform — Dataverse, canvas app &amp; Power Automate for a ~£24.5m schools capital programme</p>
+        <p class="case-hero__sub">Microsoft Power Platform: Dataverse, canvas app &amp; Power Automate for a ~£24.5m schools capital programme</p>
         <p class="case-hero__lead">
           A Dataverse-backed Power Platform application that replaces a sprawl of spreadsheets and trackers
           with a single source of truth for a public-sector schools capital programme. It tracks every
           building project from initiation to final account across two procurement routes, links actual
           finance spend without duplicating it, enforces governance through workflow rules, and lays the
-          groundwork for automating statutory reporting — all designed and built in-house.
+          groundwork for automating statutory reporting, all designed and built in-house.
         </p>
 
         <dl class="meta-grid">
-          <div><dt>Role</dt><dd>Power Platform Developer — led scoping, data-model design and build</dd></div>
+          <div><dt>Role</dt><dd>Power Platform Developer; led scoping, data-model design and build</dd></div>
           <div><dt>Client</dt><dd>UK public sector</dd></div>
           <div><dt>Status</dt><dd>Live</dd></div>
           <div><dt>Programme scale</dt><dd>~£24.5m five-year rolling programme · ~80 school sites · ~25 major and ~97 concurrent projects · ~9–10 internal users</dd></div>
@@ -100,31 +100,31 @@
           <h2 id="problem">The problem</h2>
           <p class="lead">
             The organisation delivers a large, ongoing programme of school
-            building works — planned condition works, urgent reactive repairs, SEND inclusion projects and
-            window-replacement schemes on listed buildings — funded from several grant streams. It was run
+            building works (planned condition works, urgent reactive repairs, SEND inclusion projects and
+            window-replacement schemes on listed buildings) funded from several grant streams. It was run
             across multiple disconnected artefacts: an Excel project tracker, separate SharePoint report
             trackers, Teams lists and a personal reporting spreadsheet, with finance data living in an
             entirely separate system.
           </p>
           <p>That produced a familiar set of problems:</p>
           <ul>
-            <li><strong>No single source of truth</strong> — the same project existed in several places, causing duplication and mismatches.</li>
-            <li><strong>No validation</strong> — free-text entry and inconsistent values, updated sporadically, so the tracker rarely reflected reality.</li>
-            <li><strong>Spend was hard to tie to projects</strong> — one project can carry several purchase orders and invoices, and school-procured works have no purchase order at all.</li>
-            <li><strong>Manual reconciliation and reporting</strong> — matching actual spend to each project, and compiling DfE statutory returns and quarterly corporate returns, consumed significant officer time and was funnelled through one person.</li>
-            <li><strong>Spreadsheet risk</strong> — insecure, no audit history, and prone to breaking when several people edited at once.</li>
+            <li><strong>No single source of truth</strong>: the same project existed in several places, causing duplication and mismatches.</li>
+            <li><strong>No validation</strong>: free-text entry and inconsistent values, updated sporadically, so the tracker rarely reflected reality.</li>
+            <li><strong>Spend was hard to tie to projects</strong>: one project can carry several purchase orders and invoices, and school-procured works have no purchase order at all.</li>
+            <li><strong>Manual reconciliation and reporting</strong>: matching actual spend to each project, and compiling DfE statutory returns and quarterly corporate returns, consumed significant officer time and was funnelled through one person.</li>
+            <li><strong>Spreadsheet risk</strong>: insecure, no audit history, and prone to breaking when several people edited at once.</li>
           </ul>
 
           <h2 id="role">My role and approach</h2>
           <p>
             I owned the project from discovery through to build, working within the organisation’s Power
-            Platform governance framework — a staged process (as-is scoping → to-be and technical scoping →
+            Platform governance framework, a staged process (as-is scoping → to-be and technical scoping →
             development → UAT → go-live), each stage gated by a technical-board decision.
           </p>
           <ul>
             <li>Ran structured workshops with the service manager, finance and surveyors to map the current process, capture pain points and agree the target process.</li>
             <li>Produced the governance artefacts each stage requires: as-is and to-be process maps; a technical scoping document covering environments, licensing, connectors, integrations and data handling; a full Dataverse schema specification; and input to the Data Protection Impact Assessment (DPIA).</li>
-            <li>Prioritised ruthlessly into an MVP plus later releases, so the highest-value, highest-risk items — finance linkage and both procurement routes — were proven early.</li>
+            <li>Prioritised ruthlessly into an MVP plus later releases, so the highest-value, highest-risk items (finance linkage and both procurement routes) were proven early.</li>
           </ul>
 
           <h2 id="solution">The solution</h2>
@@ -169,18 +169,18 @@
 
           <h2 id="automation">Automation and business logic</h2>
           <ul>
-            <li><strong>Auto-numbering</strong> — each project gets a unique reference on creation.</li>
-            <li><strong>Stage-gating</strong> — business rules (with a flow where cross-table checks are needed) stop a project progressing until the right conditions are met: no order without a parent project; no move to “on site” or “practical completion” without the required dates and linked spend; no move to procurement without an approved governance record for the required gate.</li>
-            <li><strong>Automatic progress ledger</strong> — a flow writes an immutable history row on every status or RAG change, capturing old and new values, the author and a timestamp.</li>
-            <li><strong>Reminders</strong> — a scheduled flow sends Outlook/Teams reminders for projects with no recent update, or milestones falling due.</li>
-            <li><strong>Assisted reporting</strong> — report generation that selects the correct decision/award template by value band and procurement route, and exports aligned to DfE statutory returns and the corporate quarterly return.</li>
+            <li><strong>Auto-numbering</strong>: each project gets a unique reference on creation.</li>
+            <li><strong>Stage-gating</strong>: business rules (with a flow where cross-table checks are needed) stop a project progressing until the right conditions are met: no order without a parent project; no move to “on site” or “practical completion” without the required dates and linked spend; no move to procurement without an approved governance record for the required gate.</li>
+            <li><strong>Automatic progress ledger</strong>: a flow writes an immutable history row on every status or RAG change, capturing old and new values, the author and a timestamp.</li>
+            <li><strong>Reminders</strong>: a scheduled flow sends Outlook/Teams reminders for projects with no recent update, or milestones falling due.</li>
+            <li><strong>Assisted reporting</strong>: report generation that selects the correct decision/award template by value band and procurement route, and exports aligned to DfE statutory returns and the corporate quarterly return.</li>
           </ul>
 
           <h2 id="security">Security, audit and compliance</h2>
           <ul>
-            <li><strong>Role-based access</strong> — surveyor/project manager (create and update), service manager/administrator (plus configuration, approvals and reporting), and read-only viewers for finance and the programme board.</li>
+            <li><strong>Role-based access</strong>: surveyor/project manager (create and update), service manager/administrator (plus configuration, approvals and reporting), and read-only viewers for finance and the programme board.</li>
             <li><strong>A deliberate audit strategy under a real constraint</strong> (tenant-wide auditing wasn’t enabled): no delete privilege on any table (records raised in error are deactivated with a status reason); append-only ledgers for progress history and year-end snapshots (create/read only); automatic created/modified stamps for attribution; and selective native auditing on core tables and critical columns once available. Together these give a defensible audit trail without relying on tenant-wide audit.</li>
-            <li><strong>Data protection</strong> — OFFICIAL classification with a low personal-data footprint (staff names appear only through ownership and timesheets); DPIA prepared as part of the governance process.</li>
+            <li><strong>Data protection</strong>: OFFICIAL classification with a low personal-data footprint (staff names appear only through ownership and timesheets); DPIA prepared as part of the governance process.</li>
           </ul>
 
           <h2 id="decisions">Key technical decisions</h2>
@@ -206,14 +206,14 @@
           </div>
           <div class="decision">
             <h3>Canvas app plus automation, not automation alone</h3>
-            <p>Day-to-day management needs an interactive app; the reminders, notifications and report generation need a flow layer — the two together, not one or the other.</p>
+            <p>Day-to-day management needs an interactive app; the reminders, notifications and report generation need a flow layer. The two together, not one or the other.</p>
           </div>
 
           <h2 id="delivery">Delivery approach</h2>
           <ul>
-            <li><strong>Managed-solution ALM</strong> — a Dataverse solution promoted Dev → Test → Production on the organisation’s standard environments, with no app-specific environment required.</li>
-            <li><strong>Phased delivery</strong> — an MVP for go-live (lifecycle, validation, finance linkage, reminders, ad-hoc/executive reporting), then a second release for automated statutory/quarterly returns and an automated finance picker, then future external school-partner access.</li>
-            <li><strong>Continuous UAT</strong> — regular walkthroughs with the service manager and surveyors throughout, surfacing business-critical items early to de-risk delivery.</li>
+            <li><strong>Managed-solution ALM</strong>: a Dataverse solution promoted Dev → Test → Production on the organisation’s standard environments, with no app-specific environment required.</li>
+            <li><strong>Phased delivery</strong>: an MVP for go-live (lifecycle, validation, finance linkage, reminders, ad-hoc/executive reporting), then a second release for automated statutory/quarterly returns and an automated finance picker, then future external school-partner access.</li>
+            <li><strong>Continuous UAT</strong>: regular walkthroughs with the service manager and surveyors throughout, surfacing business-critical items early to de-risk delivery.</li>
           </ul>
 
           <h2 id="outcomes">Outcomes</h2>

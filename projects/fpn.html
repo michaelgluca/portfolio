@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b0d12" />
-  <title>FPN Digital Transformation — Michael G. Luca</title>
+  <title>FPN Digital Transformation | Michael G. Luca</title>
   <meta name="description" content="Case study: replacing a manual, spreadsheet-and-email Fixed Penalty Notice process with an integrated Power Platform workflow for frontline enforcement officers." />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="canonical" href="https://michaelluca.co.uk/projects/fpn.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://michaelluca.co.uk/projects/fpn.html" />
-  <meta property="og:title" content="FPN Digital Transformation — case study" />
-  <meta property="og:description" content="Field-to-register automation for Fixed Penalty Notices on the Power Platform — ~200 re-keyed records removed every month." />
+  <meta property="og:title" content="FPN Digital Transformation | Case study" />
+  <meta property="og:description" content="Field-to-register automation for Fixed Penalty Notices on the Power Platform: ~200 re-keyed records removed every month." />
   <meta property="og:image" content="https://michaelluca.co.uk/assets/photo.jpg" />
   <meta name="twitter:card" content="summary" />
 
@@ -65,14 +65,14 @@
         <p class="case-hero__lead">
           Replaced a manual, spreadsheet-and-email Fixed Penalty Notice (FPN) process with an integrated
           Power Platform workflow. Enforcement officers now issue notices directly in the field, and each
-          notice writes straight into the central register — removing around 200 re-keyed records every
+          notice writes straight into the central register, removing around 200 re-keyed records every
           month and building a clean audit trail for a legal enforcement process.
         </p>
 
         <dl class="meta-grid">
           <div><dt>Role</dt><dd>Power Platform Developer</dd></div>
           <div><dt>Client</dt><dd>UK public sector</dd></div>
-          <div><dt>Status</dt><dd>Live — in daily use</dd></div>
+          <div><dt>Status</dt><dd>Live, in daily use</dd></div>
           <div class="meta--wide"><dt>Stack</dt><dd>Power Apps (Canvas + Model-driven) · Power Automate · Power BI · Dataverse · SharePoint</dd></div>
         </dl>
       </div>
@@ -98,7 +98,7 @@
             Local authority enforcement officers issue Fixed Penalty Notices for offences such as
             fly-tipping, littering, and breaches of Public Space Protection Orders (PSPOs). The existing
             process relied on a paper-style notification form emailed to a central inbox and then manually
-            copied into a tracking spreadsheet — slow, duplicative, and error-prone.
+            copied into a tracking spreadsheet: slow, duplicative, and error-prone.
           </p>
           <p>
             I extended an existing, proven field-enforcement Power App so that issuing an FPN became part
@@ -110,18 +110,18 @@
           <h2 id="problem">The problem</h2>
           <ul>
             <li>Officers completed a Word notification form on issuing an FPN and emailed it to a central admin inbox.</li>
-            <li>Admin then manually re-keyed every notice into a tracking spreadsheet — the same data entered twice.</li>
+            <li>Admin then manually re-keyed every notice into a tracking spreadsheet: the same data entered twice.</li>
             <li>The result was admin-heavy, time-consuming, and prone to duplication, transcription errors, and delay.</li>
-            <li>The spreadsheet held the full case lifecycle (reminders, appeals, outcomes, payments) but nothing was automated — reminders and status changes were tracked by hand.</li>
+            <li>The spreadsheet held the full case lifecycle (reminders, appeals, outcomes, payments) but nothing was automated; reminders and status changes were tracked by hand.</li>
             <li>There was no live visibility of issued notices, outstanding payments, or overdue reminders for management reporting.</li>
             <li>FPNs form part of a legal enforcement process, so data integrity, permissions, and a clear audit trail are essential.</li>
           </ul>
 
           <h2 id="built">What I built</h2>
           <ul>
-            <li><strong>Field issuance inside the existing app.</strong> Extended the field-enforcement Power App (already used by officers on mobile and tablet) so that marking a case as “FPN issued” opens a short capture flow, records evidence, and auto-generates the notice — no separate form.</li>
+            <li><strong>Field issuance inside the existing app.</strong> Extended the field-enforcement Power App (already used by officers on mobile and tablet) so that marking a case as “FPN issued” opens a short capture flow, records evidence, and auto-generates the notice with no separate form.</li>
             <li><strong>One data source.</strong> Consolidated the notification form and tracking spreadsheet into a single data source, eliminating the double entry and moving toward one authoritative table.</li>
-            <li><strong>Automated write to the register.</strong> Power Automate flows generate the notification, email it, and write the record directly into the central FPN register — removing the manual transfer of ~200 notices per month.</li>
+            <li><strong>Automated write to the register.</strong> Power Automate flows generate the notification, email it, and write the record directly into the central FPN register, removing the manual transfer of ~200 notices per month.</li>
             <li><strong>Offence-code-driven fines.</strong> Offence-code dropdowns auto-populate the correct penalty amount (full and reduced rate) from the selected offence, cutting a common source of manual error and keeping fines aligned with current legislation.</li>
             <li><strong>Fewer taps in the field.</strong> Pre-filled routine fields (issuing officer, date) to minimise input for officers on the move.</li>
             <li><strong>Management oversight.</strong> A Power BI dashboard for performance reporting, mirroring an approach already trusted by the team.</li>
@@ -131,9 +131,9 @@
           <h2 id="features">Key features</h2>
           <ul>
             <li>Field issuance on mobile and tablet, embedded in the existing case lifecycle</li>
-            <li>Single source of truth — form and spreadsheet consolidated into one register</li>
+            <li>Single source of truth: form and spreadsheet consolidated into one register</li>
             <li>Auto-generated notification plus automated email to the central inbox</li>
-            <li>Automated write to the central register — no re-keying</li>
+            <li>Automated write to the central register, no re-keying</li>
             <li>Offence-code-driven fine calculation (full / reduced rate) tied to legislation</li>
             <li>Validation and pre-population to reduce errors and clicks</li>
             <li>Power BI performance dashboard for management oversight</li>
@@ -151,7 +151,7 @@
           </div>
           <div class="decision">
             <h3>Automate the existing process, don’t redesign it</h3>
-            <p>A deliberately low-risk approach that made adoption smooth — the message to the team was simple:</p>
+            <p>A deliberately low-risk approach that made adoption smooth. The message to the team was simple:</p>
             <blockquote><p>“We’re not changing the process, just automating parts of it.”</p></blockquote>
           </div>
           <div class="decision">
@@ -170,7 +170,7 @@
             <div class="impact"><strong>Live</strong><span>management visibility via Power BI</span></div>
           </div>
           <ul>
-            <li>Eliminated manual re-keying of ~200 FPNs per month — the single biggest admin saving in the process.</li>
+            <li>Eliminated manual re-keying of ~200 FPNs per month, the single biggest admin saving in the process.</li>
             <li>Cut transcription and fine-amount errors through validation and offence-code-driven auto-population.</li>
             <li>Improved data quality and audit trail on a legally sensitive process.</li>
             <li>Gave management live performance visibility through Power BI dashboards.</li>
@@ -185,7 +185,7 @@
           <ul>
             <li>Automated first and second payment reminders</li>
             <li>Template letters (reminders and outcomes) generated directly from the record</li>
-            <li>Payment integration — reconciling online payments back to each notice via a unique FPN reference</li>
+            <li>Payment integration: reconciling online payments back to each notice via a unique FPN reference</li>
             <li>Structured tracking of appeals and legal escalation</li>
           </ul>
 
