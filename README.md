@@ -32,9 +32,10 @@ The site is designed to be hosted for free on GitHub Pages at **michaelluca.co.u
 
 ### 1. GitHub
 
-1. Create a **public** repository named `michaelgluca.github.io` (a "user site" — it publishes from the root of `main` with no extra config).
-2. Push this folder to it.
-3. In the repo: **Settings → Pages** → Custom domain: `michaelluca.co.uk` → Save. Tick **Enforce HTTPS** once the certificate is issued (can take up to an hour after DNS resolves).
+The site lives at [github.com/michaelgluca/portfolio](https://github.com/michaelgluca/portfolio) (public, project site, branch `master`).
+
+1. In the repo: **Settings → Pages** → Source: Deploy from branch → `master` / `(root)` → Save.
+2. Custom domain: `michaelluca.co.uk` → Save. Tick **Enforce HTTPS** once the certificate is issued (can take up to an hour after DNS resolves).
 
 The `CNAME` file in this repo keeps the custom domain set across deployments — don't delete it.
 
