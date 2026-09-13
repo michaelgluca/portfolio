@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Field Enforcement App — Michael G. Luca</title>
+  <meta name="description" content="Case study: the field-enforcement Power App used by frontline enforcement officers on mobile and tablet — digitising day-to-day case management and doubling team productivity in its first year." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://michaelluca.co.uk/projects/field-enforcement.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://michaelluca.co.uk/projects/field-enforcement.html" />
+  <meta property="og:title" content="Field Enforcement App — case study" />
+  <meta property="og:description" content="Mobile-first case management for frontline enforcement officers; annual patrols rose from ~97k to ~180k in the first year live." />
+  <meta property="og:image" content="https://michaelluca.co.uk/assets/photo.jpg" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../theme-init.js"></script>
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__top" id="scroll-top" aria-label="Scroll to top"><span aria-hidden="true">↑</span> Scroll to top</a>
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects" class="is-active">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let's talk</a>
+        <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container case-hero__inner">
+        <a class="back-link" href="../index.html#projects">← All projects</a>
+        <div class="case-hero__top">
+          <span class="status-pill">Live</span>
+          <ul class="tags">
+            <li>Field operations</li><li>Case management</li><li>Local government</li><li>Low-code</li>
+          </ul>
+        </div>
+        <h1>Field Enforcement App</h1>
+        <p class="case-hero__sub">Mobile-first case management for a frontline enforcement team</p>
+        <p class="case-hero__lead">
+          The field-enforcement Power App used day-to-day by frontline enforcement officers on mobile and
+          tablet — digitising case management, patrols and reporting that previously lived on paper and in
+          spreadsheets. In its first year live, annual patrols rose from ~97,000 to ~180,000 — a 100%
+          improvement in team productivity. It is also the platform the
+          <a href="fpn.html" style="color: var(--accent); font-weight: 600;">FPN Digital Transformation</a> project extends.
+        </p>
+
+        <dl class="meta-grid">
+          <div><dt>Role</dt><dd>Power Platform Developer</dd></div>
+          <div><dt>Client</dt><dd>UK public sector</dd></div>
+          <div><dt>Status</dt><dd>Live — in daily use for over a year</dd></div>
+          <div class="meta--wide"><dt>Stack</dt><dd>Power Apps (Canvas) · Power Automate · Power BI · SharePoint / Dataverse</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="case-body">
+      <div class="container case-body__grid">
+        <aside class="case-toc">
+          <h4>On this page</h4>
+          <a href="#overview">Overview</a>
+          <a href="#built">What was built</a>
+          <a href="#impact">Impact</a>
+          <a href="#next">What it enabled</a>
+        </aside>
+
+        <article class="prose">
+          <h2 id="overview">Overview</h2>
+          <p class="lead">
+            Frontline enforcement officers spend their day on patrol, not at a desk. Before the app, the
+            record of that work — cases, incidents, evidence and outcomes — was written up afterwards on paper
+            and in spreadsheets, which meant duplicated effort, gaps in the record, and no live picture of what
+            the team was doing.
+          </p>
+          <p>
+            The Field Enforcement App moved the whole case lifecycle onto officers' phones and tablets, so
+            recording the work became part of doing the work. A Power BI dashboard on top gives management
+            live oversight of activity and performance.
+          </p>
+
+          <h2 id="built">What was built</h2>
+          <ul>
+            <li><strong>Mobile-first canvas app</strong> — used by officers on phones and tablets while out on patrol, not back at a desk.</li>
+            <li><strong>Day-to-day case management</strong> — the case lifecycle is recorded in the field as part of the normal workflow, with evidence captured at the point of action.</li>
+            <li><strong>Performance dashboard</strong> — a Power BI report for management oversight, which became the trusted pattern later reused for FPN reporting.</li>
+            <li><strong>An extensible platform</strong> — built so further processes could be added to the same officer workflow rather than as separate apps; FPNs were the first.</li>
+          </ul>
+
+          <h2 id="impact">Impact</h2>
+          <div class="impact-grid">
+            <div class="impact"><strong>~97k → ~180k</strong><span>annual patrols in the first year live</span></div>
+            <div class="impact"><strong>+100%</strong><span>team productivity</span></div>
+            <div class="impact"><strong>1 year+</strong><span>in daily use by officers</span></div>
+          </div>
+          <ul>
+            <li>Officers' time shifted from paperwork to patrols — annual patrols roughly doubled after go-live.</li>
+            <li>A complete, timely record of enforcement activity instead of retrospective write-ups.</li>
+            <li>Live management visibility of workload and performance through Power BI.</li>
+          </ul>
+
+          <h2 id="next">What it enabled</h2>
+          <p>
+            Because officers already relied on the app every day, it became the natural foundation for further
+            automation. The <a href="fpn.html" style="color: var(--accent); font-weight: 600;">FPN Digital
+            Transformation</a> project extended it so that issuing a Fixed Penalty Notice happens inside the
+            same case workflow, with the record written straight to the central register.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-next">
+      <div class="container">
+        <h3>More projects</h3>
+        <div class="next-grid">
+          <a class="next-card" href="fpn.html"><small>Enforcement</small><b>FPN Digital Transformation</b></a>
+          <a class="next-card" href="kpi.html"><small>Performance management</small><b>KPI &amp; Performance Management App</b></a>
+          <a class="next-card" href="capital.html"><small>Capital programme</small><b>Capital Programme Management App</b></a>
+          <a class="next-card" href="housing.html"><small>Housing</small><b>Housing Maintenance Management App</b></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Michael G. Luca</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

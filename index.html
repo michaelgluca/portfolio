@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael G. Luca — Power Platform Developer</title>
+  <meta name="description" content="Michael G. Luca — Microsoft Power Platform Developer in the UK public sector. Scalable, governed Power Apps, Power Automate, Power BI and Dataverse solutions for local government." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://michaelluca.co.uk/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://michaelluca.co.uk/" />
+  <meta property="og:title" content="Michael G. Luca — Power Platform Developer" />
+  <meta property="og:description" content="Microsoft Power Platform Developer in the UK public sector. Scalable, governed Power Apps, Power Automate, Power BI and Dataverse solutions for local government." />
+  <meta property="og:image" content="https://michaelluca.co.uk/assets/photo.jpg" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="theme-init.js"></script>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__top" id="scroll-top" aria-label="Scroll to top">
+        <span aria-hidden="true">↑</span> Scroll to top
+      </a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#contact" class="btn btn--primary nav__cta">Let's talk</a>
+        <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">
+            <span class="dot"></span>
+            Microsoft Power Platform Developer · London
+          </p>
+          <h1 class="hero__title">
+            Hi, I'm <span class="gradient-text">Michael G. Luca</span>.<br />
+            I build Power Platform solutions that solve real problems.
+          </h1>
+          <p class="hero__lead">
+            Power Platform Developer in the UK public sector with hands-on production experience across
+            the whole Microsoft Power Platform — Power Apps (canvas and model-driven), Power Automate
+            (cloud and desktop flows), Power BI and Dataverse — plus the environments, governance and ALM
+            that keep it running. My solutions are live on frontline services, where they've doubled
+            performance and cut admin time in half.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">View projects</a>
+            <a href="#contact" class="btn btn--ghost">Get in touch</a>
+          </div>
+          <ul class="hero__stats" aria-label="Highlights">
+            <li><strong>2×</strong><span>frontline service performance</span></li>
+            <li><strong>50%</strong><span>less admin time</span></li>
+            <li><strong>5</strong><span>production systems shipped</span></li>
+            <li><strong>5</strong><span>professional certifications</span></li>
+          </ul>
+        </div>
+
+        <!-- Decorative "app canvas" illustration -->
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="app-mock">
+            <div class="app-mock__bar">
+              <span></span><span></span><span></span>
+              <em>Case Tracker · Canvas app</em>
+            </div>
+            <div class="app-mock__body">
+              <div class="app-mock__side">
+                <i class="active"></i><i></i><i></i><i></i>
+              </div>
+              <div class="app-mock__main">
+                <div class="app-mock__kpis">
+                  <div><small>Open</small><b>128</b></div>
+                  <div><small>Overdue</small><b class="warn">7</b></div>
+                  <div><small>Resolved</small><b class="ok">1,042</b></div>
+                </div>
+                <div class="app-mock__rows">
+                  <div><span style="width:62%"></span><u class="ok"></u></div>
+                  <div><span style="width:48%"></span><u class="warn"></u></div>
+                  <div><span style="width:71%"></span><u class="ok"></u></div>
+                  <div><span style="width:39%"></span><u></u></div>
+                  <div><span style="width:55%"></span><u class="ok"></u></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="float-chip chip-1">⚡ Power Automate</div>
+          <div class="float-chip chip-2">🗄️ Dataverse</div>
+          <div class="float-chip chip-3">📊 Power BI</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__label">About</p>
+          <h2>From the frontline to the Power Platform.</h2>
+        </div>
+
+        <div class="about reveal">
+          <div class="about__text">
+            <p>
+              I'm a Power Platform Developer in the UK public sector, where I own
+              Power Platform solutions end to end — from discovery and design through to deployment,
+              governance and continuous improvement. That means real, hands-on work across the whole
+              platform, not one corner of it: canvas and model-driven Power Apps, cloud and desktop
+              Power Automate flows, Power BI models and reports, Dataverse data design and security,
+              and the environment, DLP and ALM administration underneath.
+            </p>
+            <p>
+              My background in law enforcement and community safety sets my work apart. I spent years
+              on the frontline of the services I now build technology for — most recently leading
+              a team of enforcement officers — and completed an MSc in Software
+              Engineering alongside the day job. So I understand the operational pressures, the
+              compliance requirements, and what it actually takes for a solution to work in the
+              public sector.
+            </p>
+            <p>
+              Beyond the Power Platform I also build for the web and for iOS (Swift and SwiftUI), and
+              I care about the engineering side of low-code: proper ALM, CI/CD through Azure DevOps,
+              and solutions the next person can maintain.
+            </p>
+          </div>
+
+          <aside class="about__card">
+            <div class="about__photo">
+              <img src="assets/photo.jpg" alt="Michael G. Luca" id="about-photo" />
+              <span class="about__initials" aria-hidden="true">ML</span>
+            </div>
+            <ul class="about__facts">
+              <li><span>📍</span><div><small>Based in</small><b>London, UK</b></div></li>
+              <li><span>🏢</span><div><small>Currently</small><b>Power Platform Developer, UK public sector</b></div></li>
+              <li><span>🧩</span><div><small>Focus</small><b>Power Apps · Power Automate · Dataverse · Power BI</b></div></li>
+              <li><span>🎓</span><div><small>Education</small><b>MSc Software Engineering, University of Westminster</b></div></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__label">Skills</p>
+          <h2>Hands-on with the full Microsoft Power Platform.</h2>
+          <p class="section__sub">Not just certified — every product below is something I have built with, shipped to production and support day to day.</p>
+        </div>
+
+        <div class="platform reveal" aria-label="Microsoft Power Platform experience">
+          <div class="platform__item" style="--c: #742774">
+            <h3>Power Apps</h3>
+            <p>Canvas apps for officers on phones and tablets; model-driven apps on Dataverse for back-office case handling. Built, shipped and supported in production.</p>
+            <span class="platform__live">Live in production</span>
+          </div>
+          <div class="platform__item" style="--c: #0066ff">
+            <h3>Power Automate</h3>
+            <p>Cloud flows for approvals, notifications, scheduled collection and register writes; desktop flows (RPA) for legacy processes; Teams adaptive cards for data entry.</p>
+            <span class="platform__live">Live in production</span>
+          </div>
+          <div class="platform__item" style="--c: #f2c811">
+            <h3>Power BI</h3>
+            <p>Semantic models, DAX, row-level security, scheduled refresh and governed dashboards — from field-team oversight to organisation-wide performance reporting.</p>
+            <span class="platform__live">Live in production</span>
+          </div>
+          <div class="platform__item" style="--c: #088142">
+            <h3>Dataverse</h3>
+            <p>Relational data models normalised to 3NF, security roles and permissions, alternate keys, roll-ups, auditing, and solution-based ALM across environments.</p>
+            <span class="platform__live">Live in production</span>
+          </div>
+          <div class="platform__item" style="--c: #8b5cf6">
+            <h3>Power Fx &amp; Dynamics 365</h3>
+            <p>Power Fx across canvas apps and business rules; integration with Dynamics 365, SharePoint, SQL Server and Azure via connectors, REST APIs and on-premises gateways.</p>
+            <span class="platform__live">Live in production</span>
+          </div>
+          <div class="platform__item" style="--c: #0078d4">
+            <h3>Platform administration</h3>
+            <p>Environment strategy, DLP policies, Centre of Excellence governance, licensing and capacity decisions, and CI/CD pipelines through Azure DevOps.</p>
+            <span class="platform__live">Live in production</span>
+          </div>
+          <div class="platform__item" style="--c: #e3008c">
+            <h3>Power Pages</h3>
+            <p>External-facing sites on Dataverse — authenticated access with web roles and table permissions, forms and lists bound to the same data model as the internal apps.</p>
+            <span class="platform__live">Live in production</span>
+          </div>
+          <div class="platform__item" style="--c: #0f6cbd">
+            <h3>Copilot Studio</h3>
+            <p>Conversational copilots with topics, generative answers over organisational content, and actions that call Power Automate flows and Dataverse to get things done, not just answer.</p>
+            <span class="platform__live">Live in production</span>
+          </div>
+          <div class="platform__item" style="--c: #22d3ee">
+            <h3>AI Builder</h3>
+            <p>Prebuilt and custom AI models — document and form processing, text recognition and prediction — used inside apps and flows to take manual reading and re-keying out of processes.</p>
+            <span class="platform__live">Live in production</span>
+          </div>
+        </div>
+
+        <div class="skills reveal">
+          <div class="skill-group">
+            <h3><span class="skill-group__icon" style="--c: #f2c811">◆</span> Data &amp; BI</h3>
+            <ul class="chips">
+              <li>Microsoft SQL Server</li>
+              <li>SSIS &amp; Azure Data Factory</li>
+              <li>Data warehousing</li>
+              <li>Relational data modelling (3NF)</li>
+              <li>DAX &amp; row-level security</li>
+              <li>Semantic models &amp; reporting</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3><span class="skill-group__icon" style="--c: #0078d4">◆</span> DevOps &amp; delivery</h3>
+            <ul class="chips">
+              <li>Azure DevOps</li>
+              <li>CI/CD &amp; ALM</li>
+              <li>Solution layering &amp; environments</li>
+              <li>Scrum &amp; Agile (PSM I)</li>
+              <li>Scoping &amp; requirements</li>
+              <li>Governance &amp; DPIA</li>
+              <li>Training &amp; adoption</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3><span class="skill-group__icon" style="--c: #22d3ee">◆</span> Pro-code &amp; integration</h3>
+            <ul class="chips">
+              <li>Software engineering (MSc)</li>
+              <li>REST APIs &amp; connectors</li>
+              <li>On-premises data gateways</li>
+              <li>Web development (HTML, CSS, JavaScript)</li>
+              <li>iOS — Swift &amp; SwiftUI</li>
+              <li>Git</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__label">Projects</p>
+          <h2>Five systems built for the public sector.</h2>
+          <p class="section__sub">Case studies — the problem, what I built, and what changed. Click through for the full write-up.</p>
+        </div>
+
+        <div class="projects">
+
+          <!-- Field Enforcement App -->
+          <article class="project reveal">
+            <div class="project__media" style="--tint: #088142">
+              <span class="project__emoji">🛡️</span>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <ul class="tags">
+                  <li>Canvas app</li><li>Power Automate</li><li>Power BI</li><li>Mobile</li>
+                </ul>
+                <span class="status-pill">Live</span>
+              </div>
+              <h3><a href="projects/field-enforcement.html">Field Enforcement App</a></h3>
+              <p class="project__blurb">
+                Mobile-first case management for a public-sector enforcement team. Officers record activity,
+                evidence and outcomes in the field instead of writing up afterwards, with a Power BI dashboard
+                for live management oversight — the platform later projects build on.
+              </p>
+              <ul class="project__stats">
+                <li><strong>~97k → ~180k</strong><span>annual patrols</span></li>
+                <li><strong>+100%</strong><span>team productivity</span></li>
+                <li><strong>Live</strong><span>in daily use for over a year</span></li>
+              </ul>
+              <a class="project__link" href="projects/field-enforcement.html">Read the case study →</a>
+            </div>
+          </article>
+
+          <!-- FPN -->
+          <article class="project reveal">
+            <div class="project__media" style="--tint: #742774">
+              <span class="project__emoji">🧾</span>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <ul class="tags">
+                  <li>Power Apps</li><li>Power Automate</li><li>Dataverse</li><li>Power BI</li>
+                </ul>
+                <span class="status-pill">Live</span>
+              </div>
+              <h3><a href="projects/fpn.html">FPN Digital Transformation</a></h3>
+              <p class="project__blurb">
+                Replaced a manual, spreadsheet-and-email Fixed Penalty Notice process with an integrated
+                Power Platform workflow. Officers issue notices directly in the field and each one writes
+                straight into the central register — with a clean audit trail for a legal enforcement process.
+              </p>
+              <ul class="project__stats">
+                <li><strong>~200 / month</strong><span>records no longer re-keyed</span></li>
+                <li><strong>Offence-code</strong><span>driven fine calculation</span></li>
+                <li><strong>Live</strong><span>Power BI oversight</span></li>
+              </ul>
+              <a class="project__link" href="projects/fpn.html">Read the case study →</a>
+            </div>
+          </article>
+
+          <!-- KPI -->
+          <article class="project reveal">
+            <div class="project__media" style="--tint: #0066ff">
+              <span class="project__emoji">📈</span>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <ul class="tags">
+                  <li>Canvas app</li><li>Dataverse</li><li>Power Automate</li><li>Power BI</li><li>Teams</li>
+                </ul>
+                <span class="status-pill">Live</span>
+              </div>
+              <h3><a href="projects/kpi.html">KPI &amp; Performance Management App</a></h3>
+              <p class="project__blurb">
+                Led delivery of a governed performance-management platform for a UK public-sector organisation,
+                replacing dozens of monthly spreadsheets with a single system: automated data collection via
+                Teams adaptive cards, approval workflows, and Power BI dashboards with row-level security.
+              </p>
+              <ul class="project__stats">
+                <li><strong>37 → 450–500</strong><span>indicators, designed to scale</span></li>
+                <li><strong>~100</strong><span>contributors, no premium licences</span></li>
+                <li><strong>Dataverse</strong><span>vs SharePoint analysis led</span></li>
+              </ul>
+              <a class="project__link" href="projects/kpi.html">Read the case study →</a>
+            </div>
+          </article>
+
+          <!-- CHS Capital -->
+          <article class="project reveal">
+            <div class="project__media" style="--tint: #f2c811">
+              <span class="project__emoji">🏫</span>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <ul class="tags">
+                  <li>Dataverse</li><li>Canvas app</li><li>Power Automate</li><li>SharePoint</li>
+                </ul>
+                <span class="status-pill">Live</span>
+              </div>
+              <h3><a href="projects/capital.html">Capital Programme Management App</a></h3>
+              <p class="project__blurb">
+                A single source of truth for a ~£24.5m schools capital programme, replacing a sprawl of
+                spreadsheets and trackers. Tracks every building project from initiation to final account
+                across two procurement routes, links actual finance spend without duplicating it, and enforces
+                governance through workflow rules.
+              </p>
+              <ul class="project__stats">
+                <li><strong>£24.5m</strong><span>five-year programme</span></li>
+                <li><strong>13 tables</strong><span>Dataverse model, 3NF</span></li>
+                <li><strong>~97</strong><span>concurrent projects</span></li>
+              </ul>
+              <a class="project__link" href="projects/capital.html">Read the case study →</a>
+            </div>
+          </article>
+
+          <!-- Housing maintenance -->
+          <article class="project reveal">
+            <div class="project__media" style="--tint: #ff8c00">
+              <span class="project__emoji">🏠</span>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <ul class="tags">
+                  <li>Model-driven app</li><li>Dataverse</li><li>Power Automate</li><li>Security roles</li>
+                </ul>
+                <span class="status-pill">Live</span>
+              </div>
+              <h3><a href="projects/housing.html">Housing Maintenance Management App</a></h3>
+              <p class="project__blurb">
+                A model-driven Power App on Dataverse that gives a housing team one place to manage every
+                maintenance request across the whole area — from the initial report through triage, surveyor
+                inspection and contractor work orders to completion — so internal teams, surveyors and external
+                contractors all work from the same record.
+              </p>
+              <ul class="project__stats">
+                <li><strong>End-to-end</strong><span>report → survey → work order → completion</span></li>
+                <li><strong>Multi-party</strong><span>teams, surveyors and contractors on one record</span></li>
+                <li><strong>Role-based</strong><span>each party sees only their own work</span></li>
+              </ul>
+              <a class="project__link" href="projects/housing.html">Read the case study →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__label">Experience</p>
+          <h2>Where I've worked.</h2>
+        </div>
+
+        <ol class="timeline reveal">
+
+          <li class="timeline__item">
+            <div class="timeline__meta">
+              <span class="timeline__date">2022 — Present</span>
+            </div>
+            <div class="timeline__card">
+              <h3>UK Public Sector</h3>
+              <p class="timeline__org">Local government · Full-time · London · Hybrid</p>
+
+              <div class="roles">
+                <div class="role">
+                  <h4>Power Platform Developer</h4>
+                  <span class="role__dates">Oct 2025 — Present · promoted from Assistant Developer</span>
+                  <p>End-to-end ownership of Microsoft Power Platform solutions across the organisation.</p>
+                  <ul>
+                    <li>Build and maintain canvas and model-driven Power Apps, Power Automate cloud and desktop flows, and Power BI reporting models on Dataverse — translating operational and policy needs into reliable low-code solutions.</li>
+                    <li>Design secure data models, define roles and permissions, manage environments, and implement DLP policies and Centre of Excellence governance so the platform scales safely.</li>
+                    <li>Integrate solutions across SQL Server, SharePoint, Dynamics 365 and Azure using connectors, REST APIs and on-premises gateways.</li>
+                    <li>Manage the full application lifecycle with solution layering, Git and Azure DevOps — CI/CD pipelines, versioning, testing and controlled releases.</li>
+                    <li>Coach citizen developers, deliver user training and produce documentation to drive adoption; automated multiple manual processes and strengthened platform compliance across the organisation.</li>
+                  </ul>
+                </div>
+                <div class="role">
+                  <h4>Assistant BI and Power Apps Developer</h4>
+                  <span class="role__dates">Nov 2024 — Oct 2025</span>
+                  <p>Split remit delivering low-code solutions while building the organisation's enterprise BI platform.</p>
+                  <ul>
+                    <li>Built production Power Apps and Power Automate solutions to streamline workflows across services, reducing manual effort and improving process reliability.</li>
+                    <li>Designed SQL Server schemas and views; developed ETL pipelines in SSIS and Azure Data Factory to populate the data warehouse and enforce data quality standards.</li>
+                    <li>Created Power BI semantic models and reports with DAX, row-level security, scheduled refresh and governance controls to support data-driven decision-making.</li>
+                    <li>Maintained code quality through peer reviews, Git and Azure DevOps, working in Agile Scrum sprints for planning, delivery and releases.</li>
+                  </ul>
+                </div>
+                <div class="role">
+                  <h4>Senior Law Enforcement Officer</h4>
+                  <span class="role__dates">Jan 2024 — Nov 2024</span>
+                  <p>Led a team of enforcement officers across public safety, environmental and anti-social behaviour remits.</p>
+                </div>
+                <div class="role">
+                  <h4>Law Enforcement Officer</h4>
+                  <span class="role__dates">Apr 2022 — Jan 2024</span>
+                  <p>Frontline enforcement covering crime prevention, anti-social behaviour, environmental compliance and traffic enforcement.</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+
+        </ol>
+
+        <div class="credentials reveal">
+          <div class="education">
+            <h3>Education</h3>
+            <ul class="edu-list">
+              <li class="edu">
+                <span class="edu__icon">🎓</span>
+                <div>
+                  <b>MSc Software Engineering</b>
+                  <small>University of Westminster · 2021 — 2023</small>
+                </div>
+              </li>
+              <li class="edu">
+                <span class="edu__icon">🎓</span>
+                <div>
+                  <b>BSc Criminology and Policing</b>
+                  <small>London Metropolitan University · 2016 — 2019</small>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="certs">
+            <h3>Certifications</h3>
+            <ul class="cert-list">
+              <li class="cert">
+                <span class="cert__badge">PL-900</span>
+                <div><b>Microsoft Certified: Power Platform Fundamentals</b><small>Microsoft · Aug 2025</small></div>
+              </li>
+              <li class="cert">
+                <span class="cert__badge">Applied Skills</span>
+                <div><b>Create and manage canvas apps with Power Apps</b><small>Microsoft · Aug 2025</small></div>
+              </li>
+              <li class="cert">
+                <span class="cert__badge">Applied Skills</span>
+                <div><b>Create and manage automated processes by using Power Automate</b><small>Microsoft · Aug 2025</small></div>
+              </li>
+              <li class="cert">
+                <span class="cert__badge">Applied Skills</span>
+                <div><b>Create and manage model-driven apps with Power Apps and Dataverse</b><small>Microsoft · Sep 2025</small></div>
+              </li>
+              <li class="cert">
+                <span class="cert__badge">PSM I</span>
+                <div><b>Professional Scrum Master I</b><small>Scrum.org · Jul 2025</small></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="contact__glow" aria-hidden="true"></div>
+          <p class="section__label">Contact</p>
+          <h2>Working on Power Platform or modernising<br />local government? Let's connect.</h2>
+          <p class="contact__lead">
+            Whether it's a project, a question, or just to compare notes on low-code in the
+            public sector — the quickest way to reach me is email or LinkedIn.
+          </p>
+          <div class="contact__actions">
+            <a class="btn btn--primary" href="mailto:mrmgluca@outlook.com">Email</a>
+            <a class="btn btn--primary" href="https://www.linkedin.com/in/m-g-luca/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn--primary" href="https://github.com/michaelgluca/" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Michael G. Luca</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

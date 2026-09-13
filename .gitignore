@@ -1,0 +1,16 @@
+# Local tooling / editor state
+.claude/
+.vscode/
+.idea/
+
+# OS junk
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Anything private that should never be published
+notes/
+private/
+*.env
+.env*
+*.log

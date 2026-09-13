@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FPN Digital Transformation — Michael G. Luca</title>
+  <meta name="description" content="Case study: replacing a manual, spreadsheet-and-email Fixed Penalty Notice process with an integrated Power Platform workflow for frontline enforcement officers." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://michaelluca.co.uk/projects/fpn.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://michaelluca.co.uk/projects/fpn.html" />
+  <meta property="og:title" content="FPN Digital Transformation — case study" />
+  <meta property="og:description" content="Field-to-register automation for Fixed Penalty Notices on the Power Platform — ~200 re-keyed records removed every month." />
+  <meta property="og:image" content="https://michaelluca.co.uk/assets/photo.jpg" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../theme-init.js"></script>
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__top" id="scroll-top" aria-label="Scroll to top"><span aria-hidden="true">↑</span> Scroll to top</a>
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects" class="is-active">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let's talk</a>
+        <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container case-hero__inner">
+        <a class="back-link" href="../index.html#projects">← All projects</a>
+        <div class="case-hero__top">
+          <span class="status-pill">Live</span>
+          <ul class="tags">
+            <li>Digital transformation</li><li>Process automation</li><li>Local government</li><li>Low-code</li>
+          </ul>
+        </div>
+        <h1>FPN Digital Transformation</h1>
+        <p class="case-hero__sub">Field-to-register automation for frontline enforcement</p>
+        <p class="case-hero__lead">
+          Replaced a manual, spreadsheet-and-email Fixed Penalty Notice (FPN) process with an integrated
+          Power Platform workflow. Enforcement officers now issue notices directly in the field, and each
+          notice writes straight into the central register — removing around 200 re-keyed records every
+          month and building a clean audit trail for a legal enforcement process.
+        </p>
+
+        <dl class="meta-grid">
+          <div><dt>Role</dt><dd>Power Platform Developer</dd></div>
+          <div><dt>Client</dt><dd>UK public sector</dd></div>
+          <div><dt>Status</dt><dd>Live — in daily use</dd></div>
+          <div class="meta--wide"><dt>Stack</dt><dd>Power Apps (Canvas + Model-driven) · Power Automate · Power BI · Dataverse · SharePoint</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="case-body">
+      <div class="container case-body__grid">
+        <aside class="case-toc">
+          <h4>On this page</h4>
+          <a href="#overview">Overview</a>
+          <a href="#problem">The problem</a>
+          <a href="#built">What I built</a>
+          <a href="#features">Key features</a>
+          <a href="#decisions">Architecture &amp; decisions</a>
+          <a href="#impact">Impact</a>
+          <a href="#roadmap">What's next</a>
+          <a href="#skills">Skills demonstrated</a>
+        </aside>
+
+        <article class="prose">
+          <h2 id="overview">Overview</h2>
+          <p class="lead">
+            Local authority enforcement officers issue Fixed Penalty Notices for offences such as
+            fly-tipping, littering, and breaches of Public Space Protection Orders (PSPOs). The existing
+            process relied on a paper-style notification form emailed to a central inbox and then manually
+            copied into a tracking spreadsheet — slow, duplicative, and error-prone.
+          </p>
+          <p>
+            I extended an existing, proven field-enforcement Power App so that issuing an FPN became part
+            of an officer's normal case workflow, and automated the path from field capture to central
+            register. This removed the double data entry, reduced errors, and gave management live
+            visibility of issued notices and outstanding payments.
+          </p>
+
+          <h2 id="problem">The problem</h2>
+          <ul>
+            <li>Officers completed a Word notification form on issuing an FPN and emailed it to a central admin inbox.</li>
+            <li>Admin then manually re-keyed every notice into a tracking spreadsheet — the same data entered twice.</li>
+            <li>The result was admin-heavy, time-consuming, and prone to duplication, transcription errors, and delay.</li>
+            <li>The spreadsheet held the full case lifecycle (reminders, appeals, outcomes, payments) but nothing was automated — reminders and status changes were tracked by hand.</li>
+            <li>There was no live visibility of issued notices, outstanding payments, or overdue reminders for management reporting.</li>
+            <li>FPNs form part of a legal enforcement process, so data integrity, permissions, and a clear audit trail are essential.</li>
+          </ul>
+
+          <h2 id="built">What I built</h2>
+          <ul>
+            <li><strong>Field issuance inside the existing app.</strong> Extended the field-enforcement Power App (already used by officers on mobile and tablet) so that marking a case as "FPN issued" opens a short capture flow, records evidence, and auto-generates the notice — no separate form.</li>
+            <li><strong>One data source.</strong> Consolidated the notification form and tracking spreadsheet into a single data source, eliminating the double entry and moving toward one authoritative table.</li>
+            <li><strong>Automated write to the register.</strong> Power Automate flows generate the notification, email it, and write the record directly into the central FPN register — removing the manual transfer of ~200 notices per month.</li>
+            <li><strong>Offence-code-driven fines.</strong> Offence-code dropdowns auto-populate the correct penalty amount (full and reduced rate) from the selected offence, cutting a common source of manual error and keeping fines aligned with current legislation.</li>
+            <li><strong>Fewer taps in the field.</strong> Pre-filled routine fields (issuing officer, date) to minimise input for officers on the move.</li>
+            <li><strong>Management oversight.</strong> A Power BI dashboard for performance reporting, mirroring an approach already trusted by the team.</li>
+            <li><strong>Resilience.</strong> An email copy of every submitted record is kept as a safeguard, so data can be recovered if an automated write ever fails.</li>
+          </ul>
+
+          <h2 id="features">Key features</h2>
+          <ul>
+            <li>Field issuance on mobile and tablet, embedded in the existing case lifecycle</li>
+            <li>Single source of truth — form and spreadsheet consolidated into one register</li>
+            <li>Auto-generated notification plus automated email to the central inbox</li>
+            <li>Automated write to the central register — no re-keying</li>
+            <li>Offence-code-driven fine calculation (full / reduced rate) tied to legislation</li>
+            <li>Validation and pre-population to reduce errors and clicks</li>
+            <li>Power BI performance dashboard for management oversight</li>
+            <li>Email backup of every record for resilience and recovery</li>
+          </ul>
+
+          <h2 id="decisions">Architecture &amp; design decisions</h2>
+          <div class="decision">
+            <h4>Built on a proven platform rather than a new system</h4>
+            <p>The FPN work extends an existing enforcement app the team already relied on, keeping training and change minimal.</p>
+          </div>
+          <div class="decision">
+            <h4>Three delivery routes evaluated</h4>
+            <p>Extend the existing canvas app with more automation, build a separate canvas app, or build a Dataverse-backed model-driven app. The Dataverse / model-driven direction was preferred for its security model, granular permissions, auditability, and ability to scale to other services.</p>
+          </div>
+          <div class="decision">
+            <h4>Automate the existing process, don't redesign it</h4>
+            <p>A deliberately low-risk approach that made adoption smooth — the message to the team was simple:</p>
+            <blockquote><p>"We're not changing the process, just automating parts of it."</p></blockquote>
+          </div>
+          <div class="decision">
+            <h4>Full-lifecycle data model</h4>
+            <p>Designed to cover the FPN journey end to end: issue details, offender and location data, offence code and penalty amounts, first/second reminders, appeals, outcomes, payments, and prosecution notes.</p>
+          </div>
+          <div class="decision">
+            <h4>Shipped iteratively</h4>
+            <p>Delivered through a dedicated test environment before publishing to production, with testers validating both the laptop and mobile experiences.</p>
+          </div>
+
+          <h2 id="impact">Impact</h2>
+          <div class="impact-grid">
+            <div class="impact"><strong>~200</strong><span>FPNs per month no longer re-keyed by hand</span></div>
+            <div class="impact"><strong>2×</strong><span>team productivity on the <a href="field-enforcement.html">platform this work extends</a></span></div>
+            <div class="impact"><strong>Live</strong><span>management visibility via Power BI</span></div>
+          </div>
+          <ul>
+            <li>Eliminated manual re-keying of ~200 FPNs per month — the single biggest admin saving in the process.</li>
+            <li>Cut transcription and fine-amount errors through validation and offence-code-driven auto-population.</li>
+            <li>Improved data quality and audit trail on a legally sensitive process.</li>
+            <li>Gave management live performance visibility through Power BI dashboards.</li>
+          </ul>
+          <p>
+            For context: the field-enforcement platform this work extends had already roughly doubled team
+            productivity after digitising officers' day-to-day case management (annual patrols rose from
+            ~97,000 to ~180,000). This project brought the same low-code, field-first approach to FPNs.
+          </p>
+
+          <h2 id="roadmap">What's next</h2>
+          <ul>
+            <li>Automated first and second payment reminders</li>
+            <li>Template letters (reminders and outcomes) generated directly from the record</li>
+            <li>Payment integration — reconciling online payments back to each notice via a unique FPN reference</li>
+            <li>Structured tracking of appeals and legal escalation</li>
+          </ul>
+
+          <h2 id="skills">Skills demonstrated</h2>
+          <ul class="chips">
+            <li>Low-code application development</li>
+            <li>Workflow automation</li>
+            <li>Data modelling</li>
+            <li>BI / dashboard development</li>
+            <li>Stakeholder-driven requirements gathering</li>
+            <li>Delivery in a live operational &amp; legal context</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-next">
+      <div class="container">
+        <h3>More projects</h3>
+        <div class="next-grid">
+          <a class="next-card" href="field-enforcement.html"><small>Field enforcement</small><b>Field Enforcement App</b></a>
+          <a class="next-card" href="kpi.html"><small>Performance management</small><b>KPI &amp; Performance Management App</b></a>
+          <a class="next-card" href="capital.html"><small>Capital programme</small><b>Capital Programme Management App</b></a>
+          <a class="next-card" href="housing.html"><small>Housing</small><b>Housing Maintenance Management App</b></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Michael G. Luca</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

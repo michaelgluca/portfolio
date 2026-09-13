@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Housing Maintenance Management App — Michael G. Luca</title>
+  <meta name="description" content="Case study: a model-driven Power App on Dataverse giving a housing team one place to manage every maintenance request across teams, surveyors and contractors." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://michaelluca.co.uk/projects/housing.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://michaelluca.co.uk/projects/housing.html" />
+  <meta property="og:title" content="Housing Maintenance Management App — case study" />
+  <meta property="og:description" content="A model-driven Power App on Dataverse coordinating housing maintenance requests across internal teams, surveyors and contractors." />
+  <meta property="og:image" content="https://michaelluca.co.uk/assets/photo.jpg" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../theme-init.js"></script>
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__top" id="scroll-top" aria-label="Scroll to top"><span aria-hidden="true">↑</span> Scroll to top</a>
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects" class="is-active">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let's talk</a>
+        <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container case-hero__inner">
+        <a class="back-link" href="../index.html#projects">← All projects</a>
+        <div class="case-hero__top">
+          <span class="status-pill">Live</span>
+          <ul class="tags">
+            <li>Model-driven app</li><li>Case management</li><li>Housing</li><li>Low-code</li>
+          </ul>
+        </div>
+        <h1>Housing Maintenance Management App</h1>
+        <p class="case-hero__sub">A model-driven app on Dataverse coordinating repairs across teams, surveyors and contractors</p>
+        <p class="case-hero__lead">
+          A housing team is responsible for maintenance across an entire local authority area, and every
+          request touches several parties: the team that logs it, the surveyor who inspects it, the internal
+          team or external contractor who does the work, and the people who need to know when it is done.
+          This model-driven Power App puts the whole lifecycle on one Dataverse record so everyone works from
+          the same, current picture.
+        </p>
+
+        <dl class="meta-grid">
+          <div><dt>Role</dt><dd>Power Platform Developer</dd></div>
+          <div><dt>Client</dt><dd>UK public sector — housing</dd></div>
+          <div><dt>Status</dt><dd>Live — in daily use</dd></div>
+          <div class="meta--wide"><dt>Stack</dt><dd>Power Apps (Model-driven) · Microsoft Dataverse · Power Automate · Power BI · Microsoft 365</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="case-body">
+      <div class="container case-body__grid">
+        <aside class="case-toc">
+          <h4>On this page</h4>
+          <a href="#problem">The problem</a>
+          <a href="#built">What I built</a>
+          <a href="#model">Data model &amp; security</a>
+          <a href="#decisions">Why model-driven</a>
+          <a href="#impact">Impact</a>
+          <a href="#skills">Skills demonstrated</a>
+        </aside>
+
+        <article class="prose">
+          <h2 id="problem">The problem</h2>
+          <p class="lead">
+            Maintenance requests for an entire area of housing stock do not belong to one team. A single
+            repair can pass through the housing team, a surveyor, one of several internal trades teams and an
+            external contractor before it is closed, and each hand-off is a chance for the request to stall,
+            be duplicated, or lose its history.
+          </p>
+          <ul>
+            <li>No single view of a request from report to completion: each party kept its own record of its own part.</li>
+            <li>Hand-offs between teams, surveyors and contractors relied on email and phone, so ownership and status were often unclear.</li>
+            <li>Management had no reliable, live picture of open requests, backlogs or contractor performance.</li>
+            <li>Housing maintenance carries compliance obligations, so the who-did-what-when trail needs to be complete and defensible.</li>
+          </ul>
+
+          <h2 id="built">What I built</h2>
+          <ul>
+            <li><strong>One request record, end to end.</strong> A model-driven app on Dataverse where every maintenance request is a single record that moves through the lifecycle (reported, triaged, surveyed, assigned, in progress, completed) with the current stage visible to everyone involved.</li>
+            <li><strong>Structured hand-offs.</strong> Surveyor inspections and contractor work orders are linked child records of the request, so assigning work is a step in the process rather than an email, and the request always knows who owns it now.</li>
+            <li><strong>Multi-party working.</strong> Internal teams, surveyors and contractors work in the same system with views tailored to their role: a surveyor sees inspections due, a contractor sees the jobs assigned to them, the housing team sees everything.</li>
+            <li><strong>Automation around the record.</strong> Power Automate handles notifications on assignment and status change, and reminders when a request has sat too long at one stage.</li>
+            <li><strong>Reporting.</strong> Dashboards and views for the housing team on open requests, ageing and throughput by team and contractor.</li>
+          </ul>
+
+          <h2 id="model">Data model &amp; security</h2>
+          <p>
+            The model is built around the request. Properties, requests, inspections, work orders, teams and
+            contractors are separate Dataverse tables joined by lookups, so a property's full maintenance
+            history and a contractor's full workload are both one query away. Controlled values (categories,
+            priorities, statuses) live in option sets rather than free text.
+          </p>
+          <p>
+            Access is enforced by <strong>Dataverse security roles</strong>: each party can only see and edit
+            the records relevant to them, contractors are limited to their own work orders, and the platform's
+            built-in auditing gives a complete change history for every request.
+          </p>
+
+          <h2 id="decisions">Why model-driven</h2>
+          <div class="decision">
+            <h4>Model-driven over canvas</h4>
+            <p>This is a process-heavy, data-heavy system with many related tables and many user roles. A model-driven app gives forms, views, dashboards, business process flows and role-based security out of the box, so the effort goes into getting the data model and the process right rather than into building screens.</p>
+          </div>
+          <div class="decision">
+            <h4>Dataverse from day one</h4>
+            <p>Relational integrity between requests, inspections and work orders, row-level security between parties, and native auditing were hard requirements: the same criteria that pointed to Dataverse on the <a href="kpi.html" style="color: var(--accent); font-weight: 600;">KPI platform</a>.</p>
+          </div>
+
+          <h2 id="impact">Impact</h2>
+          <ul>
+            <li>One shared, current record per request instead of several partial ones: no more chasing across teams to find out where a repair is.</li>
+            <li>Clear ownership at every stage, with hand-offs and reminders handled by the system.</li>
+            <li>A live picture of backlogs and throughput for the housing team and management.</li>
+            <li>A complete audit trail for a compliance-sensitive service.</li>
+          </ul>
+
+          <h2 id="skills">Skills demonstrated</h2>
+          <ul class="chips">
+            <li>Model-driven app development</li>
+            <li>Dataverse data modelling</li>
+            <li>Security roles &amp; row-level access</li>
+            <li>Business process design</li>
+            <li>Power Automate</li>
+            <li>Multi-stakeholder delivery</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-next">
+      <div class="container">
+        <h3>More projects</h3>
+        <div class="next-grid">
+          <a class="next-card" href="field-enforcement.html"><small>Field enforcement</small><b>Field Enforcement App</b></a>
+          <a class="next-card" href="fpn.html"><small>Enforcement</small><b>FPN Digital Transformation</b></a>
+          <a class="next-card" href="kpi.html"><small>Performance management</small><b>KPI &amp; Performance Management App</b></a>
+          <a class="next-card" href="capital.html"><small>Capital programme</small><b>Capital Programme Management App</b></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Michael G. Luca</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

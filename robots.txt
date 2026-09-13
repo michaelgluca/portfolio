@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://michaelluca.co.uk/sitemap.xml

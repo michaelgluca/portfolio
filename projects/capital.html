@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capital Programme Management App — Michael G. Luca</title>
+  <meta name="description" content="Case study: a Dataverse-backed Power Platform application giving a UK public-sector organisation a single source of truth for its £24.5m schools capital programme." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://michaelluca.co.uk/projects/capital.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://michaelluca.co.uk/projects/capital.html" />
+  <meta property="og:title" content="Capital Programme Management App — case study" />
+  <meta property="og:description" content="A Dataverse-backed single source of truth for a ~£24.5m schools capital programme." />
+  <meta property="og:image" content="https://michaelluca.co.uk/assets/photo.jpg" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../theme-init.js"></script>
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__top" id="scroll-top" aria-label="Scroll to top"><span aria-hidden="true">↑</span> Scroll to top</a>
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects" class="is-active">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let's talk</a>
+        <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container case-hero__inner">
+        <a class="back-link" href="../index.html#projects">← All projects</a>
+        <div class="case-hero__top">
+          <span class="status-pill">Live</span>
+          <ul class="tags">
+            <li>Solution architecture</li><li>Data modelling</li><li>Public sector</li><li>ALM</li>
+          </ul>
+        </div>
+        <h1>Capital Programme Management App</h1>
+        <p class="case-hero__sub">Microsoft Power Platform — Dataverse, canvas app &amp; Power Automate for a ~£24.5m schools capital programme</p>
+        <p class="case-hero__lead">
+          A Dataverse-backed Power Platform application that replaces a sprawl of spreadsheets and trackers
+          with a single source of truth for a public-sector schools capital programme. It tracks every
+          building project from initiation to final account across two procurement routes, links actual
+          finance spend without duplicating it, enforces governance through workflow rules, and lays the
+          groundwork for automating statutory reporting — all designed and built in-house.
+        </p>
+
+        <dl class="meta-grid">
+          <div><dt>Role</dt><dd>Power Platform Developer — led scoping, data-model design and build</dd></div>
+          <div><dt>Client</dt><dd>UK public sector</dd></div>
+          <div><dt>Status</dt><dd>Live</dd></div>
+          <div><dt>Programme scale</dt><dd>~£24.5m five-year rolling programme · ~80 school sites · ~25 major and ~97 concurrent projects · ~9–10 internal users</dd></div>
+          <div class="meta--wide"><dt>Stack</dt><dd>Microsoft Dataverse · Power Apps (Canvas) · Power Automate · Power BI · SharePoint · Microsoft 365 / Entra ID · Teams &amp; Outlook</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="case-body">
+      <div class="container case-body__grid">
+        <aside class="case-toc">
+          <h4>On this page</h4>
+          <a href="#problem">The problem</a>
+          <a href="#role">My role &amp; approach</a>
+          <a href="#solution">The solution</a>
+          <a href="#data-model">Data model</a>
+          <a href="#automation">Automation &amp; logic</a>
+          <a href="#security">Security &amp; audit</a>
+          <a href="#decisions">Key decisions</a>
+          <a href="#delivery">Delivery approach</a>
+          <a href="#outcomes">Outcomes</a>
+          <a href="#skills">Skills demonstrated</a>
+        </aside>
+
+        <article class="prose">
+          <h2 id="problem">The problem</h2>
+          <p class="lead">
+            The organisation delivers a large, ongoing programme of school
+            building works — planned condition works, urgent reactive repairs, SEND inclusion projects and
+            window-replacement schemes on listed buildings — funded from several grant streams. It was run
+            across multiple disconnected artefacts: an Excel project tracker, separate SharePoint report
+            trackers, Teams lists and a personal reporting spreadsheet, with finance data living in an
+            entirely separate system.
+          </p>
+          <p>That produced a familiar set of problems:</p>
+          <ul>
+            <li><strong>No single source of truth</strong> — the same project existed in several places, causing duplication and mismatches.</li>
+            <li><strong>No validation</strong> — free-text entry and inconsistent values, updated sporadically, so the tracker rarely reflected reality.</li>
+            <li><strong>Spend was hard to tie to projects</strong> — one project can carry several purchase orders and invoices, and school-procured works have no purchase order at all.</li>
+            <li><strong>Manual reconciliation and reporting</strong> — matching actual spend to each project, and compiling DfE statutory returns and quarterly corporate returns, consumed significant officer time and was funnelled through one person.</li>
+            <li><strong>Spreadsheet risk</strong> — insecure, no audit history, and prone to breaking when several people edited at once.</li>
+          </ul>
+
+          <h2 id="role">My role and approach</h2>
+          <p>
+            I owned the project from discovery through to build, working within the organisation's Power
+            Platform governance framework — a staged process (as-is scoping → to-be and technical scoping →
+            development → UAT → go-live), each stage gated by a technical-board decision.
+          </p>
+          <ul>
+            <li>Ran structured workshops with the service manager, finance and surveyors to map the current process, capture pain points and agree the target process.</li>
+            <li>Produced the governance artefacts each stage requires: as-is and to-be process maps; a technical scoping document covering environments, licensing, connectors, integrations and data handling; a full Dataverse schema specification; and input to the Data Protection Impact Assessment (DPIA).</li>
+            <li>Prioritised ruthlessly into an MVP plus later releases, so the highest-value, highest-risk items — finance linkage and both procurement routes — were proven early.</li>
+          </ul>
+
+          <h2 id="solution">The solution</h2>
+          <p>
+            A Dataverse-backed canvas app is the day-to-day tool for creating and tracking projects, entering
+            finance references, and viewing status and dashboards. A Power Automate layer sits behind it for
+            reminders, notifications, an automatic audit ledger and (in a later release) report generation.
+            Reference/property data lives in a lightweight SharePoint list; project documents stay in
+            SharePoint and are linked rather than embedded; and actual spend is read from the organisation's
+            finance extract in the data warehouse rather than duplicated.
+          </p>
+          <p>
+            Everything is <strong>project-centric</strong>: a single project record is the backbone, and every
+            other record links back to it, so the same project is referenced consistently across delivery,
+            finance and reporting.
+          </p>
+
+          <h2 id="data-model">Data model (technical deep dive)</h2>
+          <p>
+            I designed a relational model of <strong>13 custom Dataverse tables</strong> (plus the native user
+            table for people and ownership), normalised to third normal form, in four groups:
+          </p>
+          <ul>
+            <li><strong>Core:</strong> programme, school/property, funding source, project.</li>
+            <li><strong>Delivery &amp; tracking:</strong> milestones, an append-only progress ledger, governance stages, document links.</li>
+            <li><strong>Finance:</strong> suppliers, purchase orders, invoices, capitalised timesheets.</li>
+            <li><strong>Reporting:</strong> a year-end snapshot.</li>
+          </ul>
+          <h3>Design choices worth calling out</h3>
+          <ul>
+            <li>Repeating items (orders, invoices, milestones, governance stages, timesheets) are separate rows, not columns; shared entities (schools, suppliers, funding sources) are lookups rather than repeated free text.</li>
+            <li>Controlled values via global option sets, with free text limited to narrative fields.</li>
+            <li>Natural-key alternate keys (project number, property UPRN, supplier ID) to prevent duplicates and support future integration matching.</li>
+            <li>Roll-up fields on the project for total committed spend (from POs), actual spend (from invoices) and capitalised staff cost.</li>
+          </ul>
+          <p>
+            The two procurement routes were the crux of the model. <strong>Centrally procured</strong> work flows
+            project → purchase order → invoice. <strong>School-led</strong> work has no purchase order, so the
+            invoice links straight to the project, with a composite match (invoice number + supplier ID)
+            guaranteeing a unique, reconcilable reference. Both routes share a single invoice/actual-spend table.
+          </p>
+
+          <h2 id="automation">Automation and business logic</h2>
+          <ul>
+            <li><strong>Auto-numbering</strong> — each project gets a unique reference on creation.</li>
+            <li><strong>Stage-gating</strong> — business rules (with a flow where cross-table checks are needed) stop a project progressing until the right conditions are met: no order without a parent project; no move to "on site" or "practical completion" without the required dates and linked spend; no move to procurement without an approved governance record for the required gate.</li>
+            <li><strong>Automatic progress ledger</strong> — a flow writes an immutable history row on every status or RAG change, capturing old and new values, the author and a timestamp.</li>
+            <li><strong>Reminders</strong> — a scheduled flow sends Outlook/Teams reminders for projects with no recent update, or milestones falling due.</li>
+            <li><strong>Assisted reporting</strong> — report generation that selects the correct decision/award template by value band and procurement route, and exports aligned to DfE statutory returns and the corporate quarterly return.</li>
+          </ul>
+
+          <h2 id="security">Security, audit and compliance</h2>
+          <ul>
+            <li><strong>Role-based access</strong> — surveyor/project manager (create and update), service manager/administrator (plus configuration, approvals and reporting), and read-only viewers for finance and the programme board.</li>
+            <li><strong>A deliberate audit strategy under a real constraint</strong> (tenant-wide auditing wasn't enabled): no delete privilege on any table (records raised in error are deactivated with a status reason); append-only ledgers for progress history and year-end snapshots (create/read only); automatic created/modified stamps for attribution; and selective native auditing on core tables and critical columns once available. Together these give a defensible audit trail without relying on tenant-wide audit.</li>
+            <li><strong>Data protection</strong> — OFFICIAL classification with a low personal-data footprint (staff names appear only through ownership and timesheets); DPIA prepared as part of the governance process.</li>
+          </ul>
+
+          <h2 id="decisions">Key technical decisions</h2>
+          <div class="decision">
+            <h4>Surface spend, don't duplicate it</h4>
+            <p>Actual spend stays authoritative in the finance system and is read from the data-warehouse extract, linked by PO number (centrally procured) or invoice + supplier ID (school-led). This keeps Dataverse lean and avoids a fragile two-way sync; identifiers are keyed manually in the MVP, with an automated picker as a later enhancement.</p>
+          </div>
+          <div class="decision">
+            <h4>A Programme grouping table instead of many-to-many</h4>
+            <p>Multi-site schemes are modelled as one programme with one project per school, keeping roll-ups a single hop from the project and avoiding a many-to-many relationship.</p>
+          </div>
+          <div class="decision">
+            <h4>Link documents, don't embed them</h4>
+            <p>Reports and drawings stay in SharePoint and are referenced by URL, avoiding Dataverse storage cost and keeping documents where users already manage them.</p>
+          </div>
+          <div class="decision">
+            <h4>Mirror existing column names</h4>
+            <p>Fields deliberately echo the current tracker and the finance extract, easing user familiarity and making the future automated feed a direct mapping.</p>
+          </div>
+          <div class="decision">
+            <h4>Deliberate denormalisation for reporting integrity</h4>
+            <p>The year-end snapshot stores a few reported values as text (e.g. funding source name) so figures "as reported" survive later changes to reference data.</p>
+          </div>
+          <div class="decision">
+            <h4>Canvas app plus automation, not automation alone</h4>
+            <p>Day-to-day management needs an interactive app; the reminders, notifications and report generation need a flow layer — the two together, not one or the other.</p>
+          </div>
+
+          <h2 id="delivery">Delivery approach</h2>
+          <ul>
+            <li><strong>Managed-solution ALM</strong> — a Dataverse solution promoted Dev → Test → Production on the organisation's standard environments, with no app-specific environment required.</li>
+            <li><strong>Phased delivery</strong> — an MVP for go-live (lifecycle, validation, finance linkage, reminders, ad-hoc/executive reporting), then a second release for automated statutory/quarterly returns and an automated finance picker, then future external school-partner access.</li>
+            <li><strong>Continuous UAT</strong> — regular walkthroughs with the service manager and surveyors throughout, surfacing business-critical items early to de-risk delivery.</li>
+          </ul>
+
+          <h2 id="outcomes">Outcomes</h2>
+          <div class="impact-grid">
+            <div class="impact"><strong>£24.5m</strong><span>five-year rolling capital programme</span></div>
+            <div class="impact"><strong>13</strong><span>custom Dataverse tables, normalised to 3NF</span></div>
+            <div class="impact"><strong>~97</strong><span>concurrent projects across ~80 school sites</span></div>
+          </div>
+          <p>
+            The app is live and gives the team a single, validated source of truth for the whole programme.
+            The benefits it delivers: a significant reduction in officer time spent on statutory returns,
+            reconciliation and tracker upkeep; better data quality and completeness; and more timely,
+            reliable reporting for finance and the programme board.
+          </p>
+
+          <h2 id="skills">Skills demonstrated</h2>
+          <ul class="chips">
+            <li>Solution architecture</li>
+            <li>Relational data modelling (3NF)</li>
+            <li>Microsoft Dataverse</li>
+            <li>Canvas app development</li>
+            <li>Power Automate</li>
+            <li>Business rules &amp; workflow automation</li>
+            <li>Role-based security &amp; audit design</li>
+            <li>Requirements gathering</li>
+            <li>Data protection / DPIA</li>
+            <li>Public-sector delivery</li>
+            <li>ALM</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-next">
+      <div class="container">
+        <h3>More projects</h3>
+        <div class="next-grid">
+          <a class="next-card" href="fpn.html"><small>Enforcement</small><b>FPN Digital Transformation</b></a>
+          <a class="next-card" href="field-enforcement.html"><small>Field enforcement</small><b>Field Enforcement App</b></a>
+          <a class="next-card" href="kpi.html"><small>Performance management</small><b>KPI &amp; Performance Management App</b></a>
+          <a class="next-card" href="housing.html"><small>Housing</small><b>Housing Maintenance Management App</b></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Michael G. Luca</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

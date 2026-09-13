@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KPI &amp; Performance Management App — Michael G. Luca</title>
+  <meta name="description" content="Case study: a governed, automated KPI and performance-management platform on Power Apps, Dataverse, Power Automate and Power BI, replacing spreadsheet-based reporting across a UK public-sector organisation." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://michaelluca.co.uk/projects/kpi.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://michaelluca.co.uk/projects/kpi.html" />
+  <meta property="og:title" content="KPI &amp; Performance Management App — case study" />
+  <meta property="og:description" content="A governed, automated performance-management platform on Power Apps, Dataverse, Power Automate and Power BI." />
+  <meta property="og:image" content="https://michaelluca.co.uk/assets/photo.jpg" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../theme-init.js"></script>
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__top" id="scroll-top" aria-label="Scroll to top"><span aria-hidden="true">↑</span> Scroll to top</a>
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects" class="is-active">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let's talk</a>
+        <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container case-hero__inner">
+        <a class="back-link" href="../index.html#projects">← All projects</a>
+        <div class="case-hero__top">
+          <span class="status-pill">Live</span>
+          <ul class="tags">
+            <li>Enterprise</li><li>Workflow automation</li><li>Data governance</li><li>Low-code</li>
+          </ul>
+        </div>
+        <h1>KPI &amp; Performance Management App</h1>
+        <p class="case-hero__sub">A governed, automated performance-management platform for a UK public-sector organisation</p>
+        <p class="case-hero__lead">
+          Designed and led delivery of a KPI and performance-management platform that replaces dozens of
+          disconnected monthly spreadsheets with a single governed system. Built on Power Apps and Dataverse
+          with automated data collection through Power Automate and Teams adaptive cards, approval workflows
+          to protect data quality, and Power BI dashboards with row-level security. Consolidates a
+          37-indicator corporate framework and scales toward 450–500 indicators organisation-wide — while
+          keeping licensing costs low for ~100 occasional contributors.
+        </p>
+
+        <dl class="meta-grid">
+          <div><dt>Role</dt><dd>Lead / Power Platform Developer</dd></div>
+          <div><dt>Client</dt><dd>UK public sector</dd></div>
+          <div><dt>Type</dt><dd>Enterprise low-code application (internal)</dd></div>
+          <div class="meta--wide"><dt>Stack</dt><dd>Power Apps (Canvas) · Microsoft Dataverse · Power Automate · Power BI · Teams Adaptive Cards · Microsoft 365</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="case-body">
+      <div class="container case-body__grid">
+        <aside class="case-toc">
+          <h4>On this page</h4>
+          <a href="#problem">The problem</a>
+          <a href="#solution">The solution</a>
+          <a href="#built">What was built</a>
+          <a href="#decisions">Key technical decisions</a>
+          <a href="#scale">Scope &amp; scale</a>
+          <a href="#impact">Impact</a>
+          <a href="#skills">Skills demonstrated</a>
+        </aside>
+
+        <article class="prose">
+          <h2 id="problem">The problem</h2>
+          <p class="lead">
+            Performance reporting across the organisation was manual and fragmented. Every month, teams
+            emailed spreadsheets around the organisation for people to type figures into, then re-collated the
+            results by hand. Several parallel frameworks each had their own format and cadence:
+          </p>
+          <ul>
+            <li><strong>Corporate Performance Framework</strong> — 37 indicators reported monthly to senior leadership assurance.</li>
+            <li><strong>Departmental frameworks</strong> — different indicators and formats, reported monthly or quarterly.</li>
+            <li><strong>Strategy-based reporting</strong> — outcomes tracked against strategies (e.g. climate, housing).</li>
+            <li><strong>Corporate Plan</strong> — indicators mapped to plan outcomes, reported annually.</li>
+          </ul>
+          <p>
+            This created duplicated effort, inconsistent standards, and no single source of truth. Whenever a
+            team wanted a new performance framework (for example, for a climate-change strategy), the BI team
+            had to build something bespoke — which didn't scale.
+          </p>
+
+          <h2 id="solution">The solution</h2>
+          <p>
+            A single Power App that lets staff create and manage KPIs, assemble them into reusable
+            frameworks, and then automates the monthly collection of figures and commentary — with
+            governance built in so the data stays trustworthy. Analysis and trends live in Power BI
+            dashboards rather than the app, keeping the app focused on capture and automation.
+          </p>
+
+          <h2 id="built">What was built</h2>
+          <ul>
+            <li><strong>KPI / indicator authoring</strong> — a guided form capturing rich metadata: definition, category, reporting frequency, targets and target rationale, benchmarking availability, data-due dates, and named data/commentary leads (with delegates).</li>
+            <li><strong>Approval workflows</strong> — new KPIs and new frameworks are signed off by the BI management team to prevent duplication and enforce quality before they go live.</li>
+            <li><strong>Reusable indicator bank + framework builder</strong> — users assemble frameworks (corporate, departmental, policy, strategy) by selecting from existing indicators, so KPIs are defined once and reused across many frameworks. Frameworks act as filters and row-level-security boundaries in reporting.</li>
+            <li><strong>Automated data collection</strong> — scheduled Power Automate flows detect which indicators are due and request figures from data leads, with email reminders when submissions are late (e.g. chasing after 5 days).</li>
+            <li><strong>Automated commentary capture</strong> — for red/amber (RAG) indicators, the system requests commentary and supports a threaded, dialogue-style Q&amp;A on each indicator, notifying leads when questions are posted.</li>
+            <li><strong>Target-change approvals</strong> — targets can only be changed through an approval process, protecting the integrity of reporting baselines.</li>
+            <li><strong>Performance Improvement Plans (PIPs)</strong> — for underperforming indicators, standardised improvement plans capture the issue, contributing factors, and SMART actions (owner, deadline, status, updates) tracked through to sign-off.</li>
+            <li><strong>Benchmarking fields</strong> — optional London/England ranks, quartiles and averages surfaced where benchmarking data exists.</li>
+            <li><strong>Power BI reporting layer</strong> — dashboards with RAG status (configurable ~5% tolerance), trend graphs, framework filtering, row-level security, and export to PowerPoint for board packs.</li>
+          </ul>
+
+          <h2 id="decisions">Key technical decisions</h2>
+          <div class="decision">
+            <h4>Dataverse vs SharePoint (data architecture)</h4>
+            <p>Led the analysis of whether the app needed Microsoft Dataverse or could run on SharePoint lists. Framed the decision around concrete engineering criteria rather than defaults: the requirement for row-level security (departments seeing only their own data), calculated/formula columns, integrity of lookup relationships, and delegation limits on large volumes of submission records that grow every reporting period.</p>
+            <p>Weighed these against licensing and Dataverse capacity costs, and drove the recommendation to Dataverse once row-level security was confirmed as a hard requirement — while keeping the door open to SharePoint for lower-security scenarios.</p>
+          </div>
+          <div class="decision">
+            <h4>Cost-efficient data submission via Teams Adaptive Cards</h4>
+            <p>Rather than requiring ~100 occasional contributors to each hold premium licences, designed the data-entry path around Teams adaptive cards driven by service-account flows. Contributors submit their monthly figures directly in Teams — cards can be stacked so one person with many indicators gets a single message, not one per indicator — with the flow writing back to Dataverse. This kept the solution affordable at scale while still centralising data in a secure store.</p>
+          </div>
+          <div class="decision">
+            <h4>Governance-driven delivery</h4>
+            <p>Ran the project through the organisation's formal Power Platform governance process — long-list → as-is scoping → to-be &amp; technical scoping → initial development → continuous development with stakeholders → live — producing the To-Be and Technical Scoping documents and requesting the Dataverse environments early, since provisioning has long lead times.</p>
+          </div>
+          <div class="decision">
+            <h4>Requirements elicitation</h4>
+            <p>Gathered and shaped requirements across three groups: the project sponsor/stakeholder, a senior developer (for architecture and licensing guidance), and a tester/BI group to pressure-test the workflow, notification load, and edge cases such as "single version of the truth" concerns and daily-digest vs per-indicator notifications.</p>
+          </div>
+
+          <h2 id="scale">Scope &amp; scale</h2>
+          <div class="impact-grid">
+            <div class="impact"><strong>37</strong><span>indicators in the monthly corporate framework</span></div>
+            <div class="impact"><strong>450–500</strong><span>indicators the design scales toward organisation-wide</span></div>
+            <div class="impact"><strong>~100</strong><span>users across BI and departmental data owners</span></div>
+          </div>
+          <ul>
+            <li>Consolidates the 37-indicator monthly corporate framework plus departmental and strategy frameworks.</li>
+            <li>Targeted at ~100 users across BI and departmental data owners.</li>
+            <li>Designed to scale toward 450–500 indicators organisation-wide as adoption grows.</li>
+            <li>Delivered in phases, starting with the corporate and departmental management frameworks.</li>
+          </ul>
+
+          <h2 id="impact">Impact</h2>
+          <ul>
+            <li>Replaces manual spreadsheet collection with an automated, auditable workflow.</li>
+            <li>Removes the need to build bespoke apps for each new strategy or framework — teams self-serve by assembling frameworks from a shared indicator bank.</li>
+            <li>Establishes a single source of truth with enforced standards, approvals, and consistent RAG/benchmarking treatment.</li>
+            <li>Keeps licensing costs low by routing occasional contributors through Teams rather than the app.</li>
+          </ul>
+
+          <h2 id="skills">Skills demonstrated</h2>
+          <ul class="chips">
+            <li>Low-code architecture</li>
+            <li>Dataverse data modelling</li>
+            <li>Workflow &amp; approval design</li>
+            <li>Power BI with row-level security</li>
+            <li>Cost / licensing analysis</li>
+            <li>Requirements elicitation</li>
+            <li>Stakeholder management</li>
+            <li>Data governance</li>
+            <li>Enterprise IT governance</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-next">
+      <div class="container">
+        <h3>More projects</h3>
+        <div class="next-grid">
+          <a class="next-card" href="fpn.html"><small>Enforcement</small><b>FPN Digital Transformation</b></a>
+          <a class="next-card" href="field-enforcement.html"><small>Field enforcement</small><b>Field Enforcement App</b></a>
+          <a class="next-card" href="capital.html"><small>Capital programme</small><b>Capital Programme Management App</b></a>
+          <a class="next-card" href="housing.html"><small>Housing</small><b>Housing Maintenance Management App</b></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Michael G. Luca</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
