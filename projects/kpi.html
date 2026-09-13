@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d12" />
   <title>KPI &amp; Performance Management App — Michael G. Luca</title>
   <meta name="description" content="Case study: a governed, automated KPI and performance-management platform on Power Apps, Dataverse, Power Automate and Power BI, replacing spreadsheet-based reporting across a UK public-sector organisation." />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="canonical" href="https://michaelluca.co.uk/projects/kpi.html" />
   <meta property="og:type" content="website" />
@@ -23,6 +24,7 @@
   <script src="../theme-init.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="nav" id="top">
     <div class="container nav__inner">
@@ -35,11 +37,11 @@
         <a href="../index.html#contact">Contact</a>
       </nav>
       <div class="nav__actions">
-        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button class="icon-btn" id="theme-toggle" aria-label="Switch to light theme" title="Switch to light theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let's talk</a>
+        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let’s talk</a>
         <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
         </button>
@@ -47,7 +49,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="case-hero">
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container case-hero__inner">
@@ -80,8 +82,8 @@
 
     <section class="case-body">
       <div class="container case-body__grid">
-        <aside class="case-toc">
-          <h4>On this page</h4>
+        <nav class="case-toc" aria-label="On this page">
+          <p class="case-toc__label">On this page</p>
           <a href="#problem">The problem</a>
           <a href="#solution">The solution</a>
           <a href="#built">What was built</a>
@@ -89,7 +91,7 @@
           <a href="#scale">Scope &amp; scale</a>
           <a href="#impact">Impact</a>
           <a href="#skills">Skills demonstrated</a>
-        </aside>
+        </nav>
 
         <article class="prose">
           <h2 id="problem">The problem</h2>
@@ -107,7 +109,7 @@
           <p>
             This created duplicated effort, inconsistent standards, and no single source of truth. Whenever a
             team wanted a new performance framework (for example, for a climate-change strategy), the BI team
-            had to build something bespoke — which didn't scale.
+            had to build something bespoke — which didn’t scale.
           </p>
 
           <h2 id="solution">The solution</h2>
@@ -133,21 +135,21 @@
 
           <h2 id="decisions">Key technical decisions</h2>
           <div class="decision">
-            <h4>Dataverse vs SharePoint (data architecture)</h4>
+            <h3>Dataverse vs SharePoint (data architecture)</h3>
             <p>Led the analysis of whether the app needed Microsoft Dataverse or could run on SharePoint lists. Framed the decision around concrete engineering criteria rather than defaults: the requirement for row-level security (departments seeing only their own data), calculated/formula columns, integrity of lookup relationships, and delegation limits on large volumes of submission records that grow every reporting period.</p>
             <p>Weighed these against licensing and Dataverse capacity costs, and drove the recommendation to Dataverse once row-level security was confirmed as a hard requirement — while keeping the door open to SharePoint for lower-security scenarios.</p>
           </div>
           <div class="decision">
-            <h4>Cost-efficient data submission via Teams Adaptive Cards</h4>
+            <h3>Cost-efficient data submission via Teams Adaptive Cards</h3>
             <p>Rather than requiring ~100 occasional contributors to each hold premium licences, designed the data-entry path around Teams adaptive cards driven by service-account flows. Contributors submit their monthly figures directly in Teams — cards can be stacked so one person with many indicators gets a single message, not one per indicator — with the flow writing back to Dataverse. This kept the solution affordable at scale while still centralising data in a secure store.</p>
           </div>
           <div class="decision">
-            <h4>Governance-driven delivery</h4>
-            <p>Ran the project through the organisation's formal Power Platform governance process — long-list → as-is scoping → to-be &amp; technical scoping → initial development → continuous development with stakeholders → live — producing the To-Be and Technical Scoping documents and requesting the Dataverse environments early, since provisioning has long lead times.</p>
+            <h3>Governance-driven delivery</h3>
+            <p>Ran the project through the organisation’s formal Power Platform governance process — long-list → as-is scoping → to-be &amp; technical scoping → initial development → continuous development with stakeholders → live — producing the To-Be and Technical Scoping documents and requesting the Dataverse environments early, since provisioning has long lead times.</p>
           </div>
           <div class="decision">
-            <h4>Requirements elicitation</h4>
-            <p>Gathered and shaped requirements across three groups: the project sponsor/stakeholder, a senior developer (for architecture and licensing guidance), and a tester/BI group to pressure-test the workflow, notification load, and edge cases such as "single version of the truth" concerns and daily-digest vs per-indicator notifications.</p>
+            <h3>Requirements elicitation</h3>
+            <p>Gathered and shaped requirements across three groups: the project sponsor/stakeholder, a senior developer (for architecture and licensing guidance), and a tester/BI group to pressure-test the workflow, notification load, and edge cases such as “single version of the truth” concerns and daily-digest vs per-indicator notifications.</p>
           </div>
 
           <h2 id="scale">Scope &amp; scale</h2>

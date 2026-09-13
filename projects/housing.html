@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d12" />
   <title>Housing Maintenance Management App — Michael G. Luca</title>
   <meta name="description" content="Case study: a model-driven Power App on Dataverse giving a housing team one place to manage every maintenance request across teams, surveyors and contractors." />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="canonical" href="https://michaelluca.co.uk/projects/housing.html" />
   <meta property="og:type" content="website" />
@@ -23,6 +24,7 @@
   <script src="../theme-init.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="nav" id="top">
     <div class="container nav__inner">
@@ -35,11 +37,11 @@
         <a href="../index.html#contact">Contact</a>
       </nav>
       <div class="nav__actions">
-        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button class="icon-btn" id="theme-toggle" aria-label="Switch to light theme" title="Switch to light theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let's talk</a>
+        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let’s talk</a>
         <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
         </button>
@@ -47,7 +49,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="case-hero">
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container case-hero__inner">
@@ -79,15 +81,15 @@
 
     <section class="case-body">
       <div class="container case-body__grid">
-        <aside class="case-toc">
-          <h4>On this page</h4>
+        <nav class="case-toc" aria-label="On this page">
+          <p class="case-toc__label">On this page</p>
           <a href="#problem">The problem</a>
           <a href="#built">What I built</a>
           <a href="#model">Data model &amp; security</a>
           <a href="#decisions">Why model-driven</a>
           <a href="#impact">Impact</a>
           <a href="#skills">Skills demonstrated</a>
-        </aside>
+        </nav>
 
         <article class="prose">
           <h2 id="problem">The problem</h2>
@@ -116,24 +118,24 @@
           <h2 id="model">Data model &amp; security</h2>
           <p>
             The model is built around the request. Properties, requests, inspections, work orders, teams and
-            contractors are separate Dataverse tables joined by lookups, so a property's full maintenance
-            history and a contractor's full workload are both one query away. Controlled values (categories,
+            contractors are separate Dataverse tables joined by lookups, so a property’s full maintenance
+            history and a contractor’s full workload are both one query away. Controlled values (categories,
             priorities, statuses) live in option sets rather than free text.
           </p>
           <p>
             Access is enforced by <strong>Dataverse security roles</strong>: each party can only see and edit
-            the records relevant to them, contractors are limited to their own work orders, and the platform's
+            the records relevant to them, contractors are limited to their own work orders, and the platform’s
             built-in auditing gives a complete change history for every request.
           </p>
 
           <h2 id="decisions">Why model-driven</h2>
           <div class="decision">
-            <h4>Model-driven over canvas</h4>
+            <h3>Model-driven over canvas</h3>
             <p>This is a process-heavy, data-heavy system with many related tables and many user roles. A model-driven app gives forms, views, dashboards, business process flows and role-based security out of the box, so the effort goes into getting the data model and the process right rather than into building screens.</p>
           </div>
           <div class="decision">
-            <h4>Dataverse from day one</h4>
-            <p>Relational integrity between requests, inspections and work orders, row-level security between parties, and native auditing were hard requirements: the same criteria that pointed to Dataverse on the <a href="kpi.html" style="color: var(--accent); font-weight: 600;">KPI platform</a>.</p>
+            <h3>Dataverse from day one</h3>
+            <p>Relational integrity between requests, inspections and work orders, row-level security between parties, and native auditing were hard requirements: the same criteria that pointed to Dataverse on the <a href="kpi.html">KPI platform</a>.</p>
           </div>
 
           <h2 id="impact">Impact</h2>

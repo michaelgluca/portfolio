@@ -11,18 +11,28 @@
 
   /* ---------- Theme toggle ---------- */
   const themeBtn = document.getElementById('theme-toggle');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
   if (themeBtn) {
+    const sync = () => {
+      const light = root.dataset.theme === 'light';
+      const label = light ? 'Switch to dark theme' : 'Switch to light theme';
+      themeBtn.setAttribute('aria-label', label);
+      themeBtn.title = label;
+      if (themeMeta) themeMeta.content = light ? '#f7f8fb' : '#0b0d12';
+    };
     themeBtn.addEventListener('click', () => {
-      const next = root.dataset.theme === 'light' ? 'dark' : 'light';
-      root.dataset.theme = next;
-      try { localStorage.setItem('theme', next); } catch (e) {}
+      root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+      try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+      sync();
     });
+    sync();
   }
 
   /* ---------- Mobile menu ---------- */
   const burger = document.getElementById('nav-burger');
   const links = document.getElementById('nav-links');
   if (burger && links) {
+    const isOpen = () => links.classList.contains('is-open');
     const close = () => {
       links.classList.remove('is-open');
       burger.setAttribute('aria-expanded', 'false');
@@ -34,11 +44,16 @@
       burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     });
     links.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && isOpen()) { close(); burger.focus(); }
+    });
+    document.addEventListener('pointerdown', e => {
+      if (isOpen() && !links.contains(e.target) && !burger.contains(e.target)) close();
+    });
   }
 
   /* ---------- Scroll reveal ---------- */
-  const revealEls = document.querySelectorAll('.reveal');
+  const revealEls = document.querySelectorAll('.reveal, .stagger');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -121,7 +136,8 @@
   }, { passive: true });
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
   });
   update();
 })();

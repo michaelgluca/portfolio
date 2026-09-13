@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d12" />
   <title>Field Enforcement App — Michael G. Luca</title>
   <meta name="description" content="Case study: the field-enforcement Power App used by frontline enforcement officers on mobile and tablet — digitising day-to-day case management and doubling team productivity in its first year." />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="canonical" href="https://michaelluca.co.uk/projects/field-enforcement.html" />
   <meta property="og:type" content="website" />
@@ -23,6 +24,7 @@
   <script src="../theme-init.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="nav" id="top">
     <div class="container nav__inner">
@@ -35,11 +37,11 @@
         <a href="../index.html#contact">Contact</a>
       </nav>
       <div class="nav__actions">
-        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button class="icon-btn" id="theme-toggle" aria-label="Switch to light theme" title="Switch to light theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let's talk</a>
+        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let’s talk</a>
         <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
         </button>
@@ -47,7 +49,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="case-hero">
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container case-hero__inner">
@@ -65,7 +67,7 @@
           tablet — digitising case management, patrols and reporting that previously lived on paper and in
           spreadsheets. In its first year live, annual patrols rose from ~97,000 to ~180,000 — a 100%
           improvement in team productivity. It is also the platform the
-          <a href="fpn.html" style="color: var(--accent); font-weight: 600;">FPN Digital Transformation</a> project extends.
+          <a href="fpn.html">FPN Digital Transformation</a> project extends.
         </p>
 
         <dl class="meta-grid">
@@ -79,13 +81,13 @@
 
     <section class="case-body">
       <div class="container case-body__grid">
-        <aside class="case-toc">
-          <h4>On this page</h4>
+        <nav class="case-toc" aria-label="On this page">
+          <p class="case-toc__label">On this page</p>
           <a href="#overview">Overview</a>
           <a href="#built">What was built</a>
           <a href="#impact">Impact</a>
           <a href="#next">What it enabled</a>
-        </aside>
+        </nav>
 
         <article class="prose">
           <h2 id="overview">Overview</h2>
@@ -96,7 +98,7 @@
             the team was doing.
           </p>
           <p>
-            The Field Enforcement App moved the whole case lifecycle onto officers' phones and tablets, so
+            The Field Enforcement App moved the whole case lifecycle onto officers’ phones and tablets, so
             recording the work became part of doing the work. A Power BI dashboard on top gives management
             live oversight of activity and performance.
           </p>
@@ -116,7 +118,7 @@
             <div class="impact"><strong>1 year+</strong><span>in daily use by officers</span></div>
           </div>
           <ul>
-            <li>Officers' time shifted from paperwork to patrols — annual patrols roughly doubled after go-live.</li>
+            <li>Officers’ time shifted from paperwork to patrols — annual patrols roughly doubled after go-live.</li>
             <li>A complete, timely record of enforcement activity instead of retrospective write-ups.</li>
             <li>Live management visibility of workload and performance through Power BI.</li>
           </ul>
@@ -124,7 +126,7 @@
           <h2 id="next">What it enabled</h2>
           <p>
             Because officers already relied on the app every day, it became the natural foundation for further
-            automation. The <a href="fpn.html" style="color: var(--accent); font-weight: 600;">FPN Digital
+            automation. The <a href="fpn.html">FPN Digital
             Transformation</a> project extended it so that issuing a Fixed Penalty Notice happens inside the
             same case workflow, with the record written straight to the central register.
           </p>

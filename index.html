@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d12" />
   <title>Michael G. Luca — Power Platform Developer</title>
   <meta name="description" content="Michael G. Luca — Microsoft Power Platform Developer in the UK public sector. Scalable, governed Power Apps, Power Automate, Power BI and Dataverse solutions for local government." />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="canonical" href="https://michaelluca.co.uk/" />
   <meta property="og:type" content="website" />
@@ -24,6 +25,7 @@
   <script src="theme-init.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="top">
@@ -41,11 +43,11 @@
       </nav>
 
       <div class="nav__actions">
-        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button class="icon-btn" id="theme-toggle" aria-label="Switch to light theme" title="Switch to light theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="#contact" class="btn btn--primary nav__cta">Let's talk</a>
+        <a href="#contact" class="btn btn--primary nav__cta">Let’s talk</a>
         <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
         </button>
@@ -53,7 +55,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- ===================== HERO ===================== -->
     <section class="hero">
@@ -65,14 +67,14 @@
             Microsoft Power Platform Developer · London
           </p>
           <h1 class="hero__title">
-            Hi, I'm <span class="gradient-text">Michael G. Luca</span>.<br />
+            Hi, I’m <span class="gradient-text">Michael G. Luca</span>.<br />
             I build Power Platform solutions that solve real problems.
           </h1>
           <p class="hero__lead">
             Power Platform Developer in the UK public sector with hands-on production experience across
             the whole Microsoft Power Platform — Power Apps (canvas and model-driven), Power Automate
             (cloud and desktop flows), Power BI and Dataverse — plus the environments, governance and ALM
-            that keep it running. My solutions are live on frontline services, where they've doubled
+            that keep it running. My solutions are live on frontline services, where they’ve doubled
             performance and cut admin time in half.
           </p>
           <div class="hero__actions">
@@ -105,18 +107,18 @@
                   <div><small>Resolved</small><b class="ok">1,042</b></div>
                 </div>
                 <div class="app-mock__rows">
-                  <div><span style="width:62%"></span><u class="ok"></u></div>
-                  <div><span style="width:48%"></span><u class="warn"></u></div>
-                  <div><span style="width:71%"></span><u class="ok"></u></div>
-                  <div><span style="width:39%"></span><u></u></div>
-                  <div><span style="width:55%"></span><u class="ok"></u></div>
+                  <div><span></span><u class="ok"></u></div>
+                  <div><span></span><u class="warn"></u></div>
+                  <div><span></span><u class="ok"></u></div>
+                  <div><span></span><u></u></div>
+                  <div><span></span><u class="ok"></u></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="float-chip chip-1">⚡ Power Automate</div>
-          <div class="float-chip chip-2">🗄️ Dataverse</div>
-          <div class="float-chip chip-3">📊 Power BI</div>
+          <div class="float-chip chip-1 tone-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>Power Automate</div>
+          <div class="float-chip chip-2 tone-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>Dataverse</div>
+          <div class="float-chip chip-3 tone-yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M8 17v-5M13 17V8M18 17v-3"/></svg>Power BI</div>
         </div>
       </div>
     </section>
@@ -132,7 +134,7 @@
         <div class="about reveal">
           <div class="about__text">
             <p>
-              I'm a Power Platform Developer in the UK public sector, where I own
+              I’m a Power Platform Developer in the UK public sector, where I own
               Power Platform solutions end to end — from discovery and design through to deployment,
               governance and continuous improvement. That means real, hands-on work across the whole
               platform, not one corner of it: canvas and model-driven Power Apps, cloud and desktop
@@ -156,14 +158,14 @@
 
           <aside class="about__card">
             <div class="about__photo">
-              <img src="assets/photo.jpg" alt="Michael G. Luca" id="about-photo" />
+              <img src="assets/photo.jpg" alt="Michael G. Luca" id="about-photo" width="400" height="400" loading="lazy" />
               <span class="about__initials" aria-hidden="true">ML</span>
             </div>
             <ul class="about__facts">
-              <li><span>📍</span><div><small>Based in</small><b>London, UK</b></div></li>
-              <li><span>🏢</span><div><small>Currently</small><b>Power Platform Developer, UK public sector</b></div></li>
-              <li><span>🧩</span><div><small>Focus</small><b>Power Apps · Power Automate · Dataverse · Power BI</b></div></li>
-              <li><span>🎓</span><div><small>Education</small><b>MSc Software Engineering, University of Westminster</b></div></li>
+              <li><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><div><small>Based in</small><b>London, UK</b></div></li>
+              <li><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></span><div><small>Currently</small><b>Power Platform Developer, UK public sector</b></div></li>
+              <li><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg></span><div><small>Focus</small><b>Power Apps · Power Automate · Dataverse · Power BI</b></div></li>
+              <li><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><div><small>Education</small><b>MSc Software Engineering, University of Westminster</b></div></li>
             </ul>
           </aside>
         </div>
@@ -179,57 +181,57 @@
           <p class="section__sub">Not just certified — every product below is something I have built with, shipped to production and support day to day.</p>
         </div>
 
-        <div class="platform reveal" aria-label="Microsoft Power Platform experience">
-          <div class="platform__item" style="--c: #742774">
+        <div class="platform stagger" aria-label="Microsoft Power Platform experience">
+          <div class="platform__item tone-purple">
             <h3>Power Apps</h3>
             <p>Canvas apps for officers on phones and tablets; model-driven apps on Dataverse for back-office case handling. Built, shipped and supported in production.</p>
             <span class="platform__live">Live in production</span>
           </div>
-          <div class="platform__item" style="--c: #0066ff">
+          <div class="platform__item tone-blue">
             <h3>Power Automate</h3>
             <p>Cloud flows for approvals, notifications, scheduled collection and register writes; desktop flows (RPA) for legacy processes; Teams adaptive cards for data entry.</p>
             <span class="platform__live">Live in production</span>
           </div>
-          <div class="platform__item" style="--c: #f2c811">
+          <div class="platform__item tone-yellow">
             <h3>Power BI</h3>
             <p>Semantic models, DAX, row-level security, scheduled refresh and governed dashboards — from field-team oversight to organisation-wide performance reporting.</p>
             <span class="platform__live">Live in production</span>
           </div>
-          <div class="platform__item" style="--c: #088142">
+          <div class="platform__item tone-green">
             <h3>Dataverse</h3>
             <p>Relational data models normalised to 3NF, security roles and permissions, alternate keys, roll-ups, auditing, and solution-based ALM across environments.</p>
             <span class="platform__live">Live in production</span>
           </div>
-          <div class="platform__item" style="--c: #8b5cf6">
+          <div class="platform__item tone-violet">
             <h3>Power Fx &amp; Dynamics 365</h3>
             <p>Power Fx across canvas apps and business rules; integration with Dynamics 365, SharePoint, SQL Server and Azure via connectors, REST APIs and on-premises gateways.</p>
             <span class="platform__live">Live in production</span>
           </div>
-          <div class="platform__item" style="--c: #0078d4">
+          <div class="platform__item tone-azure">
             <h3>Platform administration</h3>
             <p>Environment strategy, DLP policies, Centre of Excellence governance, licensing and capacity decisions, and CI/CD pipelines through Azure DevOps.</p>
             <span class="platform__live">Live in production</span>
           </div>
-          <div class="platform__item" style="--c: #e3008c">
+          <div class="platform__item tone-pink">
             <h3>Power Pages</h3>
             <p>External-facing sites on Dataverse — authenticated access with web roles and table permissions, forms and lists bound to the same data model as the internal apps.</p>
             <span class="platform__live">Live in production</span>
           </div>
-          <div class="platform__item" style="--c: #0f6cbd">
+          <div class="platform__item tone-navy">
             <h3>Copilot Studio</h3>
             <p>Conversational copilots with topics, generative answers over organisational content, and actions that call Power Automate flows and Dataverse to get things done, not just answer.</p>
             <span class="platform__live">Live in production</span>
           </div>
-          <div class="platform__item" style="--c: #22d3ee">
+          <div class="platform__item tone-cyan">
             <h3>AI Builder</h3>
             <p>Prebuilt and custom AI models — document and form processing, text recognition and prediction — used inside apps and flows to take manual reading and re-keying out of processes.</p>
             <span class="platform__live">Live in production</span>
           </div>
         </div>
 
-        <div class="skills reveal">
+        <div class="skills stagger">
           <div class="skill-group">
-            <h3><span class="skill-group__icon" style="--c: #f2c811">◆</span> Data &amp; BI</h3>
+            <h3><span class="skill-group__icon tone-yellow" aria-hidden="true">◆</span> Data &amp; BI</h3>
             <ul class="chips">
               <li>Microsoft SQL Server</li>
               <li>SSIS &amp; Azure Data Factory</li>
@@ -241,7 +243,7 @@
           </div>
 
           <div class="skill-group">
-            <h3><span class="skill-group__icon" style="--c: #0078d4">◆</span> DevOps &amp; delivery</h3>
+            <h3><span class="skill-group__icon tone-azure" aria-hidden="true">◆</span> DevOps &amp; delivery</h3>
             <ul class="chips">
               <li>Azure DevOps</li>
               <li>CI/CD &amp; ALM</li>
@@ -254,7 +256,7 @@
           </div>
 
           <div class="skill-group">
-            <h3><span class="skill-group__icon" style="--c: #22d3ee">◆</span> Pro-code &amp; integration</h3>
+            <h3><span class="skill-group__icon tone-cyan" aria-hidden="true">◆</span> Pro-code &amp; integration</h3>
             <ul class="chips">
               <li>Software engineering (MSc)</li>
               <li>REST APIs &amp; connectors</li>
@@ -281,8 +283,8 @@
 
           <!-- Field Enforcement App -->
           <article class="project reveal">
-            <div class="project__media" style="--tint: #088142">
-              <span class="project__emoji">🛡️</span>
+            <div class="project__media tone-green">
+              <span class="project__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
             </div>
             <div class="project__body">
               <div class="project__top">
@@ -302,14 +304,14 @@
                 <li><strong>+100%</strong><span>team productivity</span></li>
                 <li><strong>Live</strong><span>in daily use for over a year</span></li>
               </ul>
-              <a class="project__link" href="projects/field-enforcement.html">Read the case study →</a>
+              <a class="project__link" href="projects/field-enforcement.html">Read the case study <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
           <!-- FPN -->
           <article class="project reveal">
-            <div class="project__media" style="--tint: #742774">
-              <span class="project__emoji">🧾</span>
+            <div class="project__media tone-purple">
+              <span class="project__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span>
             </div>
             <div class="project__body">
               <div class="project__top">
@@ -329,14 +331,14 @@
                 <li><strong>Offence-code</strong><span>driven fine calculation</span></li>
                 <li><strong>Live</strong><span>Power BI oversight</span></li>
               </ul>
-              <a class="project__link" href="projects/fpn.html">Read the case study →</a>
+              <a class="project__link" href="projects/fpn.html">Read the case study <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
           <!-- KPI -->
           <article class="project reveal">
-            <div class="project__media" style="--tint: #0066ff">
-              <span class="project__emoji">📈</span>
+            <div class="project__media tone-blue">
+              <span class="project__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></span>
             </div>
             <div class="project__body">
               <div class="project__top">
@@ -356,14 +358,14 @@
                 <li><strong>~100</strong><span>contributors, no premium licences</span></li>
                 <li><strong>Dataverse</strong><span>vs SharePoint analysis led</span></li>
               </ul>
-              <a class="project__link" href="projects/kpi.html">Read the case study →</a>
+              <a class="project__link" href="projects/kpi.html">Read the case study <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
           <!-- CHS Capital -->
           <article class="project reveal">
-            <div class="project__media" style="--tint: #f2c811">
-              <span class="project__emoji">🏫</span>
+            <div class="project__media tone-yellow">
+              <span class="project__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 4 2v10H2V12l4-2"/><path d="M18 5v17"/><path d="m4 6 8-4 8 4"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/></svg></span>
             </div>
             <div class="project__body">
               <div class="project__top">
@@ -384,14 +386,14 @@
                 <li><strong>13 tables</strong><span>Dataverse model, 3NF</span></li>
                 <li><strong>~97</strong><span>concurrent projects</span></li>
               </ul>
-              <a class="project__link" href="projects/capital.html">Read the case study →</a>
+              <a class="project__link" href="projects/capital.html">Read the case study <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
           <!-- Housing maintenance -->
           <article class="project reveal">
-            <div class="project__media" style="--tint: #ff8c00">
-              <span class="project__emoji">🏠</span>
+            <div class="project__media tone-orange">
+              <span class="project__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
             </div>
             <div class="project__body">
               <div class="project__top">
@@ -412,7 +414,7 @@
                 <li><strong>Multi-party</strong><span>teams, surveyors and contractors on one record</span></li>
                 <li><strong>Role-based</strong><span>each party sees only their own work</span></li>
               </ul>
-              <a class="project__link" href="projects/housing.html">Read the case study →</a>
+              <a class="project__link" href="projects/housing.html">Read the case study <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
@@ -425,7 +427,7 @@
       <div class="container">
         <div class="section__head reveal">
           <p class="section__label">Experience</p>
-          <h2>Where I've worked.</h2>
+          <h2>Where I’ve worked.</h2>
         </div>
 
         <ol class="timeline reveal">
@@ -454,7 +456,7 @@
                 <div class="role">
                   <h4>Assistant BI and Power Apps Developer</h4>
                   <span class="role__dates">Nov 2024 — Oct 2025</span>
-                  <p>Split remit delivering low-code solutions while building the organisation's enterprise BI platform.</p>
+                  <p>Split remit delivering low-code solutions while building the organisation’s enterprise BI platform.</p>
                   <ul>
                     <li>Built production Power Apps and Power Automate solutions to streamline workflows across services, reducing manual effort and improving process reliability.</li>
                     <li>Designed SQL Server schemas and views; developed ETL pipelines in SSIS and Azure Data Factory to populate the data warehouse and enforce data quality standards.</li>
@@ -484,14 +486,14 @@
             <h3>Education</h3>
             <ul class="edu-list">
               <li class="edu">
-                <span class="edu__icon">🎓</span>
+                <span class="edu__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
                 <div>
                   <b>MSc Software Engineering</b>
                   <small>University of Westminster · 2021 — 2023</small>
                 </div>
               </li>
               <li class="edu">
-                <span class="edu__icon">🎓</span>
+                <span class="edu__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
                 <div>
                   <b>BSc Criminology and Policing</b>
                   <small>London Metropolitan University · 2016 — 2019</small>
@@ -535,15 +537,15 @@
         <div class="contact reveal">
           <div class="contact__glow" aria-hidden="true"></div>
           <p class="section__label">Contact</p>
-          <h2>Working on Power Platform or modernising<br />local government? Let's connect.</h2>
+          <h2>Working on Power Platform or modernising local government? Let’s connect.</h2>
           <p class="contact__lead">
-            Whether it's a project, a question, or just to compare notes on low-code in the
+            Whether it’s a project, a question, or just to compare notes on low-code in the
             public sector — the quickest way to reach me is email or LinkedIn.
           </p>
           <div class="contact__actions">
             <a class="btn btn--primary" href="mailto:mrmgluca@outlook.com">Email</a>
-            <a class="btn btn--primary" href="https://www.linkedin.com/in/m-g-luca/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn--primary" href="https://github.com/michaelgluca/" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn--primary" href="https://www.linkedin.com/in/m-g-luca/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+            <a class="btn btn--primary" href="https://github.com/michaelgluca/" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
           </div>
         </div>
       </div>

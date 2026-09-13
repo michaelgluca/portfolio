@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d12" />
   <title>Capital Programme Management App — Michael G. Luca</title>
   <meta name="description" content="Case study: a Dataverse-backed Power Platform application giving a UK public-sector organisation a single source of truth for its £24.5m schools capital programme." />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="canonical" href="https://michaelluca.co.uk/projects/capital.html" />
   <meta property="og:type" content="website" />
@@ -23,6 +24,7 @@
   <script src="../theme-init.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="nav" id="top">
     <div class="container nav__inner">
@@ -35,11 +37,11 @@
         <a href="../index.html#contact">Contact</a>
       </nav>
       <div class="nav__actions">
-        <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button class="icon-btn" id="theme-toggle" aria-label="Switch to light theme" title="Switch to light theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let's talk</a>
+        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let’s talk</a>
         <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
         </button>
@@ -47,7 +49,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="case-hero">
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container case-hero__inner">
@@ -80,8 +82,8 @@
 
     <section class="case-body">
       <div class="container case-body__grid">
-        <aside class="case-toc">
-          <h4>On this page</h4>
+        <nav class="case-toc" aria-label="On this page">
+          <p class="case-toc__label">On this page</p>
           <a href="#problem">The problem</a>
           <a href="#role">My role &amp; approach</a>
           <a href="#solution">The solution</a>
@@ -92,7 +94,7 @@
           <a href="#delivery">Delivery approach</a>
           <a href="#outcomes">Outcomes</a>
           <a href="#skills">Skills demonstrated</a>
-        </aside>
+        </nav>
 
         <article class="prose">
           <h2 id="problem">The problem</h2>
@@ -115,7 +117,7 @@
 
           <h2 id="role">My role and approach</h2>
           <p>
-            I owned the project from discovery through to build, working within the organisation's Power
+            I owned the project from discovery through to build, working within the organisation’s Power
             Platform governance framework — a staged process (as-is scoping → to-be and technical scoping →
             development → UAT → go-live), each stage gated by a technical-board decision.
           </p>
@@ -131,7 +133,7 @@
             finance references, and viewing status and dashboards. A Power Automate layer sits behind it for
             reminders, notifications, an automatic audit ledger and (in a later release) report generation.
             Reference/property data lives in a lightweight SharePoint list; project documents stay in
-            SharePoint and are linked rather than embedded; and actual spend is read from the organisation's
+            SharePoint and are linked rather than embedded; and actual spend is read from the organisation’s
             finance extract in the data warehouse rather than duplicated.
           </p>
           <p>
@@ -168,7 +170,7 @@
           <h2 id="automation">Automation and business logic</h2>
           <ul>
             <li><strong>Auto-numbering</strong> — each project gets a unique reference on creation.</li>
-            <li><strong>Stage-gating</strong> — business rules (with a flow where cross-table checks are needed) stop a project progressing until the right conditions are met: no order without a parent project; no move to "on site" or "practical completion" without the required dates and linked spend; no move to procurement without an approved governance record for the required gate.</li>
+            <li><strong>Stage-gating</strong> — business rules (with a flow where cross-table checks are needed) stop a project progressing until the right conditions are met: no order without a parent project; no move to “on site” or “practical completion” without the required dates and linked spend; no move to procurement without an approved governance record for the required gate.</li>
             <li><strong>Automatic progress ledger</strong> — a flow writes an immutable history row on every status or RAG change, capturing old and new values, the author and a timestamp.</li>
             <li><strong>Reminders</strong> — a scheduled flow sends Outlook/Teams reminders for projects with no recent update, or milestones falling due.</li>
             <li><strong>Assisted reporting</strong> — report generation that selects the correct decision/award template by value band and procurement route, and exports aligned to DfE statutory returns and the corporate quarterly return.</li>
@@ -177,39 +179,39 @@
           <h2 id="security">Security, audit and compliance</h2>
           <ul>
             <li><strong>Role-based access</strong> — surveyor/project manager (create and update), service manager/administrator (plus configuration, approvals and reporting), and read-only viewers for finance and the programme board.</li>
-            <li><strong>A deliberate audit strategy under a real constraint</strong> (tenant-wide auditing wasn't enabled): no delete privilege on any table (records raised in error are deactivated with a status reason); append-only ledgers for progress history and year-end snapshots (create/read only); automatic created/modified stamps for attribution; and selective native auditing on core tables and critical columns once available. Together these give a defensible audit trail without relying on tenant-wide audit.</li>
+            <li><strong>A deliberate audit strategy under a real constraint</strong> (tenant-wide auditing wasn’t enabled): no delete privilege on any table (records raised in error are deactivated with a status reason); append-only ledgers for progress history and year-end snapshots (create/read only); automatic created/modified stamps for attribution; and selective native auditing on core tables and critical columns once available. Together these give a defensible audit trail without relying on tenant-wide audit.</li>
             <li><strong>Data protection</strong> — OFFICIAL classification with a low personal-data footprint (staff names appear only through ownership and timesheets); DPIA prepared as part of the governance process.</li>
           </ul>
 
           <h2 id="decisions">Key technical decisions</h2>
           <div class="decision">
-            <h4>Surface spend, don't duplicate it</h4>
+            <h3>Surface spend, don’t duplicate it</h3>
             <p>Actual spend stays authoritative in the finance system and is read from the data-warehouse extract, linked by PO number (centrally procured) or invoice + supplier ID (school-led). This keeps Dataverse lean and avoids a fragile two-way sync; identifiers are keyed manually in the MVP, with an automated picker as a later enhancement.</p>
           </div>
           <div class="decision">
-            <h4>A Programme grouping table instead of many-to-many</h4>
+            <h3>A Programme grouping table instead of many-to-many</h3>
             <p>Multi-site schemes are modelled as one programme with one project per school, keeping roll-ups a single hop from the project and avoiding a many-to-many relationship.</p>
           </div>
           <div class="decision">
-            <h4>Link documents, don't embed them</h4>
+            <h3>Link documents, don’t embed them</h3>
             <p>Reports and drawings stay in SharePoint and are referenced by URL, avoiding Dataverse storage cost and keeping documents where users already manage them.</p>
           </div>
           <div class="decision">
-            <h4>Mirror existing column names</h4>
+            <h3>Mirror existing column names</h3>
             <p>Fields deliberately echo the current tracker and the finance extract, easing user familiarity and making the future automated feed a direct mapping.</p>
           </div>
           <div class="decision">
-            <h4>Deliberate denormalisation for reporting integrity</h4>
-            <p>The year-end snapshot stores a few reported values as text (e.g. funding source name) so figures "as reported" survive later changes to reference data.</p>
+            <h3>Deliberate denormalisation for reporting integrity</h3>
+            <p>The year-end snapshot stores a few reported values as text (e.g. funding source name) so figures “as reported” survive later changes to reference data.</p>
           </div>
           <div class="decision">
-            <h4>Canvas app plus automation, not automation alone</h4>
+            <h3>Canvas app plus automation, not automation alone</h3>
             <p>Day-to-day management needs an interactive app; the reminders, notifications and report generation need a flow layer — the two together, not one or the other.</p>
           </div>
 
           <h2 id="delivery">Delivery approach</h2>
           <ul>
-            <li><strong>Managed-solution ALM</strong> — a Dataverse solution promoted Dev → Test → Production on the organisation's standard environments, with no app-specific environment required.</li>
+            <li><strong>Managed-solution ALM</strong> — a Dataverse solution promoted Dev → Test → Production on the organisation’s standard environments, with no app-specific environment required.</li>
             <li><strong>Phased delivery</strong> — an MVP for go-live (lifecycle, validation, finance linkage, reminders, ad-hoc/executive reporting), then a second release for automated statutory/quarterly returns and an automated finance picker, then future external school-partner access.</li>
             <li><strong>Continuous UAT</strong> — regular walkthroughs with the service manager and surveyors throughout, surfacing business-critical items early to de-risk delivery.</li>
           </ul>
