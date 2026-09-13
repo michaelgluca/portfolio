@@ -9,5 +9,5 @@
   } catch (e) {}
   document.documentElement.dataset.theme = theme;
   var meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.content = theme === 'light' ? '#f7f8fb' : '#0b0d12';
+  if (meta) meta.content = theme === 'light' ? '#ffffff' : '#1c2229';
 })();

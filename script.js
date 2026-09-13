@@ -18,7 +18,7 @@
       const label = light ? 'Switch to dark theme' : 'Switch to light theme';
       themeBtn.setAttribute('aria-label', label);
       themeBtn.title = label;
-      if (themeMeta) themeMeta.content = light ? '#f7f8fb' : '#0b0d12';
+      if (themeMeta) themeMeta.content = light ? '#ffffff' : '#1c2229';
     };
     themeBtn.addEventListener('click', () => {
       root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
