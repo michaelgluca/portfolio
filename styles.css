@@ -338,7 +338,7 @@ strong { font-weight: 700; }
 
 .case-card__body { display: flex; flex-direction: column; gap: .65rem; padding: 1.4rem 1.5rem 1.5rem; }
 .case-card--featured .case-card__body { gap: .9rem; padding: 2rem 2.25rem; }
-.case-card__tags { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-text); }
+.case-card__tags { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .02em; color: var(--accent-text); }
 .case-card h3 { font-size: 1.5rem; font-weight: 700; line-height: 1.15; }
 .case-card--featured h3 { font-size: 2rem; }
 .case-card h3 a:hover { color: var(--accent-text); }
@@ -423,7 +423,7 @@ strong { font-weight: 700; }
 .back-link { display: inline-flex; align-items: center; gap: .5rem; align-self: flex-start; padding: .5rem 0; margin: -.5rem 0; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); }
 .back-link:hover { color: var(--text); }
 .back-link svg { width: 14px; height: 14px; }
-.case-hero__tags { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-text); }
+.case-hero__tags { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .02em; color: var(--accent-text); }
 .case-hero h1 { font-size: clamp(2.4rem, 4.7vw, 3.75rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.02; max-width: 18ch; }
 .case-hero__sub { font-size: 1.35rem; line-height: 1.4; color: var(--text-2); margin: 0; max-width: 40ch; }
 .case-hero__lead { font-size: 1.1rem; line-height: 1.6; color: var(--text-muted); margin: 0; max-width: 62ch; }
@@ -572,7 +572,7 @@ strong { font-weight: 700; }
     border: 0; border-radius: var(--radius);
     font-weight: 700;
   }
-  .nav__links .nav__menu-cta:hover { background: var(--accent-hover); }
+  .nav__links .nav__menu-cta:hover { background: var(--accent-hover); color: var(--accent-ink); }
 
   .hero__title { max-width: none; }
   .hero__actions { flex-direction: column; }
