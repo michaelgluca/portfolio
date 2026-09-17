@@ -11,13 +11,15 @@
   /* ---------- Theme toggle ---------- */
   const themeBtn = document.getElementById('theme-toggle');
   const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const schemeMeta = document.querySelector('meta[name="color-scheme"]');
   if (themeBtn) {
     const sync = () => {
       const light = root.dataset.theme === 'light';
       const label = light ? 'Switch to dark theme' : 'Switch to light theme';
       themeBtn.setAttribute('aria-label', label);
       themeBtn.title = label;
-      if (themeMeta) themeMeta.content = light ? '#ffffff' : '#1c2229';
+      if (themeMeta) themeMeta.content = light ? '#ffffff' : '#0e1116';
+      if (schemeMeta) schemeMeta.content = light ? 'light dark' : 'dark light';
     };
     themeBtn.addEventListener('click', () => {
       root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
@@ -129,31 +131,4 @@
     window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
   });
   update();
-})();
-
-/* ---------- Hero app window: tilts toward the cursor (fine pointers only) ---------- */
-(function () {
-  const stage = document.querySelector('.hero__visual');
-  if (!stage) return;
-  const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches
-    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!canTilt) return;
-  let raf = 0;
-  stage.addEventListener('pointermove', (e) => {
-    if (raf) return;
-    raf = requestAnimationFrame(() => {
-      raf = 0;
-      const r = stage.getBoundingClientRect();
-      const px = (e.clientX - r.left) / r.width;   // 0 (left) .. 1 (right)
-      const py = (e.clientY - r.top) / r.height;   // 0 (top)  .. 1 (bottom)
-      stage.style.setProperty('--ry', `${(-6 + (0.5 - px) * 10).toFixed(2)}deg`);
-      stage.style.setProperty('--rx', `${(2 + (0.5 - py) * 8).toFixed(2)}deg`);
-      stage.classList.add('is-tracking');
-    });
-  });
-  stage.addEventListener('pointerleave', () => {
-    stage.classList.remove('is-tracking');
-    stage.style.removeProperty('--ry');
-    stage.style.removeProperty('--rx');
-  });
 })();

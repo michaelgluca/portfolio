@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0e1116" />
   <title>FPN Digital Transformation | Michael G. Luca</title>
   <meta name="description" content="Case study: replacing a manual, spreadsheet-and-email Fixed Penalty Notice process with an integrated Power Platform workflow for frontline enforcement officers." />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
@@ -16,10 +17,11 @@
   <meta property="og:image" content="https://michaelluca.co.uk/assets/photo.jpg" />
   <meta name="twitter:card" content="summary" />
 
+  <link rel="preload" href="../assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="../styles.css?v=20260917" />
-  <script src="../theme-init.js?v=20260917"></script>
+  <link rel="stylesheet" href="../styles.css?v=20260917b" />
+  <script src="../theme-init.js?v=20260917b"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -28,11 +30,11 @@
     <div class="container nav__inner">
       <a href="../index.html" class="nav__brand">Michael G. Luca</a>
       <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="../index.html#work" class="is-active" aria-current="page">Case studies</a>
         <a href="../index.html#about">About</a>
-        <a href="../index.html#skills">Skills</a>
-        <a href="../index.html#projects" class="is-active" aria-current="page">Projects</a>
+        <a href="../index.html#stack">Stack</a>
         <a href="../index.html#experience">Experience</a>
-        <a href="../index.html#contact">Contact</a>
+        <a href="../index.html#contact" class="nav__menu-cta">Get in touch</a>
       </nav>
       <div class="nav__actions">
         <a href="#top" class="icon-btn nav__top" id="scroll-top" aria-label="Scroll to top" title="Scroll to top"><span aria-hidden="true">↑</span></a>
@@ -40,7 +42,7 @@
           <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="../index.html#contact" class="btn btn--primary nav__cta">Let’s talk</a>
+        <a href="../index.html#contact" class="btn btn--primary nav__cta">Get in touch</a>
         <button class="icon-btn nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
         </button>
@@ -51,13 +53,8 @@
   <main id="main">
     <section class="case-hero">
       <div class="container case-hero__inner">
-        <a class="back-link" href="../index.html#projects">All projects</a>
-        <div class="case-hero__top">
-          <span class="status-pill">Live</span>
-          <ul class="tags">
-            <li>Digital transformation</li><li>Process automation</li><li>Local government</li><li>Low-code</li>
-          </ul>
-        </div>
+        <a class="back-link" href="../index.html#work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></svg>All case studies</a>
+        <span class="case-hero__tags">Live · Digital transformation · Process automation · Local government · Low-code</span>
         <h1>FPN Digital Transformation</h1>
         <p class="case-hero__sub">Field-to-register automation for frontline enforcement</p>
         <p class="case-hero__lead">
@@ -76,10 +73,18 @@
       </div>
     </section>
 
+    <!-- Screenshot slot: remove "shot--placeholder" and the two spans, then add <img src="..." alt="..."> inside the figure -->
+    <div class="container">
+      <figure class="shot shot--placeholder case-hero__shot" aria-hidden="true">
+        <span class="shot__label">[ Screenshot: FPN issue screen on a phone, redacted ]</span>
+        <span class="shot__meta">390 × 844</span>
+      </figure>
+    </div>
+
     <section class="case-body">
       <div class="container case-body__grid">
         <nav class="case-toc" aria-label="On this page">
-          <p class="case-toc__label">On this page</p>
+          <p class="meta-label case-toc__label">On this page</p>
           <a href="#overview">Overview</a>
           <a href="#problem">The problem</a>
           <a href="#built">What I built</a>
@@ -202,7 +207,7 @@
 
     <section class="case-next">
       <div class="container">
-        <h3>More projects</h3>
+        <h2>More case studies</h2>
         <div class="next-grid">
           <a class="next-card" href="field-enforcement.html"><small>Field enforcement</small><b>Field Enforcement App</b></a>
           <a class="next-card" href="kpi.html"><small>Performance management</small><b>KPI &amp; Performance Management App</b></a>
@@ -216,9 +221,10 @@
   <footer class="footer">
     <div class="container footer__inner">
       <span>© <span id="year"></span> Michael G. Luca</span>
+      <span class="footer__domain">michaelluca.co.uk</span>
     </div>
   </footer>
 
-  <script src="../script.js?v=20260917"></script>
+  <script src="../script.js?v=20260917b"></script>
 </body>
 </html>
