@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="ui.css">
+<style>
+  body { width: 1600px; height: 1000px; display: flex; flex-direction: column; background: #fff; }
+  .appbar { height: 56px; padding: 0 20px; }
+  .appbar nav { display: flex; gap: 4px; margin-left: 24px; }
+  .appbar nav span { padding: 6px 12px; border-radius: 4px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.75); }
+  .appbar nav span.on { background: rgba(255,255,255,.14); color: #fff; }
+  .main { flex: 1; display: grid; grid-template-columns: 420px 1fr; min-height: 0; }
+  .side { border-right: 1px solid var(--line); padding: 22px 24px; background: var(--canvas); display: flex; flex-direction: column; gap: 18px; }
+  .side h2 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .side .card { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+  .side .card b { font-size: 15px; }
+  .side .card .m { font-size: 13px; color: var(--muted); }
+  .kv { display: grid; grid-template-columns: 96px 1fr; gap: 6px 12px; font-size: 13px; }
+  .kv dt { color: var(--muted); } .kv dd { margin: 0; font-weight: 500; }
+  .photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .photo { aspect-ratio: 4 / 3; }
+  .form { padding: 26px 40px; display: flex; flex-direction: column; gap: 20px; max-width: 980px; }
+  .form h2 { font-size: 22px; font-weight: 600; }
+  .form .sub { color: var(--muted); font-size: 14px; margin-top: -12px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px 20px; }
+  .fine { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; padding: 16px 18px; background: var(--blue-bg); border: 1px solid #c7e0f4; border-radius: 6px; }
+  .fine .k { font-size: 12px; color: var(--muted); font-weight: 600; }
+  .fine .v { font-size: 26px; font-weight: 600; letter-spacing: -0.01em; }
+  .fine .n { font-size: 12px; color: var(--muted); }
+  .check { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; }
+  .check i { width: 18px; height: 18px; border-radius: 3px; background: var(--blue); display: grid; place-items: center; }
+  .check i::after { content: ""; width: 5px; height: 9px; border: solid #fff; border-width: 0 2px 2px 0; transform: translateY(-1px) rotate(45deg); }
+  .actions { display: flex; gap: 10px; align-items: center; padding-top: 6px; border-top: 1px solid var(--line); }
+  .actions .hint { margin-left: auto; font-size: 13px; color: var(--muted); }
+  h3.sec { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-top: 6px; }
+</style></head>
+<body>
+  <div class="appbar">
+    <h1>Field Enforcement</h1>
+    <nav><span>Cases</span><span>Patrol</span><span class="on">Notices</span><span>Reports</span></nav>
+    <span class="spacer"></span><span class="avatar">SP</span>
+  </div>
+  <div class="main">
+    <aside class="side">
+      <h2>From case</h2>
+      <div class="card">
+        <b>ENF-2026-0421 · Littering</b>
+        <span class="m">Broad Street, outside no. 42 · opened today 10:20</span>
+        <dl class="kv" style="margin-top:6px">
+          <dt>Officer</dt><dd>S. Patel</dd>
+          <dt>Witnessed</dt><dd>Yes, in person</dd>
+          <dt>Location</dt><dd>51.4892, −0.1201 (GPS)</dd>
+        </dl>
+      </div>
+      <h2>Evidence attached · 2</h2>
+      <div class="photos">
+        <div class="photo"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+        <div class="photo"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+      </div>
+      <h2>Previous notices at this address</h2>
+      <div class="card"><b>None found</b><span class="m">Register checked 10:24</span></div>
+    </aside>
+    <section class="form">
+      <h2>Issue a Fixed Penalty Notice</h2>
+      <p class="sub">Notice FPN-2026-01187 · the record is written to the central register when issued</p>
+
+      <h3 class="sec">Offence</h3>
+      <div class="grid2">
+        <div class="field"><label>Offence</label><div class="input"><span>Littering · Environmental Protection Act 1990, s.87</span><i class="caret"></i></div></div>
+        <div class="field"><label>Offence code</label><div class="value">L01</div></div>
+      </div>
+      <div class="fine">
+        <div><div class="k">Penalty</div><div class="v">£150</div><div class="n">set by offence code</div></div>
+        <div><div class="k">Early payment</div><div class="v">£100</div><div class="n">if paid within 14 days</div></div>
+        <div><div class="k">Payment due</div><div class="v">1 Oct 2026</div><div class="n">28 days from issue</div></div>
+      </div>
+
+      <h3 class="sec">Person</h3>
+      <div class="grid3">
+        <div class="field"><label>Full name</label><div class="input input--focus">J. Example</div></div>
+        <div class="field"><label>Date of birth</label><div class="input">14 / 03 / 1988</div></div>
+        <div class="field"><label>ID seen</label><div class="input"><span>Driving licence</span><i class="caret"></i></div></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label>Address</label><div class="input">42 Broad Street, [postcode]</div></div>
+        <div class="field"><label>Contact</label><div class="input">07700 900 000</div></div>
+      </div>
+      <span class="check"><i></i>Offender informed of the offence and their right to be tried instead</span>
+
+      <div class="actions">
+        <span class="btn">Save draft</span>
+        <span class="btn btn--primary">Issue notice</span>
+        <span class="hint">Issuing sends the notice to print, writes the register entry and links it to the case.</span>
+      </div>
+    </section>
+  </div>
+</body></html>

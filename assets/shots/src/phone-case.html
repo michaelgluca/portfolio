@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="ui.css">
+<style>
+  body { width: 390px; height: 844px; display: flex; flex-direction: column; background: #fff; }
+  .appbar { height: 56px; padding: 0 12px 0 8px; }
+  .appbar h1 { font-size: 15px; }
+  .head { padding: 16px 16px 12px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+  .head .type { font-size: 12px; color: var(--muted); }
+  .head h2 { font-size: 18px; font-weight: 600; line-height: 1.25; }
+  .head .row { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+  .body { flex: 1; padding: 0 16px; overflow: hidden; }
+  .section { padding: 14px 0; border-bottom: 1px solid var(--line-2); }
+  .section h3 { font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: .04em; }
+  .kv { display: grid; grid-template-columns: 96px 1fr; gap: 6px 12px; font-size: 14px; }
+  .kv dt { color: var(--muted); } .kv dd { margin: 0; font-weight: 500; }
+  .photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .photo { aspect-ratio: 1; }
+  .photo.add { background: #fff; border: 1.5px dashed #c8c6c4; display: grid; place-items: center; color: var(--muted); font-size: 12px; font-weight: 600; }
+  .photo.add::after { display: none; }
+  .timeline { display: flex; flex-direction: column; gap: 10px; }
+  .ev { display: grid; grid-template-columns: 14px 1fr; gap: 10px; font-size: 13px; }
+  .ev i { width: 10px; height: 10px; border-radius: 50%; background: var(--blue); margin-top: 4px; }
+  .ev .t { color: var(--muted); font-size: 12px; }
+  .actions { display: flex; gap: 10px; padding: 12px 16px 20px; border-top: 1px solid var(--line); background: #fff; }
+  .actions .btn { flex: 1; height: 44px; }
+</style></head>
+<body>
+  <div class="appbar">
+    <svg class="ico" viewBox="0 0 24 24" style="stroke:#fff"><path d="M15 6l-6 6 6 6"/></svg>
+    <h1>ENF-2026-0418</h1><span class="spacer"></span>
+    <svg class="ico" viewBox="0 0 24 24" style="stroke:#fff"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+  </div>
+  <div class="head">
+    <span class="type">Fly-tipping · Environmental Protection Act 1990 s.33</span>
+    <h2>Mattress and bags, rear of Mill Lane</h2>
+    <div class="row"><span class="chip chip--overdue">Overdue</span><span class="chip chip--neutral">Priority 2</span></div>
+  </div>
+  <div class="body">
+    <div class="section">
+      <h3>Details</h3>
+      <dl class="kv">
+        <dt>Location</dt><dd>Rear of 12–18 Mill Lane, Riverside</dd>
+        <dt>Reported</dt><dd>15 Sep 2026, 09:12</dd>
+        <dt>Source</dt><dd>Officer patrol</dd>
+        <dt>Officer</dt><dd>M. Reyes</dd>
+        <dt>Due</dt><dd style="color:#d13438">16 Sep 2026 · 1 day overdue</dd>
+      </dl>
+    </div>
+    <div class="section">
+      <h3>Evidence · 3</h3>
+      <div class="photos">
+        <div class="photo"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+        <div class="photo"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+        <div class="photo add">+ Add</div>
+      </div>
+    </div>
+    <div class="section">
+      <h3>Activity</h3>
+      <div class="timeline">
+        <div class="ev"><i></i><div>Site visited, photos taken, waste tagged for removal<div class="t">Today 08:41 · M. Reyes</div></div></div>
+        <div class="ev"><i style="background:#c8c6c4"></i><div>Removal request sent to Waste Services<div class="t">15 Sep 10:05 · automated</div></div></div>
+        <div class="ev"><i style="background:#c8c6c4"></i><div>Case opened from patrol<div class="t">15 Sep 09:12 · M. Reyes</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="actions"><span class="btn">Add evidence</span><span class="btn btn--primary">Issue FPN</span></div>
+</body></html>

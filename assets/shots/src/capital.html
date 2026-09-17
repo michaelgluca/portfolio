@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="ui.css">
+<style>
+  body { width: 1600px; height: 1000px; display: flex; flex-direction: column; background: var(--canvas); }
+  .top { height: 48px; display: flex; align-items: center; gap: 16px; padding: 0 16px; background: #0f2b46; color: #fff; }
+  .top .app { font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 10px; }
+  .top .app i { width: 24px; height: 24px; border-radius: 4px; background: #2b88d8; display: inline-block; }
+  .top .search { margin-left: auto; width: 360px; height: 30px; border-radius: 4px; background: rgba(255,255,255,.14); display: flex; align-items: center; gap: 8px; padding: 0 10px; font-size: 13px; color: rgba(255,255,255,.7); }
+  .main { flex: 1; display: grid; grid-template-columns: 220px 1fr; min-height: 0; }
+  .nav { background: #fff; border-right: 1px solid var(--line); padding: 12px 0; }
+  .nav h3 { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; padding: 8px 16px 4px; }
+  .nav li { display: flex; align-items: center; gap: 10px; padding: 8px 16px; font-size: 14px; }
+  .nav li.on { background: var(--blue-bg); box-shadow: inset 3px 0 0 var(--blue); font-weight: 600; }
+  .nav li i { width: 16px; height: 16px; border-radius: 3px; background: #c8c6c4; display: inline-block; }
+  .nav li.on i { background: var(--blue); }
+  .content { display: flex; flex-direction: column; min-height: 0; }
+  .cmd { height: 44px; display: flex; align-items: center; gap: 4px; padding: 0 12px; background: #fff; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .cmd span { padding: 6px 10px; border-radius: 4px; display: inline-flex; align-items: center; gap: 6px; }
+  .cmd span b { font-weight: 600; }
+  .viewhead { display: flex; align-items: center; gap: 16px; padding: 14px 20px 10px; }
+  .viewhead h2 { font-size: 20px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .viewhead .count { color: var(--muted); font-size: 13px; }
+  .viewhead .filter { margin-left: auto; height: 32px; width: 260px; border: 1px solid #8a8886; border-radius: 4px; background: #fff; display: flex; align-items: center; padding: 0 10px; font-size: 13px; color: var(--faint); }
+  .summary { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; padding: 0 20px 12px; }
+  .sum { padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+  .sum .k { font-size: 12px; color: var(--muted); font-weight: 600; }
+  .sum .v { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .sum .n { font-size: 12px; color: var(--muted); }
+  .grid { margin: 0 20px 16px; flex: 1; overflow: hidden; background: #fff; }
+  th { background: #faf9f8; }
+  td.name { font-weight: 600; color: var(--blue); }
+  .bar { position: relative; height: 6px; background: var(--line-2); border-radius: 3px; width: 110px; display: inline-block; vertical-align: middle; margin-right: 8px; }
+  .bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--blue); border-radius: 3px; }
+  .bar i.over { background: var(--bad); }
+</style></head>
+<body>
+  <div class="top"><span class="app"><i></i>Capital Programme</span><span class="search">Search projects, schools, contractors…</span><span class="avatar">ML</span></div>
+  <div class="main">
+    <nav class="nav">
+      <h3>Programme</h3>
+      <ul><li><i></i>Home</li><li><i></i>Dashboards</li></ul>
+      <h3>Delivery</h3>
+      <ul><li class="on"><i></i>Projects</li><li><i></i>Schools</li><li><i></i>Contractors</li><li><i></i>Milestones</li><li><i></i>Risks &amp; issues</li></ul>
+      <h3>Finance</h3>
+      <ul><li><i></i>Budgets</li><li><i></i>Forecasts</li><li><i></i>Invoices</li><li><i></i>Funding streams</li></ul>
+      <h3>Governance</h3>
+      <ul><li><i></i>Approvals</li><li><i></i>Board reports</li></ul>
+    </nav>
+    <section class="content">
+      <div class="cmd"><span><b>+</b> New</span><span>Edit</span><span>Delete</span><span>Refresh</span><span>Export to Excel</span><span>Run report</span><span>Flow</span></div>
+      <div class="viewhead"><h2>Active projects <i class="caret"></i></h2><span class="count">97 records · sorted by forecast variance</span><span class="filter">Filter by keyword</span></div>
+      <div class="summary">
+        <div class="card sum"><span class="k">Programme budget</span><span class="v">£24.5m</span><span class="n">5-year schools programme</span></div>
+        <div class="card sum"><span class="k">Committed</span><span class="v">£18.2m</span><span class="n">74% of budget</span></div>
+        <div class="card sum"><span class="k">Spend to date</span><span class="v">£9.7m</span><span class="n">as at 31 Aug 2026</span></div>
+        <div class="card sum"><span class="k">Forecast outturn</span><span class="v">£24.1m</span><span class="n" style="color:#107c10">£0.4m under budget</span></div>
+        <div class="card sum"><span class="k">Projects</span><span class="v">97</span><span class="n">12 on site · 61 in design · 24 complete</span></div>
+      </div>
+      <div class="card grid">
+        <table>
+          <thead><tr><th style="width:36px"></th><th>Project</th><th>School</th><th>Phase</th><th class="num">Budget</th><th class="num">Spend to date</th><th class="num">Forecast</th><th class="num">Variance</th><th>Progress</th><th>RAG</th></tr></thead>
+          <tbody>
+            <tr><td>☐</td><td class="name">Roof replacement, main block</td><td>Oakfield Primary</td><td>On site</td><td class="num">£1,240,000</td><td class="num">£812,400</td><td class="num">£1,305,000</td><td class="num" style="color:#d13438">+£65,000</td><td><span class="bar"><i class="over" style="width:66%"></i></span>66%</td><td><span class="chip chip--overdue">Red</span></td></tr>
+            <tr><td>☐</td><td class="name">Boiler and heating renewal</td><td>St Mark's Junior</td><td>On site</td><td class="num">£480,000</td><td class="num">£391,200</td><td class="num">£498,000</td><td class="num" style="color:#c19c00">+£18,000</td><td><span class="bar"><i style="width:82%"></i></span>82%</td><td><span class="chip chip--progress">Amber</span></td></tr>
+            <tr><td>☐</td><td class="name">Two-classroom extension</td><td>Riverside Academy</td><td>Design</td><td class="num">£2,150,000</td><td class="num">£164,000</td><td class="num">£2,150,000</td><td class="num">£0</td><td><span class="bar"><i style="width:8%"></i></span>8%</td><td><span class="chip chip--done">Green</span></td></tr>
+            <tr><td>☐</td><td class="name">Fire door compliance, phase 2</td><td>Northgate High</td><td>Procurement</td><td class="num">£320,000</td><td class="num">£0</td><td class="num">£305,000</td><td class="num" style="color:#107c10">−£15,000</td><td><span class="bar"><i style="width:0%"></i></span>0%</td><td><span class="chip chip--done">Green</span></td></tr>
+            <tr><td>☐</td><td class="name">Window replacement, east wing</td><td>Highfield Primary</td><td>On site</td><td class="num">£610,000</td><td class="num">£577,000</td><td class="num">£604,000</td><td class="num" style="color:#107c10">−£6,000</td><td><span class="bar"><i style="width:95%"></i></span>95%</td><td><span class="chip chip--done">Green</span></td></tr>
+            <tr><td>☐</td><td class="name">SEND resource base fit-out</td><td>Castle Community School</td><td>Design</td><td class="num">£890,000</td><td class="num">£42,000</td><td class="num">£890,000</td><td class="num">£0</td><td><span class="bar"><i style="width:5%"></i></span>5%</td><td><span class="chip chip--done">Green</span></td></tr>
+            <tr><td>☐</td><td class="name">Playground resurfacing</td><td>Mill Lane Infants</td><td>Complete</td><td class="num">£95,000</td><td class="num">£93,100</td><td class="num">£93,100</td><td class="num" style="color:#107c10">−£1,900</td><td><span class="bar"><i style="width:100%"></i></span>100%</td><td><span class="chip chip--done">Green</span></td></tr>
+            <tr><td>☐</td><td class="name">Kitchen ventilation upgrade</td><td>Broad Street Primary</td><td>On site</td><td class="num">£210,000</td><td class="num">£128,000</td><td class="num">£226,000</td><td class="num" style="color:#c19c00">+£16,000</td><td><span class="bar"><i style="width:58%"></i></span>58%</td><td><span class="chip chip--progress">Amber</span></td></tr>
+            <tr><td>☐</td><td class="name">Roof safety and access works</td><td>Oakfield Primary</td><td>Procurement</td><td class="num">£140,000</td><td class="num">£0</td><td class="num">£140,000</td><td class="num">£0</td><td><span class="bar"><i style="width:0%"></i></span>0%</td><td><span class="chip chip--done">Green</span></td></tr>
+            <tr><td>☐</td><td class="name">Sports hall floor</td><td>Northgate High</td><td>Design</td><td class="num">£175,000</td><td class="num">£9,500</td><td class="num">£175,000</td><td class="num">£0</td><td><span class="bar"><i style="width:5%"></i></span>5%</td><td><span class="chip chip--done">Green</span></td></tr>
+            <tr><td>☐</td><td class="name">Electrical rewire, phase 1</td><td>St Mark's Junior</td><td>Complete</td><td class="num">£260,000</td><td class="num">£258,700</td><td class="num">£258,700</td><td class="num" style="color:#107c10">−£1,300</td><td><span class="bar"><i style="width:100%"></i></span>100%</td><td><span class="chip chip--done">Green</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body></html>

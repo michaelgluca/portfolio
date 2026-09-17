@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="ui.css">
+<style>
+  body { width: 1440px; height: 900px; display: flex; flex-direction: column; }
+  .top { display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 24px; background: #fff; border-bottom: 1px solid var(--line); }
+  .top h1 { font-size: 16px; font-weight: 600; }
+  .top .sub { color: var(--muted); font-size: 13px; }
+  .top .filters { margin-left: auto; display: flex; gap: 8px; }
+  .filter { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 12px; border: 1px solid var(--line); border-radius: 4px; font-size: 13px; background: #fff; }
+  .filter b { font-weight: 600; }
+  .page { flex: 1; padding: 20px 24px; display: grid; grid-template-rows: 110px 300px 1fr; gap: 16px; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .kpi { padding: 16px 20px; display: flex; flex-direction: column; justify-content: space-between; }
+  .kpi .label { font-size: 13px; color: var(--muted); font-weight: 600; }
+  .kpi .val { font-size: 34px; font-weight: 600; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+  .kpi .delta { font-size: 12px; font-weight: 600; }
+  .kpi .delta.up { color: var(--ok); } .kpi .delta.down { color: var(--bad); } .kpi .delta.flat { color: var(--muted); }
+  .row2 { display: grid; grid-template-columns: 1.1fr 1.5fr 0.9fr; gap: 16px; }
+  .panel { padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+  .panel h2 { font-size: 14px; font-weight: 600; }
+  .panel .hint { font-size: 12px; color: var(--muted); margin-top: -8px; }
+  .bars { display: grid; grid-template-columns: 110px 1fr 48px; gap: 8px 10px; align-items: center; font-size: 12px; }
+  .bars .name { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bars .track { height: 14px; background: var(--line-2); border-radius: 2px; overflow: hidden; }
+  .bars .fill { height: 100%; background: var(--blue); }
+  .bars .n { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .legend { display: flex; gap: 14px; font-size: 12px; color: var(--muted); flex-wrap: wrap; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+  .donut-wrap { display: flex; align-items: center; gap: 18px; flex: 1; }
+  .donut-legend { display: flex; flex-direction: column; gap: 8px; font-size: 12px; }
+  .donut-legend b { font-variant-numeric: tabular-nums; }
+  .tbl { padding: 0; overflow: hidden; }
+  .tbl h2 { font-size: 14px; font-weight: 600; padding: 14px 20px 8px; }
+  .tbl th:first-child, .tbl td:first-child { padding-left: 20px; }
+  .rag { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 0; }
+</style></head>
+<body>
+  <div class="top">
+    <div><h1>Field Enforcement · Oversight</h1><div class="sub">Live from the Field Enforcement App · refreshed 08:00 today</div></div>
+    <div class="filters">
+      <span class="filter">Period <b>Sep 2026</b><i class="caret"></i></span>
+      <span class="filter">Ward <b>All</b><i class="caret"></i></span>
+      <span class="filter">Team <b>All</b><i class="caret"></i></span>
+    </div>
+  </div>
+  <div class="page">
+    <div class="kpis">
+      <div class="card kpi"><span class="label">Patrols this month</span><span class="val">15,204</span><span class="delta up">▲ 9% vs last month</span></div>
+      <div class="card kpi"><span class="label">Open cases</span><span class="val">128</span><span class="delta flat">— 3 fewer than last week</span></div>
+      <div class="card kpi"><span class="label">Overdue</span><span class="val" style="color:#d13438">7</span><span class="delta down">▲ 2 since Monday</span></div>
+      <div class="card kpi"><span class="label">Resolved, last 30 days</span><span class="val">1,042</span><span class="delta up">▲ 14% vs previous 30</span></div>
+    </div>
+
+    <div class="row2">
+      <div class="card panel">
+        <h2>Patrols by ward</h2>
+        <div class="bars">
+          <span class="name">Riverside</span><div class="track"><div class="fill" style="width:92%"></div></div><span class="n">2,614</span>
+          <span class="name">Northgate</span><div class="track"><div class="fill" style="width:80%"></div></div><span class="n">2,270</span>
+          <span class="name">Mill Lane</span><div class="track"><div class="fill" style="width:71%"></div></div><span class="n">2,018</span>
+          <span class="name">St Mark's</span><div class="track"><div class="fill" style="width:64%"></div></div><span class="n">1,812</span>
+          <span class="name">Oakfield</span><div class="track"><div class="fill" style="width:58%"></div></div><span class="n">1,647</span>
+          <span class="name">Broad Street</span><div class="track"><div class="fill" style="width:52%"></div></div><span class="n">1,470</span>
+          <span class="name">Highfield</span><div class="track"><div class="fill" style="width:47%"></div></div><span class="n">1,331</span>
+          <span class="name">Castle</span><div class="track"><div class="fill" style="width:41%"></div></div><span class="n">1,158</span>
+          <span class="name">Other</span><div class="track"><div class="fill" style="width:31%"></div></div><span class="n">884</span>
+        </div>
+      </div>
+
+      <div class="card panel">
+        <h2>Patrols per month</h2>
+        <div class="hint">Rolling 12 months · go-live in month 1</div>
+        <svg viewBox="0 0 560 210" width="100%" height="210" font-family="Segoe UI, system-ui" font-size="11">
+          <g stroke="#edebe9">
+            <line x1="40" y1="20" x2="540" y2="20"/><line x1="40" y1="65" x2="540" y2="65"/><line x1="40" y1="110" x2="540" y2="110"/><line x1="40" y1="155" x2="540" y2="155"/>
+          </g>
+          <line x1="40" y1="180" x2="540" y2="180" stroke="#c8c6c4"/>
+          <g fill="#8a8886" text-anchor="end"><text x="34" y="24">16k</text><text x="34" y="69">12k</text><text x="34" y="114">8k</text><text x="34" y="159">4k</text><text x="34" y="184">0</text></g>
+          <g fill="#8a8886" text-anchor="middle"><text x="60" y="200">Oct</text><text x="146" y="200">Dec</text><text x="232" y="200">Feb</text><text x="318" y="200">Apr</text><text x="404" y="200">Jun</text><text x="490" y="200">Aug</text></g>
+          <polyline fill="none" stroke="#0f6cbd" stroke-width="2.5" stroke-linejoin="round" points="60,92 103,94 146,88 189,80 232,72 275,66 318,58 361,52 404,46 447,40 490,36 520,32"/>
+          <polyline fill="none" stroke="#8a8886" stroke-width="1.5" stroke-dasharray="4 4" points="60,100 520,100"/>
+          <text x="524" y="112" fill="#8a8886" text-anchor="end">pre-app average · ~8k a month</text>
+          <g fill="#0f6cbd"><circle cx="520" cy="32" r="4"/></g>
+          <text x="512" y="24" fill="#0f6cbd" font-weight="600" text-anchor="end">15,204</text>
+        </svg>
+      </div>
+
+      <div class="card panel">
+        <h2>Case outcomes</h2>
+        <div class="hint">Cases closed in the last 30 days</div>
+        <div class="donut-wrap">
+          <svg viewBox="0 0 120 120" width="130" height="130">
+            <circle cx="60" cy="60" r="44" fill="none" stroke="#edebe9" stroke-width="18"/>
+            <circle cx="60" cy="60" r="44" fill="none" stroke="#0f6cbd" stroke-width="18" stroke-dasharray="152 276" transform="rotate(-90 60 60)"/>
+            <circle cx="60" cy="60" r="44" fill="none" stroke="#2b88d8" stroke-width="18" stroke-dasharray="58 276" stroke-dashoffset="-152" transform="rotate(-90 60 60)"/>
+            <circle cx="60" cy="60" r="44" fill="none" stroke="#c7e0f4" stroke-width="18" stroke-dasharray="41 276" stroke-dashoffset="-210" transform="rotate(-90 60 60)"/>
+            <text x="60" y="57" text-anchor="middle" font-size="18" font-weight="600" fill="#201f1e" font-family="Segoe UI, system-ui">1,042</text>
+            <text x="60" y="73" text-anchor="middle" font-size="9" fill="#605e5c" font-family="Segoe UI, system-ui">closed</text>
+          </svg>
+          <div class="donut-legend">
+            <span><i class="rag" style="background:#0f6cbd"></i>Resolved on site <b>55%</b></span>
+            <span><i class="rag" style="background:#2b88d8"></i>FPN issued <b>21%</b></span>
+            <span><i class="rag" style="background:#c7e0f4"></i>Referred <b>15%</b></span>
+            <span><i class="rag" style="background:#edebe9"></i>No further action <b>9%</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card tbl">
+      <h2>Officer activity, this week</h2>
+      <table>
+        <thead><tr><th>Officer</th><th>Team</th><th class="num">Patrols</th><th class="num">Cases opened</th><th class="num">Cases closed</th><th class="num">FPNs</th><th class="num">Avg. response</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>M. Reyes</td><td>Riverside</td><td class="num">184</td><td class="num">12</td><td class="num">15</td><td class="num">4</td><td class="num">1h 40m</td><td><i class="rag" style="background:#107c10"></i>On target</td></tr>
+          <tr><td>A. Okafor</td><td>Riverside</td><td class="num">171</td><td class="num">9</td><td class="num">11</td><td class="num">3</td><td class="num">2h 05m</td><td><i class="rag" style="background:#107c10"></i>On target</td></tr>
+          <tr><td>S. Patel</td><td>Northgate</td><td class="num">166</td><td class="num">14</td><td class="num">10</td><td class="num">6</td><td class="num">1h 55m</td><td><i class="rag" style="background:#107c10"></i>On target</td></tr>
+          <tr><td>J. Whitfield</td><td>Northgate</td><td class="num">149</td><td class="num">8</td><td class="num">9</td><td class="num">2</td><td class="num">2h 30m</td><td><i class="rag" style="background:#c19c00"></i>Watch</td></tr>
+          <tr><td>D. Kowalski</td><td>Mill Lane</td><td class="num">158</td><td class="num">11</td><td class="num">12</td><td class="num">5</td><td class="num">1h 50m</td><td><i class="rag" style="background:#107c10"></i>On target</td></tr>
+          <tr><td>L. Grant</td><td>Mill Lane</td><td class="num">162</td><td class="num">10</td><td class="num">13</td><td class="num">4</td><td class="num">1h 45m</td><td><i class="rag" style="background:#107c10"></i>On target</td></tr>
+          <tr><td>R. Osei</td><td>Castle</td><td class="num">131</td><td class="num">7</td><td class="num">6</td><td class="num">1</td><td class="num">3h 10m</td><td><i class="rag" style="background:#d13438"></i>Below</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body></html>

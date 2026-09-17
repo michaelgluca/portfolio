@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="ui.css">
+<style>
+  body { width: 1600px; height: 1000px; display: flex; flex-direction: column; background: #fff; }
+  .appbar { height: 56px; padding: 0 20px; }
+  .appbar nav { display: flex; gap: 4px; margin-left: 24px; }
+  .appbar nav span { padding: 6px 12px; border-radius: 4px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.75); }
+  .appbar nav span.on { background: rgba(255,255,255,.14); color: #fff; }
+  .main { flex: 1; display: grid; grid-template-columns: 440px 1fr; min-height: 0; }
+  .side { border-right: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; }
+  .search { margin: 14px 16px 6px; height: 38px; display: flex; align-items: center; gap: 10px; padding: 0 12px; border: 1px solid #c8c6c4; border-radius: 6px; color: var(--faint); }
+  .tabs { display: flex; gap: 4px; padding: 0 16px 8px; border-bottom: 1px solid var(--line); }
+  .tab { padding: 8px 10px; font-size: 13px; font-weight: 600; color: var(--muted); border-bottom: 2px solid transparent; }
+  .tab.on { color: var(--navy); border-bottom-color: var(--navy); }
+  .list { flex: 1; overflow: hidden; }
+  .case { display: grid; grid-template-columns: 1fr auto; gap: 3px 12px; padding: 13px 16px; border-bottom: 1px solid var(--line-2); }
+  .case.sel { background: var(--blue-bg); box-shadow: inset 3px 0 0 var(--navy); }
+  .case .ref { font-size: 12px; color: var(--muted); }
+  .case .title { font-size: 14px; font-weight: 600; grid-column: 1; }
+  .case .meta { font-size: 12px; color: var(--muted); grid-column: 1; }
+  .case .chip { grid-column: 2; grid-row: 1 / span 3; align-self: center; }
+  .content { display: grid; grid-template-rows: 1fr 340px; min-height: 0; }
+  .map { position: relative; background: #eef0ee; overflow: hidden; }
+  .map .ctl { position: absolute; top: 16px; right: 16px; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+  .map .ctl span { width: 32px; height: 32px; display: grid; place-items: center; font-weight: 600; border-bottom: 1px solid var(--line); }
+  .map .ctl span:last-child { border: 0; }
+  .map .title { position: absolute; top: 16px; left: 20px; padding: 6px 12px; background: #fff; border: 1px solid var(--line); border-radius: 4px; font-size: 13px; font-weight: 600; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+  .map .legend { position: absolute; bottom: 16px; right: 16px; padding: 8px 12px; background: #fff; border: 1px solid var(--line); border-radius: 4px; font-size: 12px; display: flex; gap: 14px; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+  .map .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+  .detail { border-top: 1px solid var(--line); padding: 18px 24px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; background: #fff; }
+  .detail h2 { font-size: 18px; font-weight: 600; }
+  .detail .sub { font-size: 13px; color: var(--muted); margin: 2px 0 12px; }
+  .kv { display: grid; grid-template-columns: 110px 1fr; gap: 6px 12px; font-size: 13px; }
+  .kv dt { color: var(--muted); } .kv dd { margin: 0; font-weight: 500; }
+  .actions { display: flex; gap: 10px; margin-top: 14px; }
+  .photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .photo { aspect-ratio: 4 / 3; }
+  .right h3 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .note { margin-top: 12px; font-size: 13px; padding: 10px 12px; background: var(--canvas); border-radius: 4px; color: var(--muted); }
+</style></head>
+<body>
+  <div class="appbar">
+    <h1>Field Enforcement</h1>
+    <nav><span class="on">Cases</span><span>Patrol</span><span>Notices</span><span>Reports</span></nav>
+    <span class="spacer"></span>
+    <span style="font-size:13px;opacity:.85">Riverside team · shift 07:00–15:00</span>
+    <span class="avatar">MR</span>
+  </div>
+  <div class="main">
+    <aside class="side">
+      <div class="search"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search cases, streets, references</div>
+      <div class="tabs"><span class="tab on">My cases · 12</span><span class="tab">Team · 128</span><span class="tab">Nearby · 9</span></div>
+      <ul class="list">
+        <li class="case sel"><span class="ref">ENF-2026-0418 · Fly-tipping</span><span class="title">Mattress and bags, Mill Lane rear</span><span class="meta">Riverside · opened 2 days ago</span><span class="chip chip--overdue">Overdue</span></li>
+        <li class="case"><span class="ref">ENF-2026-0421 · Littering</span><span class="title">Broad Street, outside no. 42</span><span class="meta">Broad Street · opened today</span><span class="chip chip--open">Open</span></li>
+        <li class="case"><span class="ref">ENF-2026-0417 · Abandoned vehicle</span><span class="title">Silver hatchback, Castle Road</span><span class="meta">Castle · opened 3 days ago</span><span class="chip chip--progress">In progress</span></li>
+        <li class="case"><span class="ref">ENF-2026-0412 · Dog fouling</span><span class="title">Oakfield Park, north gate</span><span class="meta">Oakfield · opened 4 days ago</span><span class="chip chip--progress">In progress</span></li>
+        <li class="case"><span class="ref">ENF-2026-0409 · Fly-tipping</span><span class="title">Builders' waste, St Mark's car park</span><span class="meta">St Mark's · awaiting evidence</span><span class="chip chip--neutral">Awaiting</span></li>
+        <li class="case"><span class="ref">ENF-2026-0404 · Graffiti</span><span class="title">Underpass, Northgate Bridge</span><span class="meta">Northgate · opened 6 days ago</span><span class="chip chip--open">Open</span></li>
+        <li class="case"><span class="ref">ENF-2026-0398 · Littering</span><span class="title">Highfield Parade bus stop</span><span class="meta">Highfield · closed yesterday</span><span class="chip chip--done">Resolved</span></li>
+        <li class="case"><span class="ref">ENF-2026-0395 · Fly-posting</span><span class="title">Hoardings, Station Approach</span><span class="meta">Castle · closed 2 days ago</span><span class="chip chip--done">Resolved</span></li>
+        <li class="case"><span class="ref">ENF-2026-0391 · Littering</span><span class="title">Riverside Walk, bench 4</span><span class="meta">Riverside · closed 3 days ago</span><span class="chip chip--done">Resolved</span></li>
+      </ul>
+    </aside>
+    <section class="content">
+      <div class="map">
+        <svg viewBox="0 0 1160 604" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <rect width="1160" height="604" fill="#eef0ee"/>
+          <!-- river -->
+          <path d="M-20 420 C 200 380, 320 470, 560 430 S 900 360, 1180 420 L 1180 500 C 900 440, 700 520, 560 500 S 200 460, -20 500 Z" fill="#cfe1ee"/>
+          <!-- parks -->
+          <rect x="700" y="80" width="220" height="150" rx="14" fill="#d9e8d3"/>
+          <rect x="120" y="60" width="150" height="110" rx="12" fill="#d9e8d3"/>
+          <!-- blocks -->
+          <g fill="#e2e4e1">
+            <rect x="40" y="200" width="120" height="70" rx="3"/><rect x="180" y="200" width="90" height="70" rx="3"/><rect x="300" y="60" width="130" height="90" rx="3"/><rect x="300" y="180" width="130" height="90" rx="3"/>
+            <rect x="470" y="60" width="110" height="60" rx="3"/><rect x="470" y="150" width="110" height="120" rx="3"/><rect x="620" y="60" width="60" height="210" rx="3"/>
+            <rect x="960" y="60" width="160" height="80" rx="3"/><rect x="960" y="170" width="160" height="100" rx="3"/>
+            <rect x="40" y="310" width="230" height="60" rx="3"/><rect x="300" y="310" width="280" height="60" rx="3"/><rect x="620" y="310" width="300" height="60" rx="3"/><rect x="960" y="310" width="160" height="60" rx="3"/>
+            <rect x="60" y="530" width="200" height="60" rx="3"/><rect x="300" y="540" width="260" height="50" rx="3"/><rect x="620" y="530" width="300" height="60" rx="3"/><rect x="960" y="530" width="160" height="60" rx="3"/>
+          </g>
+          <!-- roads -->
+          <g stroke="#ffffff" stroke-width="14" fill="none" stroke-linecap="round">
+            <path d="M0 290 H1160"/><path d="M0 390 H1160"/><path d="M0 515 H1160"/>
+            <path d="M285 0 V604"/><path d="M450 0 V604"/><path d="M600 0 V604"/><path d="M940 0 V604"/>
+          </g>
+          <g stroke="#f6f6f4" stroke-width="6" fill="none"><path d="M0 175 H1160"/><path d="M700 0 V290"/></g>
+          <!-- patrol route -->
+          <path d="M330 120 L 330 240 L 520 240 L 520 350 L 760 350 L 760 240 L 900 240" fill="none" stroke="#0f6cbd" stroke-width="4" stroke-dasharray="10 8" stroke-linecap="round" opacity=".8"/>
+          <!-- pins -->
+          <g font-family="Segoe UI, system-ui" font-size="12" font-weight="700" text-anchor="middle">
+            <g transform="translate(520 350)"><circle r="16" fill="#d13438" stroke="#fff" stroke-width="3"/><text y="4" fill="#fff">1</text></g>
+            <g transform="translate(760 240)"><circle r="14" fill="#0f6cbd" stroke="#fff" stroke-width="3"/><text y="4" fill="#fff">2</text></g>
+            <g transform="translate(330 120)"><circle r="14" fill="#c19c00" stroke="#fff" stroke-width="3"/><text y="4" fill="#fff">3</text></g>
+            <g transform="translate(900 240)"><circle r="14" fill="#c19c00" stroke="#fff" stroke-width="3"/><text y="4" fill="#fff">4</text></g>
+            <g transform="translate(1010 470)"><circle r="14" fill="#8a8886" stroke="#fff" stroke-width="3"/><text y="4" fill="#fff">5</text></g>
+            <g transform="translate(180 560)"><circle r="14" fill="#107c10" stroke="#fff" stroke-width="3"/><text y="4" fill="#fff">6</text></g>
+            <!-- officer -->
+            <g transform="translate(420 240)"><circle r="9" fill="#14305a" stroke="#fff" stroke-width="3"/><circle r="22" fill="none" stroke="#14305a" stroke-width="2" opacity=".35"/></g>
+          </g>
+          <g font-family="Segoe UI, system-ui" font-size="11" fill="#8a8886">
+            <text x="60" y="230">Riverside</text><text x="720" y="70" >Oakfield Park</text><text x="980" y="200">Northgate</text><text x="320" y="560">St Mark's</text><text x="640" y="560">Castle</text>
+          </g>
+        </svg>
+        <span class="title">Patrol · Riverside beat 2 · 3.4 km today</span>
+        <div class="ctl"><span>+</span><span>−</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="5"/></svg></span></div>
+        <div class="legend"><span><i style="background:#d13438"></i>Overdue</span><span><i style="background:#0f6cbd"></i>Open</span><span><i style="background:#c19c00"></i>In progress</span><span><i style="background:#107c10"></i>Resolved</span><span><i style="background:#14305a"></i>You</span></div>
+      </div>
+      <div class="detail">
+        <div>
+          <h2>ENF-2026-0418 · Mattress and bags, rear of Mill Lane</h2>
+          <div class="sub">Fly-tipping · Environmental Protection Act 1990 s.33 · <span style="color:#d13438;font-weight:600">1 day overdue</span></div>
+          <dl class="kv">
+            <dt>Location</dt><dd>Rear of 12–18 Mill Lane, Riverside</dd>
+            <dt>Reported</dt><dd>15 Sep 2026, 09:12 · officer patrol</dd>
+            <dt>Officer</dt><dd>M. Reyes</dd>
+            <dt>Last activity</dt><dd>Today 08:41 · site visited, waste tagged for removal</dd>
+          </dl>
+          <div class="actions"><span class="btn">Add evidence</span><span class="btn">Add note</span><span class="btn btn--primary">Issue FPN</span><span class="btn" style="margin-left:auto">Close case</span></div>
+        </div>
+        <div class="right">
+          <h3>Evidence · 3 photos</h3>
+          <div class="photos">
+            <div class="photo"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+            <div class="photo"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+            <div class="photo"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+          </div>
+          <div class="note">Photos are geotagged and timestamped at capture and written to the case record; nothing is re-keyed later.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body></html>

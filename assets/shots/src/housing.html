@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="ui.css">
+<style>
+  body { width: 1600px; height: 1000px; display: flex; flex-direction: column; background: var(--canvas); }
+  .top { height: 48px; display: flex; align-items: center; gap: 16px; padding: 0 16px; background: #3b2a5a; color: #fff; }
+  .top .app { font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 10px; }
+  .top .app i { width: 24px; height: 24px; border-radius: 4px; background: #8b6fc4; display: inline-block; }
+  .top .search { margin-left: auto; width: 360px; height: 30px; border-radius: 4px; background: rgba(255,255,255,.14); display: flex; align-items: center; padding: 0 10px; font-size: 13px; color: rgba(255,255,255,.7); }
+  .main { flex: 1; display: grid; grid-template-columns: 220px 1fr; min-height: 0; }
+  .nav { background: #fff; border-right: 1px solid var(--line); padding: 12px 0; }
+  .nav h3 { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; padding: 8px 16px 4px; }
+  .nav li { display: flex; align-items: center; gap: 10px; padding: 8px 16px; font-size: 14px; }
+  .nav li.on { background: #efe9f8; box-shadow: inset 3px 0 0 #5b3f8f; font-weight: 600; }
+  .nav li i { width: 16px; height: 16px; border-radius: 3px; background: #c8c6c4; display: inline-block; }
+  .nav li.on i { background: #5b3f8f; }
+  .content { display: flex; flex-direction: column; min-height: 0; }
+  .cmd { height: 44px; display: flex; align-items: center; gap: 4px; padding: 0 12px; background: #fff; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .cmd span { padding: 6px 10px; border-radius: 4px; }
+  .rec { padding: 14px 20px 10px; display: flex; align-items: flex-start; gap: 24px; background: #fff; border-bottom: 1px solid var(--line); }
+  .rec h2 { font-size: 20px; font-weight: 600; }
+  .rec .sub { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .rec .hdr { margin-left: auto; display: grid; grid-template-columns: repeat(4, auto); gap: 4px 28px; font-size: 13px; }
+  .rec .hdr span { color: var(--muted); } .rec .hdr b { font-weight: 600; }
+  .bpf { display: flex; margin: 12px 20px 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: #fff; }
+  .stage { flex: 1; display: flex; align-items: center; gap: 10px; padding: 10px 16px; font-size: 13px; border-right: 1px solid var(--line); }
+  .stage:last-child { border-right: 0; }
+  .stage i { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 700; color: #fff; background: #c8c6c4; }
+  .stage.done i { background: #107c10; } .stage.on i { background: #5b3f8f; }
+  .stage.on { background: #efe9f8; font-weight: 600; }
+  .stage small { display: block; color: var(--muted); font-weight: 400; font-size: 11px; }
+  .tabs { display: flex; gap: 4px; padding: 12px 20px 0; }
+  .tab { padding: 8px 12px; font-size: 14px; font-weight: 600; color: var(--muted); border-bottom: 2px solid transparent; }
+  .tab.on { color: #5b3f8f; border-bottom-color: #5b3f8f; }
+  .body { flex: 1; display: grid; grid-template-columns: 1fr 1fr 360px; gap: 16px; padding: 12px 20px 16px; min-height: 0; }
+  .sec { padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; }
+  .sec h3 { font-size: 14px; font-weight: 600; }
+  .frow { display: grid; grid-template-columns: 130px 1fr; gap: 6px 12px; align-items: center; font-size: 13px; }
+  .frow label { color: var(--muted); }
+  .frow .v { padding: 6px 0; border-bottom: 1px solid var(--line-2); min-height: 30px; display: flex; align-items: center; justify-content: space-between; }
+  .frow .v.lookup { color: #5b3f8f; font-weight: 600; }
+  .tl { display: flex; flex-direction: column; gap: 12px; }
+  .tl .ev { display: grid; grid-template-columns: 26px 1fr; gap: 8px; font-size: 13px; }
+  .tl .ev i { width: 22px; height: 22px; border-radius: 50%; background: #efe9f8; color: #5b3f8f; display: grid; place-items: center; font-size: 11px; font-weight: 700; }
+  .tl .t { color: var(--muted); font-size: 12px; }
+  .tl .ev.sys i { background: var(--line-2); color: var(--muted); }
+  .photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .photo { aspect-ratio: 4 / 3; }
+</style></head>
+<body>
+  <div class="top"><span class="app"><i></i>Housing Maintenance</span><span class="search">Search work orders, properties, contractors…</span><span class="avatar" style="background:#8b6fc4">ML</span></div>
+  <div class="main">
+    <nav class="nav">
+      <h3>Repairs</h3>
+      <ul><li><i></i>Reports</li><li><i></i>Surveys</li><li class="on"><i></i>Work orders</li><li><i></i>Completions</li></ul>
+      <h3>Assets</h3>
+      <ul><li><i></i>Properties</li><li><i></i>Tenancies</li><li><i></i>Components</li></ul>
+      <h3>Partners</h3>
+      <ul><li><i></i>Contractors</li><li><i></i>Surveyors</li><li><i></i>SLAs</li></ul>
+    </nav>
+    <section class="content">
+      <div class="cmd"><span>Save</span><span>Save &amp; close</span><span>Assign</span><span>Share</span><span>Refresh</span><span>Flow</span><span>Word templates</span></div>
+      <div class="rec">
+        <div><h2>WO-2026-00731 · Boiler replacement</h2><div class="sub">14 Elm Court, Riverside · Work order · <span class="chip chip--progress" style="vertical-align:middle">Contractor assigned</span></div></div>
+        <div class="hdr">
+          <span>Priority</span><span>Trade</span><span>SLA due</span><span>Owner</span>
+          <b style="color:#d13438">Urgent · 24h</b><b>Heating</b><b>17 Sep 2026, 09:12</b><b>Repairs team</b>
+        </div>
+      </div>
+      <div class="bpf">
+        <div class="stage done"><i>✓</i><span>Reported<small>15 Sep, tenant call</small></span></div>
+        <div class="stage done"><i>✓</i><span>Survey<small>16 Sep, D. Hughes</small></span></div>
+        <div class="stage on"><i>3</i><span>Work order<small>active · 1 day</small></span></div>
+        <div class="stage"><i>4</i><span>Completion<small>sign-off and tenant confirmation</small></span></div>
+      </div>
+      <div class="tabs"><span class="tab on">General</span><span class="tab">Survey</span><span class="tab">Contractor</span><span class="tab">Costs</span><span class="tab">Timeline</span><span class="tab">Related</span></div>
+      <div class="body">
+        <div class="card sec">
+          <h3>Work order</h3>
+          <div class="frow">
+            <label>Property</label><div class="v lookup">14 Elm Court, Riverside</div>
+            <label>Tenant</label><div class="v lookup">Tenant record (restricted)</div>
+            <label>Reported issue</label><div class="v">No heating or hot water, boiler fault code</div>
+            <label>Survey finding</label><div class="v">Heat exchanger failed, unit beyond economic repair</div>
+            <label>Works required</label><div class="v">Replace combi boiler like-for-like, flush system</div>
+            <label>Vulnerable household</label><div class="v" style="color:#d13438;font-weight:600">Yes · temporary heaters delivered</div>
+            <label>Access</label><div class="v">Tenant available weekdays after 14:00</div>
+          </div>
+          <h3 style="margin-top:6px">SLA</h3>
+          <div style="font-size:13px;display:flex;justify-content:space-between"><span>Urgent · 24 hours</span><b style="color:#c19c00">19h elapsed · 5h left</b></div>
+          <div style="height:8px;background:#edebe9;border-radius:4px;overflow:hidden"><i style="display:block;height:100%;width:79%;background:#c19c00"></i></div>
+          <h3 style="margin-top:6px">Related records</h3>
+          <div class="frow">
+            <label>Report</label><div class="v lookup">RPT-2026-01922 · No heating, tenant call</div>
+            <label>Survey</label><div class="v lookup">SRV-2026-00488 · Heating survey, D. Hughes</div>
+            <label>Previous orders</label><div class="v">2 in the last 12 months at this property</div>
+          </div>
+        </div>
+        <div class="card sec">
+          <h3>Contractor</h3>
+          <div class="frow">
+            <label>Assigned to</label><div class="v lookup">[Heating contractor]</div>
+            <label>Appointment</label><div class="v">17 Sep 2026, 08:00–12:00</div>
+            <label>Operative</label><div class="v">R. Ahmed · Gas Safe 000000</div>
+            <label>Order value</label><div class="v">£2,340.00 · schedule of rates</div>
+            <label>Variation requested</label><div class="v">None</div>
+            <label>Contractor sees</label><div class="v">This order, property access notes, survey photos</div>
+          </div>
+          <h3 style="margin-top:6px">Cost lines · schedule of rates</h3>
+          <div class="frow">
+            <label>HTG-201</label><div class="v"><span>Combi boiler, supply and fit</span><span>£1,890.00</span></div>
+            <label>HTG-118</label><div class="v"><span>System power flush</span><span>£310.00</span></div>
+            <label>HTG-044</label><div class="v"><span>Gas Safe certificate</span><span>£140.00</span></div>
+          </div>
+          <h3 style="margin-top:6px">Survey photos · 2</h3>
+          <div class="photos">
+            <div class="photo"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+            <div class="photo"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+          </div>
+        </div>
+        <div class="card sec">
+          <h3>Timeline</h3>
+          <div class="tl">
+            <div class="ev"><i>RA</i><div>Contractor accepted the order and confirmed the appointment<div class="t">Today 08:15 · contractor portal</div></div></div>
+            <div class="ev sys"><i>⚙</i><div>Work order created from survey and assigned by trade and area<div class="t">16 Sep 15:40 · automated</div></div></div>
+            <div class="ev"><i>DH</i><div>Survey completed, photos attached, boiler condemned<div class="t">16 Sep 15:32 · D. Hughes</div></div></div>
+            <div class="ev sys"><i>⚙</i><div>Temporary heaters requested for vulnerable household<div class="t">15 Sep 11:05 · automated</div></div></div>
+            <div class="ev"><i>CS</i><div>Report logged from tenant call, priority set to Urgent<div class="t">15 Sep 10:58 · Customer services</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body></html>

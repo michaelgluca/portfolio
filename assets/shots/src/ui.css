@@ -1,0 +1,62 @@
+/* Shared look for the mock app screens: Fluent-flavoured, light, Segoe UI. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: "Segoe UI", "Segoe UI Variable", system-ui, sans-serif;
+  font-size: 14px; line-height: 1.4; color: #201f1e; background: #f3f2f1;
+  -webkit-font-smoothing: antialiased;
+}
+:root {
+  --ink: #201f1e; --muted: #605e5c; --faint: #8a8886;
+  --line: #e1dfdd; --line-2: #edebe9;
+  --card: #ffffff; --canvas: #f3f2f1;
+  --blue: #0f6cbd; --blue-2: #2b88d8; --blue-bg: #e8f1fb;
+  --navy: #14305a;
+  --ok: #107c10; --ok-bg: #e6f2e6;
+  --warn: #c19c00; --warn-bg: #fff8dc;
+  --bad: #d13438; --bad-bg: #fde7e9;
+  --grey-bg: #f0f0f0;
+}
+h1, h2, h3, p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+button, input, select { font: inherit; }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.chip--open { background: var(--blue-bg); color: var(--blue); }
+.chip--progress { background: var(--warn-bg); color: #7a6200; }
+.chip--overdue { background: var(--bad-bg); color: var(--bad); }
+.chip--done { background: var(--ok-bg); color: var(--ok); }
+.chip--neutral { background: var(--grey-bg); color: var(--muted); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 36px; padding: 0 16px; border-radius: 4px; border: 1px solid var(--line); background: #fff; color: var(--ink); font-weight: 600; font-size: 14px; }
+.btn--primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+.btn--danger { background: var(--bad); border-color: var(--bad); color: #fff; }
+
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field label { font-size: 12px; font-weight: 600; color: var(--muted); }
+.field .value, .field .input { min-height: 34px; padding: 6px 10px; border: 1px solid #8a8886; border-radius: 4px; background: #fff; font-size: 14px; display: flex; align-items: center; justify-content: space-between; }
+.field .value { border-color: var(--line); background: #faf9f8; }
+.field .input--focus { border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); }
+.caret { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid var(--muted); }
+
+.ico { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+/* App header bars */
+.appbar { display: flex; align-items: center; gap: 12px; height: 48px; padding: 0 16px; background: var(--navy); color: #fff; }
+.appbar h1 { font-size: 16px; font-weight: 600; }
+.appbar .spacer { flex: 1; }
+.avatar { width: 28px; height: 28px; border-radius: 50%; background: #2b88d8; color: #fff; display: grid; place-items: center; font-size: 11px; font-weight: 700; }
+
+/* Photo placeholders: a soft grey block with a camera glyph */
+.photo { position: relative; border-radius: 6px; background: linear-gradient(160deg, #d6d3cf, #b9b5b0); overflow: hidden; }
+.photo::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 30% 70%, rgba(255,255,255,.35), transparent 45%); }
+.photo svg { position: absolute; left: 50%; top: 50%; width: 24px; height: 24px; transform: translate(-50%, -50%); stroke: #fff; fill: none; stroke-width: 1.6; opacity: .9; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-size: 12px; font-weight: 600; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 9px 10px; border-bottom: 1px solid var(--line-2); font-size: 13px; vertical-align: middle; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.selected td { background: var(--blue-bg); }
