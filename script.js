@@ -2,7 +2,6 @@
    Portfolio interactions
    - theme toggle (remembered in localStorage)
    - mobile menu
-   - scroll-reveal animations
    - highlight the nav link for the section in view
    ========================================================= */
 
@@ -32,16 +31,22 @@
   const burger = document.getElementById('nav-burger');
   const links = document.getElementById('nav-links');
   if (burger && links) {
+    // Everything outside the header is made inert while the panel is open, so
+    // Tab cannot wander into the page behind it.
+    const behind = [document.getElementById('main'), document.querySelector('.footer')].filter(Boolean);
+    const setBehindInert = (on) => behind.forEach(el => { el.inert = on; });
     const isOpen = () => links.classList.contains('is-open');
     const close = () => {
       links.classList.remove('is-open');
       burger.setAttribute('aria-expanded', 'false');
       burger.setAttribute('aria-label', 'Open menu');
+      setBehindInert(false);
     };
     burger.addEventListener('click', () => {
       const open = links.classList.toggle('is-open');
       burger.setAttribute('aria-expanded', String(open));
       burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      setBehindInert(open);
     });
     links.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
     document.addEventListener('keydown', e => {
@@ -52,22 +57,6 @@
     });
   }
 
-  /* ---------- Scroll reveal ---------- */
-  const revealEls = document.querySelectorAll('.reveal, .stagger');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => io.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('is-visible'));
-  }
-
   /* ---------- Active nav link ---------- */
   const sections = [...document.querySelectorAll('main section[id]')];
   const navAnchors = [...document.querySelectorAll('.nav__links a[href^="#"]')];
@@ -76,9 +65,9 @@
     const spy = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        navAnchors.forEach(a => a.classList.remove('is-active'));
+        navAnchors.forEach(a => { a.classList.remove('is-active'); a.removeAttribute('aria-current'); });
         const a = byId[entry.target.id];
-        if (a) a.classList.add('is-active');
+        if (a) { a.classList.add('is-active'); a.setAttribute('aria-current', 'true'); }
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(s => spy.observe(s));
@@ -97,9 +86,9 @@
       for (const h of headings) {
         if (h.getBoundingClientRect().top <= line) current = h; else break;
       }
-      tocLinks.forEach(a => a.classList.remove('is-active'));
+      tocLinks.forEach(a => { a.classList.remove('is-active'); a.removeAttribute('aria-current'); });
       const a = byId[current.id];
-      if (a) a.classList.add('is-active');
+      if (a) { a.classList.add('is-active'); a.setAttribute('aria-current', 'true'); }
     };
     window.addEventListener('scroll', () => {
       if (!ticking) { ticking = true; requestAnimationFrame(update); }

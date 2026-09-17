@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#ffffff" />
   <title>Michael G. Luca | Power Platform Developer</title>
   <meta name="description" content="Michael G. Luca, Microsoft Power Platform Developer in the UK public sector. Scalable, governed Power Apps, Power Automate, Power BI and Dataverse solutions for local government." />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="canonical" href="https://michaelluca.co.uk/" />
   <meta property="og:type" content="website" />
@@ -16,13 +16,11 @@
   <meta property="og:image" content="https://michaelluca.co.uk/assets/photo.jpg" />
   <meta name="twitter:card" content="summary" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css?v=20260915" />
+  <link rel="stylesheet" href="styles.css?v=20260917" />
 
-  <script src="theme-init.js?v=20260915"></script>
+  <script src="theme-init.js?v=20260917"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -30,9 +28,7 @@
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="top">
     <div class="container nav__inner">
-      <a href="#top" class="nav__top" id="scroll-top" aria-label="Scroll to top">
-        <span aria-hidden="true">↑</span> Scroll to top
-      </a>
+      <a href="#top" class="nav__brand">Michael G. Luca</a>
 
       <nav class="nav__links" id="nav-links" aria-label="Primary">
         <a href="#about">About</a>
@@ -43,6 +39,7 @@
       </nav>
 
       <div class="nav__actions">
+        <a href="#top" class="icon-btn nav__top" id="scroll-top" aria-label="Scroll to top" title="Scroll to top"><span aria-hidden="true">↑</span></a>
         <button class="icon-btn" id="theme-toggle" aria-label="Switch to light theme" title="Switch to light theme">
           <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -224,7 +221,7 @@
 
         <div class="skills">
           <div class="skill-group">
-            <h3><span class="skill-group__icon tone-yellow" aria-hidden="true">◆</span> Data &amp; BI</h3>
+            <h3>Data &amp; BI</h3>
             <ul class="chips">
               <li>Microsoft SQL Server</li>
               <li>SSIS &amp; Azure Data Factory</li>
@@ -236,7 +233,7 @@
           </div>
 
           <div class="skill-group">
-            <h3><span class="skill-group__icon tone-azure" aria-hidden="true">◆</span> DevOps &amp; delivery</h3>
+            <h3>DevOps &amp; delivery</h3>
             <ul class="chips">
               <li>Azure DevOps</li>
               <li>CI/CD &amp; ALM</li>
@@ -249,7 +246,7 @@
           </div>
 
           <div class="skill-group">
-            <h3><span class="skill-group__icon tone-cyan" aria-hidden="true">◆</span> Pro-code &amp; integration</h3>
+            <h3>Pro-code &amp; integration</h3>
             <ul class="chips">
               <li>Software engineering (MSc)</li>
               <li>REST APIs &amp; connectors</li>
@@ -409,13 +406,11 @@
 
         <div class="clients">
           <article class="client">
-            <span class="client__icon" aria-hidden="true">🏛️</span>
             <p class="client__meta">UK public sector, London</p>
             <h3>London councils</h3>
             <p>Power Platform projects for multiple London borough councils, covering frontline enforcement, housing, performance management and capital programmes, from discovery through to live service.</p>
           </article>
           <article class="client">
-            <span class="client__icon" aria-hidden="true">💼</span>
             <p class="client__meta">Private sector, UK</p>
             <h3>Private consulting</h3>
             <p>Independent Power Platform consulting for private businesses alongside my public-sector work: scoping, building and handing over solutions that fit the way the business already operates.</p>
@@ -427,14 +422,12 @@
             <h3>Education</h3>
             <ul class="edu-list">
               <li class="edu">
-                <span class="edu__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
                 <div>
                   <b>MSc Software Engineering</b>
                   <small>University of Westminster, <span class="nowrap">2021–2023</span></small>
                 </div>
               </li>
               <li class="edu">
-                <span class="edu__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
                 <div>
                   <b>BSc Criminology and Policing</b>
                   <small>London Metropolitan University, <span class="nowrap">2016–2019</span></small>
@@ -511,6 +504,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260915"></script>
+  <script src="script.js?v=20260917"></script>
 </body>
 </html>
