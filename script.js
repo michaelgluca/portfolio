@@ -1,6 +1,6 @@
 /* =========================================================
    Portfolio interactions
-   - theme toggle (remembered in localStorage)
+   - theme toggle (a light-theme choice is remembered in localStorage; dark, the default, stores nothing)
    - mobile menu
    - highlight the nav link for the section in view
    ========================================================= */
@@ -15,7 +15,7 @@
   if (themeBtn) {
     const sync = () => {
       const light = root.dataset.theme === 'light';
-      const label = light ? 'Switch to dark theme' : 'Switch to light theme';
+      const label = (light ? 'Switch to dark theme' : 'Switch to light theme') + ' (remembered on this device)';
       themeBtn.setAttribute('aria-label', label);
       themeBtn.title = label;
       if (themeMeta) themeMeta.content = light ? '#ffffff' : '#0e1116';
@@ -23,7 +23,7 @@
     };
     themeBtn.addEventListener('click', () => {
       root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
-      try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+      try { if (root.dataset.theme === 'light') localStorage.setItem('theme', 'light'); else localStorage.removeItem('theme'); } catch (e) {}
       sync();
     });
     sync();
