@@ -1,4 +1,5 @@
 # Local tooling / editor state
+CLAUDE.md
 .claude/
 .vscode/
 .idea/
