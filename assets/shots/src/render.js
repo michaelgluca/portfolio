@@ -1,6 +1,6 @@
 // Renders each mock screen in this folder to a PNG one level up (assets/shots).
 // These are illustrations of the apps, not screenshots: edit the HTML, re-render.
-// One-off setup:  npm install playwright-core   (drives the Edge already on Windows)
+// One-off setup:  npm install playwright-core   (drives Google Chrome on the Mac, Edge on Windows)
 // Run:            node render.js
 const { chromium } = require('playwright-core');
 const path = require('path');
@@ -21,11 +21,11 @@ const screens = [
 ];
 
 (async () => {
-  const browser = await chromium.launch({ channel: 'msedge', headless: true });
+  const browser = await chromium.launch({ channel: process.platform === 'win32' ? 'msedge' : 'chrome', headless: true });
   for (const s of screens) {
     const ctx = await browser.newContext({ viewport: { width: s.w, height: s.h }, deviceScaleFactor: s.dpr });
     const page = await ctx.newPage();
-    await page.goto('file:///' + path.join(SRC, s.file).replace(/\\/g, '/'), { waitUntil: 'load' });
+    await page.goto(require('url').pathToFileURL(path.join(SRC, s.file)).href, { waitUntil: 'load' });
     await page.evaluate(() => document.fonts.ready);
     await page.screenshot({ path: path.join(OUT, s.out), type: 'png' });
     const size = fs.statSync(path.join(OUT, s.out)).size;
