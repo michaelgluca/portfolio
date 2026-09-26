@@ -1,5 +1,5 @@
 # Tiny static file server for local preview with live reload, no installs needed.
-# Run:  powershell -ExecutionPolicy Bypass -File serve.ps1
+# Run:  pwsh -NoProfile -File serve.ps1   (Windows PowerShell: powershell -ExecutionPolicy Bypass -File serve.ps1)
 # Then open http://localhost:8080 in your browser. Ctrl+C to stop.
 # Saving a CSS file swaps the stylesheet in place; saving anything else reloads the page.
 
@@ -96,7 +96,7 @@ try {
       }
       else {
         if ($path.EndsWith('/')) { $path += 'index.html' }
-        $file = Join-Path $root ($path -replace '/', '\')
+        $file = Join-Path $root ($path -replace '/', [IO.Path]::DirectorySeparatorChar)
 
         $ok = (Test-Path $file -PathType Leaf) -and ((Resolve-Path $file).Path).StartsWith($root)
         if (-not $ok) {
